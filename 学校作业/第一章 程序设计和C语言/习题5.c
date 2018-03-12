@@ -1,6 +1,6 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+main()
 {
 	printf("*****\n  *****\n    *****\n      *****\n");
-	return 0;
 }
