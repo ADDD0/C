@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* ��ӡ�����¶�-�����¶ȶ��ձ� */
+/* 打印华氏温度-摄氏温度对照表 */
 main ()
 {
 	int fahr;

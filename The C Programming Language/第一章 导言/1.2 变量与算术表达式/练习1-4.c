@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-/* 编写一个程序打印摄氏温度转换为相应华氏温度的转换表 */
+/* 缂栧啓涓�涓▼搴忔墦鍗版憚姘忔俯搴﹁浆鎹负鐩稿簲鍗庢皬娓╁害鐨勮浆鎹㈣〃 */
 main()
 {
 	float fahr, celsius;
 	int lower, upper, step;
 	
-	lower = 0;						  /* 温度表的下限 */
-	upper = 300;					  /* 温度表的上限 */
-	step = 20;								  /* 步长 */
+	lower = 0;						  /* 娓╁害琛ㄧ殑涓嬮檺 */
+	upper = 300;					  /* 娓╁害琛ㄧ殑涓婇檺 */
+	step = 20;								  /* 姝ラ暱 */
 	
 	printf("Celsius Fahr\n");
 	celsius = lower;

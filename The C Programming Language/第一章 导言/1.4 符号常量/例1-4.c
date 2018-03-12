@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#define  LOWER  0  /* ╠М╣добоч */
-#define  UPPER  300/* ╠М╣диооч */
-#define  STEP   20	   /* ╡╫Ё╓ */
+#define  LOWER  0  /* Х║╗Г └Д╦▀И≥░ */
+#define  UPPER  300/* Х║╗Г └Д╦┼И≥░ */
+#define  STEP   20	   /* Ф╜╔И∙© */
 
-/* ╢Рс║╩╙йонб╤х-иЦйонб╤х╤туу╠М */
+/* Ф┴⌠Е█╟Е█▌Ф╟▐Ф╦╘Е╨╕-Ф▒└Ф╟▐Ф╦╘Е╨╕Е╞╧Г┘╖Х║╗ */
 main()
 {
 	int fahr;

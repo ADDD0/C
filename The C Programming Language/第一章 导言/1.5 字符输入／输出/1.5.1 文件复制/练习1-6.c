@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* 验证表达式getchar()!=EOF的值是0还是1 */
+/* 楠岃瘉琛ㄨ揪寮廹etchar()!=EOF鐨勫�兼槸0杩樻槸1 */
 main()
 {
 	int c;

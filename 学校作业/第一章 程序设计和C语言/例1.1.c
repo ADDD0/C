@@ -1,6 +1,6 @@
-# include <stdio.h>						//ÕâÊÇ±àÒëÔ¤´¦ÀíÖ¸Áî
-int main()								//¶¨ÒåÖ÷º¯Êý
-{										//º¯Êý¿ªÊ¼µÄ±êÖ¾
-	printf("This is a C program.\n");	//Êä³öËùÖ¸¶¨µÄÒ»ÐÐÐÅÏ¢
-	return 0;							//º¯ÊýÖ´ÐÐÍê±ÏÊ±·µ»Øº¯ÊýÖµ0
-}										//º¯Êý½áÊøµÄ±êÖ¾
+# include <stdio.h>						//è¿™æ˜¯ç¼–è¯‘é¢„å¤„ç†æŒ‡ä»¤
+int main()								//å®šä¹‰ä¸»å‡½æ•°
+{										//å‡½æ•°å¼€å§‹çš„æ ‡å¿—
+	printf("This is a C program.\n");	//è¾“å‡ºæ‰€æŒ‡å®šçš„ä¸€è¡Œä¿¡æ¯
+	return 0;							//å‡½æ•°æ‰§è¡Œå®Œæ¯•æ—¶è¿”å›žå‡½æ•°å€¼0
+}										//å‡½æ•°ç»“æŸçš„æ ‡å¿—
