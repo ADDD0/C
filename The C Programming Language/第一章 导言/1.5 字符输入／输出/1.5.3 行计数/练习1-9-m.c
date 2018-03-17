@@ -10,7 +10,7 @@ main()
 		if (c == ' ') {
 			putchar(c);
 			while ((c = getchar()) == ' ') {
-				c = "";
+				;
 			}
 		}
 		putchar(c);
