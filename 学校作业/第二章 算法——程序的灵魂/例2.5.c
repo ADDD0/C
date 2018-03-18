@@ -8,7 +8,7 @@ main()
 	int i;
 	
 	scanf("%lf", &n);
-	for (i = 2; i < (int)sqrt(n)+1; i++)
+	for (i = 2; i < (int)sqrt(n)+1; ++i)
 	{
 		if ((int)n % i == 0)
 		{
