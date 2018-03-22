@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#define  MAXHIST 15				  /* 直方图最大长度 */
-#define  MAXCHAR 128				/* 不同字符个数 */
+#define  MAXHIST  15	/* 	直方图最大长度 				*/
+#define  MAXCHAR  128	/* 	不同字符个数 				*/
 
-/* 编写一个程序，打印输入中各个字符出现频度的直方图 */
-/* 垂直方向直方图 									*/
+/* 	编写一个程序，打印输入中各个字符出现频度的直方图	*/
+/* 	垂直方向直方图										*/
 main()
 {
 	int c, i, j;
-	int maxvalue;					/* cc[]的最大值 */
-	int cc[MAXCHAR];			  	  /* 字符计数器 */
+	int maxvalue;		/*	cc[]的最大值 				*/
+	int cc[MAXCHAR];	/*	字符计数器 					*/
 	
 	for (i = 0; i < MAXCHAR; ++i)
 		cc[i] = 0;

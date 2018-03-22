@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-/* 修改温度转换程序，
-使之能在转换表的顶部打印一个标题 */
+/*	修改温度转换程序，
+使之能在转换表的顶部打印一个标题		*/
 main()
 {
 	float fahr, celsius;
 	int lower, upper, step;
 	
-	lower = 0;	 /* 温度表的下限 */
-	upper = 300; /* 温度表的上限 */
-	step = 20;			 /* 步长 */
+	lower = 0;		/*	温度表的下限	*/
+	upper = 300;	/*	温度表的上限 	*/
+	step = 20;		/*	步长			*/
 	
 	printf("Fahr Celsius\n");
 	fahr = lower;

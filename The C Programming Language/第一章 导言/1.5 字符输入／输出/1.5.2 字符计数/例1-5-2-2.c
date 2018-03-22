@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* 统计输入的字符数；版本2 */
+/*	统计输入的字符数；版本2	*/
 main()
 {
 	double nc;

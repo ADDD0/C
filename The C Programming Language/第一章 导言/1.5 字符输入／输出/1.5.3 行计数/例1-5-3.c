@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* 统计输入中的行数 */
+/*	统计输入中的行数	*/
 main()
 {
 	int c, nl;
