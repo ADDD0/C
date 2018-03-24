@@ -75,7 +75,7 @@ void in_comment(void)
 	}
 }
 
-/* in_quote：引号内部                               */
+/* in_quote：引号内部                               */maohao gai cheng ban jiao
 void in_quote(int c)
 {
 	int d;
