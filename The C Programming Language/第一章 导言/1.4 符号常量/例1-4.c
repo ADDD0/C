@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#define  LOWER  0	/*	表的下限	*/
-#define  UPPER  300	/*	表的上限	*/
-#define  STEP   20	/*	步长		*/
+#define  LOWER  0    /* 表的下限 */
+#define  UPPER  300  /* 表的上限 */
+#define  STEP   20   /* 步长     */
 
-/*	打印华氏温度-摄氏温度对照表		*/
+/* 打印华氏温度-摄氏温度对照表   */
 main()
 {
 	int fahr;

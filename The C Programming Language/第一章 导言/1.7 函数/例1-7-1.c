@@ -2,7 +2,7 @@
 
 int power(int m, int n);
 
-/*	测试power函数 							*/
+/* 测试power函数                        */
 main()
 {
 	int i;
@@ -12,7 +12,7 @@ main()
 	return 0;
 }
 
-/*	power函数：求底数的n次幂；其中n >= 0	*/
+/* power函数：求底数的n次幂；其中n >= 0 */
 int power(int base, int n)
 {
 	int i, p;

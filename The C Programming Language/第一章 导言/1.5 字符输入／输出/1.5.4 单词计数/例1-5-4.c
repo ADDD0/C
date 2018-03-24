@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#define  IN   1	/* 	在单词内 		*/
-#define  OUT  0	/* 	在单词外 		*/
+#define  IN   1  /* 在单词内      */
+#define  OUT  0  /* 在单词外      */
 
-/* 	统计输入的行数、单词数与字符数 	*/
+/* 统计输入的行数、单词数与字符数 */
 main()
 {
 	int c, nl, nw, nc, state;

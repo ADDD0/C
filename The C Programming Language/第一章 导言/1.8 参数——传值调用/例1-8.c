@@ -1,4 +1,4 @@
-/*	power函数：求底数的n次幂； n>=0；版本2	*/
+/* power函数：求底数的n次幂； n>=0；版本2 */
 int power(int base, int n)
 {
 	int p;

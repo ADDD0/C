@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-#define  MAXLINE  1000		/*	允许的输入行的最大长度		*/
+#define  MAXLINE  1000      /* 允许的输入行的最大长度     */
 
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-/*	修改打印最长文本行的程序的主程序main，
-使之可以打印任意长度的输入行的长度，并尽可能多地打印文本	*/
+/* 修改打印最长文本行的程序的主程序main，
+使之可以打印任意长度的输入行的长度，并尽可能多地打印文本  */
 main()
 {
-	int len;				/*	当前行长度					*/
-	int max;				/*	目前为止发现的最长行的长度	*/
-	char line[MAXLINE];		/*	当前的输入行				*/
-	char longest[MAXLINE];	/*	用于保存最长的行			*/
+	int len;                /* 当前行长度                 */
+	int max;                /* 目前为止发现的最长行的长度 */
+	char line[MAXLINE];     /* 当前的输入行               */
+	char longest[MAXLINE];  /* 用于保存最长的行           */
 	
 	max = 0;
 	while ((len = getline(line, MAXLINE)) > 0) {
@@ -22,12 +22,12 @@ main()
 			copy(longest, line);
 		}
 	}
-	if (max > 0)			/*	存在这样的行				*/
+	if (max > 0)            /* 存在这样的行               */
 		printf("%s", longest);
 	return 0;
 }
 
-/*	getline函数：将一行读入到s中并返回其长度				*/
+/* getline函数：将一行读入到s中并返回其长度               */
 int getline(char s[], int lim)
 {
 	int c, i, j;
@@ -39,7 +39,7 @@ int getline(char s[], int lim)
 			++j;
 		}
 	if (c == '\n') {
-		s[j] = c;			/*	行仍在边界内				*/
+		s[j] = c;           /* 行仍在边界内               */
 		++j;
 		++i;
 	}
@@ -47,7 +47,7 @@ int getline(char s[], int lim)
 	return i;
 }
 
-/*	copy函数：将from复制到to；这里假定to足够大				*/
+/* copy函数：将from复制到to；这里假定to足够大             */
 void copy(char to[], char from[])
 {
 	int i;
