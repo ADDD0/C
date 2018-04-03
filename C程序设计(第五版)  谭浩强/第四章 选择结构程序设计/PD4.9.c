@@ -6,15 +6,13 @@
    3.按逆序输出各位数字 */
 main()
 {
-    int c, i, count;
-    char re[count];
+    int n, count = 0;
 
-    count = 0;
-    while ((c = getchar()) != '\n') {
-        re[count] = c;
+    scanf("%d", &n);
+    while (n != 0) {
+        printf("%d", n % 10);
+        n /= 10;
         ++count;
     }
-    printf("%d", count);
-    for (i = count; i >= 0; --i)
-        printf("%c", re[i]);
+    printf("\n%d\n", count);
 }
