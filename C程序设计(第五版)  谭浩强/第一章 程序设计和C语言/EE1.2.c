@@ -1,4 +1,4 @@
-#include <stdio.h>              //这是编译预处理指令
+#include<stdio.h>               //这是编译预处理指令
 int main()                      //定义主函数
   {                             //函数开始
     int a,b,sum;                //本行是程序的声明部分,定义a,b,sum为整型变量

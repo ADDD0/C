@@ -1,9 +1,9 @@
 #include<stdio.h>
-#include<math.h>  //程序中要调用求平方根函数sqrt
+#include<math.h>                                            //程序中要调用求平方根函数sqrt
 int main()
   {
-    double a,b,c,disc,x1,x2,p,q;  //disc是判别式sqrt(b*b-4ac)
-    scanf("%lf%lf%lf",&a,&b,&c);  //输入双精度浮点型变量的值要用格式声明“%lf”
+    double a,b,c,disc,x1,x2,p,q;                            //disc是判别式sqrt(b*b-4ac)
+    scanf("%lf%lf%lf",&a,&b,&c);                            //输入双精度浮点型变量的值要用格式声明“%lf”
     disc=b*b-4*a*c;
     if(disc<0)                                              //若b²-4ac<0
         printf("This equation hasn't real rootn");          //输出“此方程无实根”

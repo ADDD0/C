@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     int a=66,b=79,c=89;  //定义3个整型变量并初始化

@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-/* 输入4个整数,要求按由小到大的顺序输出 */
+/* 输入4个整数,要求按由小到大的顺序输出    */
 main()
 {
-    void swap(int *i, int *j);
+    void swap(int *i, int *j); /* 冒泡排序 */
     int a, b, c, d;
 
     scanf("%d %d %d %d", &a, &b, &c, &d);

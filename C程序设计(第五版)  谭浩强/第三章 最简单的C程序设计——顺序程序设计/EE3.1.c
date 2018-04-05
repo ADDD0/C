@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     float f,c;                   //定义f和c为单精度浮点型变量

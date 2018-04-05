@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 //主函数
 int main()                 //定义主函数
   {                        //主函数体开始

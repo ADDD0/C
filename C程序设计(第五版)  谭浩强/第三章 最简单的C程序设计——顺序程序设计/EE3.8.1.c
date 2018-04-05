@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     char a='B',b='O',c='Y';  //定义3个字符变量并初始化

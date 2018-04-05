@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <math.h>                          //程序中要调用求平方根函数sqrt
+#include<stdio.h>
+#include<math.h>                           //程序中要调用求平方根函数sqrt
 int main()
   {
     double a,b,c,disc,x1,x2,p,q;           //disc用来存放判别式(b*b-4ac)的值

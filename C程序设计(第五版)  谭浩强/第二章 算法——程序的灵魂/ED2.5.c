@@ -4,10 +4,10 @@
 /* 给出一个大于或等于3的正整数,判断它是不是一个素数 */
 main()
 {
-    int judge = 1;
-    int i;
+    int i, judge;
     double n;
 
+    judge = 1;
     scanf("%lf", &n);
     for (i = 2; i < (int)sqrt(n) + 1; ++i)
     {

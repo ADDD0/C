@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     char a,b,c;     //定义字符变量a,b,c

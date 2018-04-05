@@ -1,4 +1,4 @@
-#include <stdio.h>                      //这是编译预处理指令
+#include<stdio.h>                       //这是编译预处理指令
 int main()                              //定义主函数
   {                                     //函数开始的标志
     printf ("This is a C program.\n");  //输出所指定的一行信息

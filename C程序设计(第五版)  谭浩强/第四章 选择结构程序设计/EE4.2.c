@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     float a,b,t;
@@ -9,6 +9,6 @@ int main()
         a=b;
         b=t;
       }
-     printf("%5.2f,%5.2f\n",a,b);
-     return 0;
+    printf("%5.2f,%5.2f\n",a,b);
+    return 0;
   }

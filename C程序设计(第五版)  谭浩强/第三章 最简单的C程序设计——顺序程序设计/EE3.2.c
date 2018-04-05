@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     float p0=1000,r1=0.0036,r2=0.0225,r3=0.0198,p1,p2,p3;  //定义变量

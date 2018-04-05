@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     void action1(int,int),action2(int,int);  //函数声明
