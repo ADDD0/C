@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 #define SUM 100000  //指定符号常量SUM代表100000
 int main()
   {
@@ -9,7 +9,8 @@ int main()
         printf("please enter amount");
         scanf("%d",&amount);
         total=total+amount;
-        if(total>=SUM)break;
+        if(total>=SUM)
+          break;
       }
     aver=total/i;
     printf("num=%d\naver=%10.2f\n",i,aver);

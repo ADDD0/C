@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
   {
     int i=1,sum=0;             //定义变量i的初值为1,sum的初值为0

@@ -5,13 +5,13 @@ main()
 {
     int m, n, gy, temp;
 
-    printf("m = ");
+    printf("m=");
     scanf("%d", &m);
-    printf("n = ");
+    printf("n=");
     scanf("%d", &n);
     temp = m * n;
     while (1) {
-        if(!(m %= n)) {
+        if(!(m %= n)) {  /* 辗转相除法           */
             gy = n;
             break;
         }

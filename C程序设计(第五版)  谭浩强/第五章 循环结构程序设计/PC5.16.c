@@ -28,5 +28,4 @@ main()
             putchar('*');
         putchar('\n');
     }
-
 }
