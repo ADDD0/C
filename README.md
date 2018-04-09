@@ -1,7 +1,7 @@
 # C
-这是一个供自己时刻查看与上传关于C语言代码的代码库
-不同文件夹内代码风格可能**不统一**(这是为了与书本上的代码更加契合)
-本人目前主要的代码风格与K&R(Brian W.Kernighan,Dennis M.Ritchie)合著的
+这是一个供自己时刻查看与上传关于C语言代码的代码库  
+不同文件夹内代码风格可能**不统一**(这是为了与书本上的代码更加契合)  
+本人目前主要的代码风格与K&R(Brian W.Kernighan,Dennis M.Ritchie)合著的  
 C程序设计语言(The C Programming Language)类似
 
 代码源文件命名遵循以下规则:  
