@@ -3,5 +3,5 @@
 设置为y中最右边n位的值,x的其余各位保持不变 */
 unsigned setbits(unsigned x, int p, int n,unsigned y)
 {
-    return x & (~(~0 << n) << (p - n));
+    return x & ~(~(~0 << n) << (p - n + 1)) | (y & ~(~0 << n)) << (p - n + 1);
 }

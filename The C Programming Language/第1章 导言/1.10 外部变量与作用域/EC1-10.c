@@ -9,13 +9,13 @@ char longest[MAXLINE];  /* 用于保存最长的行             */
 int getline(void);
 void copy(void);
 
-/* 打印最长的输入行；特别版本                           */
+/* 打印最长的输入行;特别版本                            */
 main()
 {
     int len;
     extern int max;
     extern char longest[];
-    
+
     max = 0;
     while ((len = getline()) > 0)
         if (len > max) {
@@ -27,12 +27,12 @@ main()
     return 0;
 }
 
-/* getline函数：特别版本                                */
+/* getline函数:特别版本                                 */
 int getline(void)
 {
     int c, i;
     extern char line[];
-    
+
     for (i = 0; i < MAXLINE - 1 && (c = getchar() != EOF) && c != '\n'; ++i)
         line[i] = c;
     if (c == '\n') {
@@ -43,12 +43,12 @@ int getline(void)
     return i;
 }
 
-/* copy函数：特别版本                                   */
+/* copy函数:特别版本                                    */
 void copy(void)
 {
     int i;
     extern char line[], longest[];
-    
+
     i = 0;
     while ((longest[i] = line[i]) != '\0')
         ++i;

@@ -1,16 +1,18 @@
+/* 修改温度转换程序,
+使之能在转换表的顶部打印一个标题    */
 #include <stdio.h>
 
-/* 修改温度转换程序，
-使之能在转换表的顶部打印一个标题  */
+/* 当fahr=0,20,…,300时,打印
+华氏温度与摄氏温度对照表;浮点数版本 */
 main()
 {
     float fahr, celsius;
     int lower, upper, step;
-    
-    lower = 0;    /* 温度表的下限 */
-    upper = 300;  /* 温度表的上限 */
-    step = 20;    /* 步长         */
-    
+
+    lower = 0;    /* 温度表的下限   */
+    upper = 300;  /* 温度表的上限   */
+    step = 20;    /* 步长           */
+
     printf("Fahr Celsius\n");
     fahr = lower;
     while (fahr <= upper) {

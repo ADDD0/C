@@ -7,7 +7,7 @@ main()
     int c, nl, nb, nd, no;
 
     nl = nb = nd = no = 0;
-    while((c = getchar()) != '\n') {
+    while ((c = getchar()) != '\n') {
         if (isalpha(c))
             ++nl;
         else if (c == ' ')

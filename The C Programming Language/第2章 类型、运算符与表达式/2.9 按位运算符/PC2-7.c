@@ -3,5 +3,5 @@
 (即,1变成0,0变成1),x的其余各位保持不变             */
 unsigned invert(unsigned x, int p, int n)
 {
-
+    return x ^ (~(~0 << n) << (p - n + 1));
 }

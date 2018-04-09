@@ -3,23 +3,17 @@
 /* 输入两个正整数m和n,求其最大公约数和最小公倍数 */
 main()
 {
-    int m, n, gy, temp;
+    int m, n, r, temp;
 
     printf("m=");
     scanf("%d", &m);
     printf("n=");
     scanf("%d", &n);
     temp = m * n;
-    while (1) {
-        if(!(m %= n)) {  /* 辗转相除法           */
-            gy = n;
-            break;
-        }
-        if(!(n %= m)) {
-            gy = m;
-            break;
-        }
+    while (r = m % n) {  /* 辗转相除法           */
+        m = n;
+        n = r;
     }
-    printf("%d\n", gy);
-    printf("%d\n", temp / gy);
+    printf("%d\n", n);
+    printf("%d\n", temp / n);
 }
