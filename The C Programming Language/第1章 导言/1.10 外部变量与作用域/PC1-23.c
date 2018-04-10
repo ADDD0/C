@@ -1,11 +1,12 @@
+/* 编写一个删除C语言程序中所有的注释语句
+要正确处理带引号的字符串与字符常量.在C语言中,注释不允许嵌套 */
 #include <stdio.h>
 
 void rcomment(int c);
 void in_comment(void);
 void echo_quote(int c);
 
-/* 编写一个删除C语言程序中所有的注释语句
-要正确处理带引号的字符串与字符常量.在C语言中,注释不允许嵌套 */
+/* 从一个有效的C程序中移除所有的注释                        */
 main()
 {
     int c;

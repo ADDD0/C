@@ -1,3 +1,5 @@
+/* 编写一个程序
+删除每个输入行末尾的空格及制表符,并删除完全是空格的行 */
 #include <stdio.h>
 
 #define  MAXLINE   1000  /* 允许的输入行的最大长度    */
@@ -5,8 +7,7 @@
 int getline(char line[], int maxline);
 int remove(char s[]);
 
-/* 编写一个程序
-删除每个输入行末尾的空格及制表符,并删除完全是空格的行 */
+/* 删除末尾的空格及制表符,并删除空白行                */
 main()
 {
     char line[MAXLINE];  /* 当前的输入行              */

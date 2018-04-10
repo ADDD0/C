@@ -1,8 +1,9 @@
+/* 重新编写1.2节中的温度转换程序,使用函数实现温度转换计算 */
 #include <stdio.h>
 
 float celsius(float fahr);
 
-/* 重新编写1.2节中的温度转换程序,使用函数实现温度转换计算 */
+/* 打印摄氏温度与华氏温度对照表                           */
 main()
 {
     float fahr;
@@ -19,7 +20,7 @@ main()
     }
 }
 
-/* 摄氏度:华氏度转换为摄氏度                             */
+/* 摄氏度:华氏度转换为摄氏度                              */
 float celsius(float fahr)
 {
     return (5.0/9.0) * (fahr-32.0);

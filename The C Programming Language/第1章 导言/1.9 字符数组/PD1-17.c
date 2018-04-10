@@ -1,3 +1,4 @@
+/* 编写一个程序,打印长度大于80个字符的所有输入行   */
 #include <stdio.h>
 
 #define  MAXLINE   1000  /* 允许的输入行的最大长度 */
@@ -5,7 +6,7 @@
 
 int getline(char line[], int maxline);
 
-/* 编写一个程序,打印长度大于80个字符的所有输入行   */
+/* 打印比LONGLINE长的行                            */
 main()
 {
     int len;             /* 当前行长度             */

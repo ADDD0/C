@@ -1,3 +1,5 @@
+/* 编写函数reverse(s),将字符串s中的字符顺序颠倒过来
+使用该函数编写一个程序,每次颠倒一个输入行中的字符顺序 */
 #include <stdio.h>
 
 #define  MAXLINE  1000  /* 允许的输入行的最大长度     */
@@ -5,8 +7,7 @@
 int getline(char line[], int maxline);
 void reverse(char s[], int len);
 
-/* 编写函数reverse(s),将字符串s中的字符顺序颠倒过来
-使用该函数编写一个程序,每次颠倒一个输入行中的字符顺序 */
+/* 反转输入行,一次反转一行                            */
 main()
 {
     int len;

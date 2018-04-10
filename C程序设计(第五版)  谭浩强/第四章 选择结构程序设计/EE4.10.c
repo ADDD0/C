@@ -4,7 +4,7 @@ int main()
     int c,s;
     float p,w,d,f;
     printf("please enter price,weight,discount:");  //提示输入的数据
-    scanf("%f,%f,%d",&p,&w,&s);                     //输入单价、重量、距离
+    scanf("%f,%f,%d",&p,&w,&s);                     //输入单价,重量,距离
     if(s>=3000)c=12;                                //3000km以上为同一折扣
     else c=s/250;                                   //3000km以下各段折扣不同,c的值不相同
     switch(c)

@@ -1,3 +1,5 @@
+/* 修改打印最长文本行的程序的主程序main
+使之可以打印任意长度的输入行的长度,并尽可能多地打印文本   */
 #include <stdio.h>
 
 #define  MAXLINE  1000      /* 允许的输入行的最大长度     */
@@ -5,8 +7,7 @@
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-/* 修改打印最长文本行的程序的主程序main
-使之可以打印任意长度的输入行的长度,并尽可能多地打印文本   */
+/* 打印最长输入行                                         */
 main()
 {
     int len;                /* 当前行长度                 */
