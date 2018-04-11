@@ -1,8 +1,8 @@
-#include <stdio.h>
-
 /* 一个数如果恰好等于它的因子之和,这个数就称为"完数"
 编程序找出1000以内的完数,并按下面格式输出其因子:
 6 its factors are 1,2,3                              */
+#include <stdio.h>
+
 main()
 {
     int n, i, sum;

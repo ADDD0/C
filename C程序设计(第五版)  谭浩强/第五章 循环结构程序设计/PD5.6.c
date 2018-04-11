@@ -1,8 +1,8 @@
+/* 求1!+2!+3!+4!+…+20! */
 #include <stdio.h>
 
 #define  LIMIT  20
 
-/* 求1!+2!+3!+4!+…+20! */
 main()
 {
     int n, i, j, sum;

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /* 以逆序打印华氏温度与摄氏温度对照表     */
-main ()
+main()
 {
     int fahr;
 

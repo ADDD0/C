@@ -1,7 +1,3 @@
-#include <stdio.h>
-
-#define  LINE  80
-
 /* 输出以下图案:
       *
      ***
@@ -10,6 +6,10 @@
     *****
      ***
       *          */
+#include <stdio.h>
+
+#define  LINE  80
+
 main()
 {
     int n, i;
