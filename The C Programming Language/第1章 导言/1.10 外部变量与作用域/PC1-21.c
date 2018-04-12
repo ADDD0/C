@@ -20,17 +20,17 @@ main()
                 ++nt;               /* 加一个制表符     */
             }
         } else {
-                for ( ; nt > 0; --nt)
-                    putchar('\t');  /* 输出制表符       */
-                if (c == '\t')      /* 忽略空格         */
-                    nb = 0;
-                else                /* 输出空格         */
-                    for ( ; nb > 0; --nb)
-                        putchar(' ');
-                putchar(c);
-                if (c == '\n')
-                    pos = 0;
-                else if (c == '\t')
-                    pos = pos + (TABINC - (pos-1) % TABINC) - 1;
+			for ( ; nt > 0; --nt)
+				putchar('\t');  	/* 输出制表符       */
+			if (c == '\t')      	/* 忽略空格         */
+				nb = 0;
+			else                	/* 输出空格         */
+				for ( ; nb > 0; --nb)
+					putchar(' ');
+			putchar(c);
+			if (c == '\n')
+				pos = 0;
+			else if (c == '\t')
+				pos = pos + (TABINC - (pos-1) % TABINC) - 1;
         }
 }

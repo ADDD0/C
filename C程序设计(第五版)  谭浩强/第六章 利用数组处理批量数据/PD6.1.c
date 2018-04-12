@@ -1,4 +1,4 @@
-/* 用筛选法求100之内的素数 */
+/* 用筛选法求100之内的素数                                     */
 #include <stdio.h>
 #include <math.h>
 
@@ -13,7 +13,7 @@ main()
         num[i] = i;
     for (i = 2; i < sqrt(MAX); ++i) {
         for (j = 2 * i; j < MAX; j += i)
-            num[j] = 0;
+            num[j] = 0;  /* 令所有(根号n以下的正整数)的倍数为0 */
     }
     for (i = 2; i < MAX; ++i) {
         if (num[i]) {

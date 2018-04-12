@@ -5,12 +5,11 @@
 
 main()
 {
-    int n, i, j, sum;
+    int i, j, sum;
 
-    for (n = LIMIT, sum = 0; n > 0; --n) {
-        for (i = j = n; j > 1; --j)
-            i *= (j - 1);
+    for (i = j = 1, sum = 0; j <= LIMIT; ++j) {
+		i *= j;
         sum += i;
     }
-    printf("%d\n", sum);
+    printf("%ld\n", sum);
 }
