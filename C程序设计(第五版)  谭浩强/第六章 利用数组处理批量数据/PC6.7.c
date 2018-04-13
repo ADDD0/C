@@ -8,7 +8,7 @@
 要求输出1~n*n的自然数构成的魔方阵 */
 #include <stdio.h>
 
-#define  N  9
+#define  N  7
 
 /* 只能输出奇数平方               */
 main()
@@ -23,7 +23,7 @@ main()
         if (i == 0)
             i = N - 1;
         else
-            i = i - 1;
+            --i;
         j = (j + 1) % N;
         if (a[i][j] != 0 || (row == 0 && cul == N-1))
         {
