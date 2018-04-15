@@ -1,5 +1,6 @@
-/* 重新编写函数squeeze(s1, s2),
+/* 重新编写函数squeeze(s1, s2)
 将字符串s1中任何与字符串s2中字符匹配的字符都删除 */
+/* squeeze函数:删除s1中每个在s2中出现的字符      */
 void squeeze(char s1[], char s2[])
 {
     int i, j, k;

@@ -7,7 +7,7 @@ main()
     int n;
 
     for (n = 100; n < 1000; ++n) {
-        if (n == pow(n % 10, 3) + pow(n / 10 % 10, 3) + pow(n / 100, 3) )
+        if (n == pow(n % 10, 3) + pow(n / 10 % 10, 3) + pow(n / 100, 3))
             printf("%d\n", n);
     }
 }

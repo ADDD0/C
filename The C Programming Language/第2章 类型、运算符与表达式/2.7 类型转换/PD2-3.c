@@ -1,27 +1,9 @@
-#include <stdio.h>
-
-#define  MAX  128
-#define  YES  1
-#define  NO   0
-
 /* 编写函数htoi(s),把由十六进制数字组成的字符串(包含可选的前缀0x或0X)
 转换为与之等价的整型值.字符串中允许包含的数字包括:0~9,a~f以及A~F      */
-main()
-{
-    int htoi(char s[]);
-    int c, n, i = 0;
-    char s[MAX];
+#include <stdio.h>
 
-    while ((c = getchar()) != EOF) {
-        s[i] = c;
-        ++i;
-        if (c == '\0') {
-            n = htoi(s[i]);
-            printf("%d", n);
-            i = 0;
-        }
-    }
-}
+#define  YES  1
+#define  NO   0
 
 /* htoi函数:将十六进制字符串s转换为整型数                             */
 int htoi(char s[])

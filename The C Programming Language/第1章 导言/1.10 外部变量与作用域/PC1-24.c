@@ -35,7 +35,7 @@ main()
             printf("Unbalanced parentheses\n");
             paren = 0;
         }
-
+    }
     if (brace > 0)                  /* 输出错误     */
         printf("Unbalanced braces\n");
     if (brack > 0)

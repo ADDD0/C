@@ -2,7 +2,7 @@
 #include<math.h>                           //程序中要调用求平方根函数sqrt
 int main()
   {
-    double a,b,c,disc,x1,x2,p,q;           //disc用来存放判别式(b*b-4ac)的值
+    double a,b,c,disc,x1,x2,p,q;           //disc用来存放判别式(b²-4ac)的值
     scanf("%lf%lf%lf",&a,&b,&c);           //输入双精度型变量的值要用格式声明"%lf"
     disc=b*b-4*a*c;
     p=-b/(2.0*a);

@@ -1,9 +1,10 @@
-#include <stdio.h>
-#include <limits.h>
-
 /* 编写一个程序以确定分别由signed及unsigned
 限定的char,short,int与long类型变量的取值范围
 打印标准头文件中的相应值                     */
+#include <stdio.h>
+#include <limits.h>
+
+/* 确定类型的取值范围                        */
 main()
 {
     /* 有符号数据类型                        */

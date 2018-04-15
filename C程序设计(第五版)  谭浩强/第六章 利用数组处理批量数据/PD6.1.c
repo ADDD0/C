@@ -11,17 +11,15 @@ main()
 
     for (i = 2; i < MAX; ++i)
         num[i] = i;
-    for (i = 2; i < sqrt(MAX); ++i) {
+    for (i = 2; i < sqrt(MAX); ++i)
         for (j = 2 * i; j < MAX; j += i)
             num[j] = 0;  /* 令所有(根号n以下的正整数)的倍数为0 */
-    }
-    for (i = 2; i < MAX; ++i) {
+    for (i = 2; i < MAX; ++i)
         if (num[i]) {
             printf("%4d ", num[i]);
             ++count;
             if (!(count % 15))
                 printf("\n");
         }
-    }
     printf("\n");
 }

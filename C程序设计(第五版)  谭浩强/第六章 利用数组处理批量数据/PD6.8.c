@@ -11,24 +11,21 @@ main()
 
     for (row = 0; row < ROW; ++row) {
         max = 0;
-        for (col = 0; col < COLUMN; ++col) {
+        for (col = 0; col < COLUMN; ++col)
             if (a[row][col] > max) {
                 max = a[row][col];
                 rowMax = row;
                 colMin = col;
             }
-        }
         min = max;
-        for (i = 0; i < ROW; ++i) {
+        for (i = 0; i < ROW; ++i)
             if (a[i][colMin] < min) {
                 min = a[i][colMin];
                 break;
             }
-        }
         if (min == max) {
             printf("row=%d, colume=%d\nthe value is %d\n", rowMax, colMin, max);
             break;
         }
-
     }
 }

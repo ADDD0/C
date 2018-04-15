@@ -1,8 +1,9 @@
-#include <stdio.h>
-
 /* 编写一个程序以确定分别由signed及unsigned
 限定的char,short,int与long类型变量的取值范围
 直接计算                                     */
+#include <stdio.h>
+
+/* 确定类型的取值范围                            */
 main()
 {
     /* 有符号数据类型                        */

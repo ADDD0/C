@@ -1,6 +1,6 @@
 /* 编写一个密码表,密码规律是:
 用原来的字母后面第4个字母代替原来的字母
-例:“China”-->"Glmre"                    */
+例:"China"-->"Glmre"                    */
 #include <stdio.h>
 
 main()

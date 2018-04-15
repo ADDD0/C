@@ -11,10 +11,13 @@ main()
     for (year = LOWER, n = 1; year <= UPPER; year += 4, ++n)
     {
         if (year % 400 == 0)
-            printf("%d ", year);
+            printf("%5d", year);
         else if (year % 4 == 0 && year % 100 != 0)
-            printf("%d ", year);
+            printf("%5d", year);
+		else
+			printf("     ");
         if (!(n % 8))  /* 满8个换一行 */
             putchar('\n');
     }
+	printf("\n");
 }
