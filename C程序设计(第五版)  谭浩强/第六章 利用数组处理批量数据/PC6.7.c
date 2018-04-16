@@ -17,6 +17,7 @@ main()
     int count = 0;
     int row = 0, cul = N / 2;
     int i = row, j = cul;
+
     while (count++ <= N * N)
     {
         a[row][cul] = count;

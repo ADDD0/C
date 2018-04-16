@@ -7,7 +7,7 @@ const int a[ROW][COLUMN] = {{3, 7, 5},{1, 4, 2},{8, 6, 9}};
 
 main()
 {
-    int row, col, i, rowMax, colMin, max, min;
+    int row, col, i, rowMax, colMin, max, min, flag;
 
     for (row = 0; row < ROW; ++row) {
         max = 0;
@@ -23,9 +23,14 @@ main()
                 min = a[i][colMin];
                 break;
             }
+        flag = 0;
         if (min == max) {
-            printf("row=%d, colume=%d\nthe value is %d\n", rowMax, colMin, max);
+            flag = 1;
             break;
         }
     }
+    if (flag)
+        printf("row=%d, colume=%d\nthe value is %d\n", rowMax, colMin, max);
+    else
+        printf("Saddle point doesn't exist\n");
 }
