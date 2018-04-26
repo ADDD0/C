@@ -1,3 +1,4 @@
+//float型数据的有效位数
 #include<stdio.h>
 int main()
   {

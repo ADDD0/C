@@ -1,3 +1,5 @@
+//求ax²+bx+c=0方程的根
+//a,b,c由键盘输入,设b²-4ac>0
 #include<stdio.h>
 #include<math.h>                           //程序中要调用求平方根函数sqrt
 int main()

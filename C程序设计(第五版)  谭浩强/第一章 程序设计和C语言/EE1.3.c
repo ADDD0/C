@@ -1,3 +1,4 @@
+//求两个整数中的较大者
 #include<stdio.h>
 //主函数
 int main()                 //定义主函数

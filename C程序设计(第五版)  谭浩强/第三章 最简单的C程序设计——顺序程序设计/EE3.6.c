@@ -1,3 +1,4 @@
+//用%f输出实数,只能得到6位小数
 #include<stdio.h>
 int main()
   {

@@ -7,16 +7,14 @@ main()
     int c, i, j;
 
     printf("Please enter a string:\n");
-    for (i = 0; (c = getchar()) != '\n'; ++i)
-        s[i] = c;
+    gets(s);
     printf("Please enter another string:\n");
-    for (j = 0; (c = getchar()) != '\n'; ++j)
-        t[j] = c;
+    gets(t);
     i = j = 0;
     while (s[i] != '\0')
         ++i;
-    while ((s[i++] = t[j++]) != '\0') {
+    while ((s[i++] = t[j++]) != '\0')
         ;
-    }
+    s[i++] = '\0';
     printf("%s\n", s);
 }

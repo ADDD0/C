@@ -1,3 +1,4 @@
+//先后输出BOY三个字符
 #include<stdio.h>
 int main()
   {

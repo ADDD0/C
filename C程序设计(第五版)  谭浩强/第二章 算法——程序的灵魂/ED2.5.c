@@ -1,7 +1,7 @@
+/* 给出一个大于或等于3的正整数,判断它是不是一个素数 */
 #include <stdio.h>
 #include <math.h>
 
-/* 给出一个大于或等于3的正整数,判断它是不是一个素数 */
 main()
 {
     int n, i, judge;

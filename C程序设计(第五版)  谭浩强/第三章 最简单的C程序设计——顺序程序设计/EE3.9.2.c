@@ -1,3 +1,4 @@
+//从键盘输入BOY3个字符,然后把它们输出到屏幕
 #include<stdio.h>
 int main()
   {

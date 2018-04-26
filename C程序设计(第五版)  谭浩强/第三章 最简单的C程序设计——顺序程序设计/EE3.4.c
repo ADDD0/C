@@ -1,3 +1,4 @@
+//给出三角形的三边长,求三角形面积
 #include<stdio.h>
 #include<math.h>
 int main()

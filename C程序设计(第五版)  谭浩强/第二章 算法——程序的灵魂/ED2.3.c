@@ -1,9 +1,9 @@
+/* 判定2000-2500年中的哪一年是闰年    */
 #include <stdio.h>
 
 #define  LOWER  2000
 #define  UPPER  2500
 
-/* 判定2000-2500年中的哪一年是闰年    */
 main()
 {
     int year, n;
@@ -14,10 +14,10 @@ main()
             printf("%5d", year);
         else if (year % 4 == 0 && year % 100 != 0)
             printf("%5d", year);
-		else
-			printf("     ");
+        else
+            printf("     ");
         if (!(n % 8))  /* 满8个换一行 */
             putchar('\n');
     }
-	printf("\n");
+    printf("\n");
 }

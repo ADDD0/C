@@ -1,3 +1,5 @@
+//要求在屏幕上输出以下一行信息
+//This is a C Program.
 #include<stdio.h>                       //这是编译预处理指令
 int main()                              //定义主函数
   {                                     //函数开始的标志
