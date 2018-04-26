@@ -1,3 +1,4 @@
+//输入两个实数,按由小到大的顺序输出这两个数
 #include<stdio.h>
 int main()
   {

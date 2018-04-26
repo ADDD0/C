@@ -1,3 +1,4 @@
+//求ax²+bx+c=0方程的解
 #include<stdio.h>
 #include<math.h>
 int main()

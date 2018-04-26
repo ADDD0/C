@@ -1,3 +1,4 @@
+//输入3个数a,b,c,要求按由小到大的顺序输出
 #include<stdio.h>
 int main()
   {
