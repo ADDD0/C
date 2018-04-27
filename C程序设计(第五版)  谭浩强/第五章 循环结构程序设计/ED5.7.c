@@ -1,3 +1,4 @@
+//用公式π/4≈1-1/3+1/5-1/7+…求π的近似值,直到发现某一项的绝对值小于10^-6为止(该项不累加)
 #include<stdio.h>
 #include<math.h>                   //程序中用到数学函数fabs,应包含头文件math.h
 int main()
@@ -13,6 +14,6 @@ int main()
         term=sign/n;               //求出下一项的值term
       }
     pi=pi*4;                       //多项式的和pi乘以4,才是π的近似值
-    printf("pi=%10.8f\n",pi);      //输出pi的近似值
+    printf("pi=%10.8f\n",pi);      //输出π的近似值
     return 0;
   }

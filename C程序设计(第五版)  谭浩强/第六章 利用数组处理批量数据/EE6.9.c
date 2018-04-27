@@ -1,3 +1,4 @@
+//有3个字符串,要求找出其中"最大"者
 #include<stdio.h>
 #include<string.h>
 int main()

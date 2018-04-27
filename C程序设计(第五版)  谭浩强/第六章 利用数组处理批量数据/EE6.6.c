@@ -1,3 +1,4 @@
+//输出一个已知的字符串
 #include<stdio.h>
 int main()
   {

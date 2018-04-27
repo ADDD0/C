@@ -1,3 +1,4 @@
+//用do…while语句求1+2+3…+100
 #include<stdio.h>
 int main()
   {

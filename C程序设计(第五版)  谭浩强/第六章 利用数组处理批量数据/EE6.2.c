@@ -1,3 +1,4 @@
+//用数组来处理求Fibonacci数列问题
 #include<stdio.h>
 int main()
   {

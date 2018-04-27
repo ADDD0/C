@@ -1,3 +1,4 @@
+//输出一个菱形图
 #include<stdio.h>
 int main()
   {

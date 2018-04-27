@@ -1,3 +1,5 @@
+//while和do…while循环的比较
+//用while循环
 #include<stdio.h>
 int main()
   {
