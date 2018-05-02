@@ -1,3 +1,4 @@
+//用选择法对数组中10个整数按由小到大排序
 #include<stdio.h>
 int main()
   {

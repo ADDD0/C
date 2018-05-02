@@ -1,3 +1,4 @@
+//输入10个数,要求输出其中值最大的元素和该数是第几个数
 #include<stdio.h>
 int main()
   {
@@ -15,7 +16,7 @@ int main()
             n=i;            //把此数组元素的序号记下来,放在n中
           }
       }
-    printf("The largest number is &d\nit is the %dth number.\n",m,n+1);
+    printf("The largest number is %d\nit is the %dth number.\n",m,n+1);
     return 0;
   }
 

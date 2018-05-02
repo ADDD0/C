@@ -1,3 +1,4 @@
+//有一个3*4的矩阵,求所有元素中的最大值
 #include<stdio.h>
 int main()
   {

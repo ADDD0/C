@@ -1,3 +1,4 @@
+//用递归方法求n!
 #include<stdio.h>
 int main()
   {
@@ -7,7 +8,7 @@ int main()
     printf("input an integer number:");
     scanf("%d",&n);      //输入要求阶乘的数
     y=fac(n);
-    printf("%d!=%d",n,y);
+    printf("%d!=%d\n",n,y);
     return 0;
   }
 

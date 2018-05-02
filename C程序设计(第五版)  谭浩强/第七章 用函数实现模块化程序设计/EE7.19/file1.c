@@ -1,3 +1,4 @@
+//给定b的值,输入a和m,求a*b和a**m的值
 #include<stdio.h>
 int A;               //定义外部变量
 int main()

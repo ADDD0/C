@@ -1,3 +1,4 @@
+//若外部变量与局部变量同名,分析结果
 #include<stdio.h>
 int a=3,b=5;               //a,b是全局变量
 int main()

@@ -1,3 +1,4 @@
+//输出1到5的阶乘值
 #include<stdio.h>
 int main()
   {

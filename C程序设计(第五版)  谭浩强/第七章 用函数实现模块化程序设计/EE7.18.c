@@ -1,3 +1,4 @@
+//调用函数,求3个整数中的大者
 #include<stdio.h>
 int main()
   {

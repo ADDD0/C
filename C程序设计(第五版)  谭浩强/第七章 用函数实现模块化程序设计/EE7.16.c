@@ -1,3 +1,4 @@
+//考察静态局部变量的值
 #include<stdio.h>
 int main()
   {

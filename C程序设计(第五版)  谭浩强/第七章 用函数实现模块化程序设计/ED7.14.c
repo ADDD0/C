@@ -1,3 +1,4 @@
+//有一个一维数组,内放10个学生成绩,写一个函数,当主函数调用此函数后,能求出平均分,最高分和最低分
 #include<stdio.h>
 float Max=0,Min=0;                  //定义全局变量Max,Min
 int main()

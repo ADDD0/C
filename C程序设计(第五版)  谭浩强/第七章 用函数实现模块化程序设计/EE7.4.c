@@ -1,3 +1,4 @@
+//输入两个实数,用一个函数求出它们之和
 #include<stdio.h>
 int main()
   {

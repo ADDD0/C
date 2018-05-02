@@ -1,3 +1,4 @@
+//有一个一维数组score,内放10个学生成绩,求平均成绩
 #include<stdio.h>
 int main()
   {
