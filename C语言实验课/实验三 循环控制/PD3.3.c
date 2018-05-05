@@ -33,7 +33,7 @@ main()
         scanf("%d", &guess);
         if (ans < guess)
             printf("Too big\n");
-        else if (ans > guess)
+        if (ans > guess)
             printf("Too small\n");
     } while (ans != guess && count < 10);
     if (ans != guess)

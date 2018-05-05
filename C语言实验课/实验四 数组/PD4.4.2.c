@@ -7,19 +7,17 @@
 main()
 {
     char s[128], t[128];
-    int c, i, j;
+    int i, j;
 
     printf("Please enter a string:\n");
-    for (i = 0; (c = getchar()) != '\n'; ++i)
-        s[i] = c;
-    printf("Please enter another string:\n");
-    for (j = 0; (c = getchar()) != '\n'; ++j)
-        t[j] = c;
-    i = j = 0;
-    while (s[i] != '\0')
-        ++i;
-    while ((s[i++] = t[j++]) != '\0') {
+    for (i = 0; (s[i] = getchar()) != '\n'; ++i)
         ;
-    }
-    printf("%s\n", s);
+    printf("Please enter another string:\n");
+    for (j = 0; (t[j] = getchar()) != '\n'; ++j)
+        ;
+    j = 0;
+    while ((s[i++] = t[j++]) != '\0')
+        ;
+    s[i] = '\0';
+    printf("%s", s);
 }

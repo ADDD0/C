@@ -14,7 +14,7 @@ main()
             if (a[j] > a[j + 1]) {
                 t = a[j];
                 a[j] = a[j + 1];
-                a[j + 1] = t;3
+                a[j + 1] = t;
             }
     for (i = 0; i < 10; ++i)
         printf("%d ", a[i]);

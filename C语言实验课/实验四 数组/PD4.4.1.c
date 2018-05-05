@@ -10,8 +10,8 @@ main()
     char s[128], t[128];
 
     printf("Please enter a string:\n");
-    scanf("%s", s);
+    gets(s);
     printf("Please enter another string:\n");
-    scanf("%s", t);
+    gets(t);
     printf("%s\n", strcat(s, t));
 }

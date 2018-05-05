@@ -21,20 +21,18 @@ main()
             num[j] = 0;                /* 令所有(根号n以下的正整数)的倍数为0 */
     }
     sum = 0;
-    for (i = count = 1; count < 11; ++i) {
+    for (i = count = 1; count < 11; ++i)
         if (num[i]) {
             printf("%4d", num[i]);
             ++count;
             sum += num[i];
         }
-    }
     printf("\n");
-    for (i = MAX - 1; count > 1; --i) {  /* 初始化count为11                  */
+    for (i = MAX - 1; count > 1; --i)  /* 初始化count为11                  */
         if (num[i]) {
             printf("%4d", num[i]);
             --count;
             sum += num[i];
         }
-    }
     printf("\nsum=%d\n", sum);
 }

@@ -20,5 +20,5 @@ main()
         else
             ++no;
     }
-    printf("alpha=%d     digit=%d     other=%d\n", nl, nd, no);
+    printf("×ÖÄ¸=%d     Êı×Ö=%d     ÆäËû=%d\n", nl, nd, no);
 }
