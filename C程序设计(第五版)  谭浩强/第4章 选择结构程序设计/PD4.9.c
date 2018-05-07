@@ -10,7 +10,7 @@ main()
 
     count = 0;
     scanf("%d", &n);
-    while (n != 0) {
+    while (n) {
         printf("%d", n % 10);
         n /= 10;
         ++count;

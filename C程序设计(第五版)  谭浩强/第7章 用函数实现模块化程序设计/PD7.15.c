@@ -10,13 +10,13 @@ main()
     void input(char a[10][2]);
     void sort(char a[10][2]);
     void output(char a[10][2]);
-
-
     char a[10][2];
-
+    int i;
 
     input(a);
     sort(a);
+    for (i = 0; i < 10; ++i)
+        printf("%s %s\n", a[i][0], a[i][1]);
     output(a);
 }
 
@@ -31,17 +31,17 @@ void input(char a[10][2])
 void sort(char a[10][2])
 {
     int i, j;
-    char temp;
+    char temp[2];
 
     for (i = 0; i < 10; ++i)
         for (j = i; j < 9; ++j)
             if ((int)a[j][1] > (int)a[j + 1][1]) {//???
-                temp = a[j][0];
+                temp[0] = a[j][0];
+                temp[1] = a[j][1];
                 a[j][0] = a[j + 1][0];
-                a[j + 1][0] = temp;
-                temp = a[j][1];
                 a[j][1] = a[j + 1][1];
-                a[j + 1][1] = temp;
+                a[j + 1][0] = temp[0];
+                a[j + 1][1] = temp[1];
             }
 }
 

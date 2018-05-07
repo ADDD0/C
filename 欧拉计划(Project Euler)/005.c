@@ -24,5 +24,5 @@ int gcd(int x, int y)
         x = y;
         y = t;
     }
-    return(y);
+    return y;
 }

@@ -19,7 +19,7 @@ main()
             if (max < j + 1) {
                 max = j + 1;  /* 单词长度大于max时存放起来 */
                 for (j = 0; (longest[j] = word[j]) != '\0'; ++j)
-                    ;
+                    ;         /* 字符串复制                */
                 longest[j] = '\0';
             }
         } else if (state == OUT) {
