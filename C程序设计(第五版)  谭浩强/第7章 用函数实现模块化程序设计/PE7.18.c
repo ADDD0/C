@@ -37,12 +37,11 @@ int month(int m[2])
         case 5: days += 31;
         case 4: days += 30;
         case 3: days += 31;
-        case 2: {
+        case 2:
             if (year(m[0]))
                 days += 29;
             else
                 days += 28;
-        }
         case 1: days += 31;
     }
     return days;
