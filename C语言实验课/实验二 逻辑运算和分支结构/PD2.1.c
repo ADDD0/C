@@ -21,7 +21,7 @@ main()
     scanf("%f", &x);
     if (x < 0 && x + 3)
         printf("y=%.1f\n", (x + 3) * (x - 2));
-    else if (x >= 0 && x < 10 && (x - 2) * (x - 3))
+    else if (x >= 0 && x < 10 && (x - 3) * (x - 2))
         printf("y=%.1f\n", (x - 3) * (x - 2));
     else
         printf("y=%.1f\n", x * x - x - 1);

@@ -16,8 +16,7 @@ main()
     for (j = 0; (t[j] = getchar()) != '\n'; ++j)
         ;
     j = 0;
-    while ((s[i++] = t[j++]) != '\0')
+    while (s[i++] = t[j++])
         ;
-    s[i] = '\0';
     printf("%s", s);
 }

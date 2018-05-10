@@ -12,11 +12,11 @@ main()
     char op;
 
     printf("Please enter the expression,for example:5*6\n:");
-    scanf("%f%c%f", &data1, &op, &data2);  /* 无法判断data2格式出错               */
+    scanf("%f %c %f", &data1, &op, &data2);  /* 无法判断data2格式出错             */
     switch (op) {
-        case '+': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 + data2);break;
-        case '-': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 - data2);break;
-        case '*': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 * data2);break;
+        case '+': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 + data2); break;
+        case '-': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 - data2); break;
+        case '*': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 * data2); break;
         case '/': {
             if (data2) {
                 printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 / data2);
@@ -26,6 +26,6 @@ main()
                 break;
             }
         }
-        default : printf("Invalid data\n");
+        default : printf("Invalid data\n"); break;
     }
 }

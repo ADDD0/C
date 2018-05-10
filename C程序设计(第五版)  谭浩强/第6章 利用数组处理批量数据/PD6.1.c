@@ -16,9 +16,8 @@ main()
             num[j] = 0;  /* 令所有(根号n以下的正整数)的倍数为0 */
     for (i = 2; i < MAX; ++i)
         if (num[i]) {
-            printf("%4d ", i);
-            ++count;
-            if (!(count % 15))
+            printf("%4d", i);
+            if (!(++count % 15))
                 printf("\n");
         }
     printf("\n");

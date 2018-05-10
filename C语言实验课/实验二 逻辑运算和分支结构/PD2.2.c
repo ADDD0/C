@@ -19,16 +19,15 @@ main()
     printf("Input a four-digit integer:");
     scanf("%d", &n);
     if (n >= 1000 && n < 10000) {
-        for (i = 0; n; n /= 10, ++i) {
-            a[i] = n % 10;
-            printf("%d   ", a[i]);
+        i = 0;
+        while (i - 4) {
+            printf("%d   ", a[i++] = n % 10);
+            n /= 10;
         }
         for (i = 0; i < 3; ++i)  /* 冒泡排序                                    */
             for (j = 0; j < 3 - i; ++j)
                 if (a[j] < a[j + 1]) {
-                    t = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = t;
+                    t = a[j], a[j] = a[j + 1], a[j + 1] = t;
                 }
         for (max = min = i = 0; i < 4; ++i) {
             max = max * 10 + a[i];

@@ -7,8 +7,6 @@ main()
 
     a = 13, b = 9;
     printf("a=%d b=%d\n", a, b);
-    t = a;
-    a = b;
-    b = t;
+    t = a, a = b, b = t;
     printf("a=%d b=%d\n", a, b);
 }

@@ -3,10 +3,9 @@ main()
 {
     int f1, f2, f, sum = 0;
 
-    for (f1 = f2 = 1; f < 4000000; ) {
-        f = f1 + f2;
-        f1 = f2;
-        f2 = f;
+    f1 = f2 = 1;
+	while (f < 4000000) {
+        f = f1 + f2, f1 = f2, f2 = f;
         if (!(f % 2))
             sum += f;
     }

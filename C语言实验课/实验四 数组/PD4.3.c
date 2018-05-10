@@ -16,7 +16,8 @@ main()
     int i, j;
 
     for (i = 0; i < 4; ++i)
-        scanf("%d %d %d %d", &a[i][0], &a[i][1], &a[i][2], &a[i][3]);
+        for (j = 0; j < 4; ++j)
+            scanf("%d", &a[i][j]);
     for (i = 0; i < 3; ++i)
         for (j = i + 1; j < 4; ++j)
             if (a[i][j] < a[j][i])

@@ -32,6 +32,4 @@ main()
             printf("%d ", num[i]);
         printf("\n");
     }
-
-
 }

@@ -12,9 +12,7 @@ main()
         printf("%d ", num[i]);
     printf("\n");
     for (i = 0; i < LENGTH / 2; ++i) {
-        t = num[i];
-        num[i] = num[LENGTH - 1 - i];
-        num[LENGTH - 1 - i] = t;
+        t = num[i], num[i] = num[LENGTH - 1 - i], num[LENGTH - 1 - i] = t;
     }
     for (i = 0; i < LENGTH; ++i)
         printf("%d ", num[i]);

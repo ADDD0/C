@@ -12,11 +12,8 @@ main()
     for (row = 0; row < ROW; ++row) {
         max = 0;
         for (col = 0; col < COLUMN; ++col)
-            if (a[row][col] > max) {
-                max = a[row][col];
-                rowMax = row;
-                colMin = col;
-            }
+            if (a[row][col] > max)
+                max = a[row][col], rowMax = row, colMin = col;
         min = max;
         for (i = 0; i < ROW; ++i)
             if (a[i][colMin] < min) {

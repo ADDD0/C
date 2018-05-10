@@ -15,24 +15,23 @@ main()
     int i, j, count, sum;
 
     for (i = 2; i < MAX; ++i)
-        num[i] = i;
+        num[i] = 1;
     for (i = 2; i < sqrt(MAX); ++i) {  /* 筛选法求素数                       */
         for (j = 2 * i; j < MAX; j += i)
             num[j] = 0;                /* 令所有(根号n以下的正整数)的倍数为0 */
     }
-    sum = 0;
-    for (i = count = 1; count < 11; ++i)
+    for (sum = 0, i = count = 1; count < 11; ++i)
         if (num[i]) {
-            printf("%4d", num[i]);
+            printf("%4d", i);
             ++count;
-            sum += num[i];
+            sum += i;
         }
     printf("\n");
-    for (i = MAX - 1; count > 1; --i)  /* 初始化count为11                  */
+    for (i = MAX - 1; count > 1; --i)  /* 初始化count为11                    */
         if (num[i]) {
-            printf("%4d", num[i]);
+            printf("%4d", i);
             --count;
-            sum += num[i];
+            sum += i;
         }
     printf("\nsum=%d\n", sum);
 }

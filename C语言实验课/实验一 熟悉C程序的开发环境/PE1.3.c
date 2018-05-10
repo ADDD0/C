@@ -9,7 +9,9 @@ main()
 
     printf("Input a three-digit integer:");
     scanf("%d", &n);
-    for ( ; n; n /= 10)
+    while (n) {
         printf("%3d", n % 10);
+        n /= 10;
+    }
     printf("\n");
 }

@@ -1,5 +1,5 @@
-//已知a、b，计算a、b的和并输出结果
-#include "stdio.h "
+//已知a,b,计算a,b的和并输出结果
+#include "stdio.h"
 void main()
 {
     int a,b,sum;

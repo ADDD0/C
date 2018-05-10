@@ -6,20 +6,20 @@
 
 提示:
 ①求最大公约数的方法:辗转相除法
-	I.将m,n较大者送入m中,较小者送入n中
-	II.r=m%n
-	III.若r==0,则n为最大公约数
-		否则将n→m中,r→n中,重复执行II,III
+    I.将m,n较大者送入m中,较小者送入n中
+    II.r=m%n
+    III.若r==0,则n为最大公约数
+        否则将n→m中,r→n中,重复执行II,III
 ②求最小公倍数的方法:m*n/最大公约数                                           */
 #include <stdio.h>
 
 main()
 {
-	int lcm(int m, int n);
-	int gcd(int m, int n);
-	int x, y;
-	
-	printf("请输入两个整数:");
-	scanf("%d %d", &x, &y);
-	printf("最大公约数为:%d\n最小公倍数为:%d\n", gcd(x, y), lcm(x, y));
+    int lcm(int m, int n);
+    int gcd(int m, int n);
+    int x, y;
+
+    printf("请输入两个整数:");
+    scanf("%d %d", &x, &y);
+    printf("最大公约数为:%d\n最小公倍数为:%d\n", gcd(x, y), lcm(x, y));
 }

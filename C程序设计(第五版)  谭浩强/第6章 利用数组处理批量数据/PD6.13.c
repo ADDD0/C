@@ -13,8 +13,7 @@ main()
     i = j = 0;
     while (s[i] != '\0')
         ++i;
-    while ((s[i++] = t[j++]) != '\0')
+    while ((s[i++] = t[j++]))
         ;
-    s[i++] = '\0';
     printf("%s\n", s);
 }
