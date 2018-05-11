@@ -9,23 +9,23 @@ void unescape(char s[], char t[])
 
     for (i = j = 0; t[i] != '\0'; i++)
         switch (t[i]) {
-        case '\\':         /* 反斜杠                                           */
-            switch (t[++i]) {
-                case 'n':  /* 实际换行符                                       */
-                    s[j++] = '\n';
-                    break;
-                case 't':  /* 实际制表符                                       */
-                    s[j++] = '\t';
-                    break;
-                default:   /* 所有其他字符                                     */
-                    s[j++] = '\\';
-                    s[j++] = t[i];
-                    break;
-                }
+            case '\\':         /* 反斜杠                                       */
+                switch (t[++i]) {
+                    case 'n':  /* 实际换行符                                   */
+                        s[j++] = '\n';
+                        break;
+                    case 't':  /* 实际制表符                                   */
+                        s[j++] = '\t';
+                        break;
+                    default:   /* 所有其他字符                                 */
+                        s[j++] = '\\';
+                        s[j++] = t[i];
+                        break;
+                    }
                 break;
-        default:           /* 不是一个反斜杠                                   */
-            s[j++] = t[i];
-            break;
+            default:           /* 不是一个反斜杠                               */
+                s[j++] = t[i];
+                break;
         }
     s[j] = '\0';
 }

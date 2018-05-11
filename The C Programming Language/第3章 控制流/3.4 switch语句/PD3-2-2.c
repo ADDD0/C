@@ -12,16 +12,16 @@ void unescape(char s[], char t[])
             s[j++] = t[i];
         else           /* 它是一个反斜杠                                       */
             switch (t[++i]) {
-            case 'n':  /* 实际换行符                                           */
-                s[j++] = '\n';
-                break;
-            case 't':  /* 实际制表符                                           */
-                s[j++] = '\t';
-                break;
-            default:   /* 所有其他字符                                         */
-                s[j++] = '\\';
-                s[j++] = t[i];
-                break;
+                case 'n':  /* 实际换行符                                       */
+                    s[j++] = '\n';
+                    break;
+                case 't':  /* 实际制表符                                       */
+                    s[j++] = '\t';
+                    break;
+                default:   /* 所有其他字符                                     */
+                    s[j++] = '\\';
+                    s[j++] = t[i];
+                    break;
             }
     s[j] = '\0';
 }

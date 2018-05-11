@@ -25,10 +25,8 @@ int getline(char s[], int lim)
 
     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
         s[i] = c;
-    if (c == '\n') {
-        s[i] = c;
-        ++i;
-    }
+    if (c == '\n')
+        s[i++] = c;
     s[i] = '\0';
     return i;
 }
@@ -36,9 +34,7 @@ int getline(char s[], int lim)
 /* reverse函数:反向字符串                             */
 void reverse(char s[], int i)
 {
-    while (i >= 0) {
-        putchar(s[i-2]);
-        --i;
-    }
+    while (--i > 0)
+        putchar(s[i-1]);
     putchar('\n');
 }

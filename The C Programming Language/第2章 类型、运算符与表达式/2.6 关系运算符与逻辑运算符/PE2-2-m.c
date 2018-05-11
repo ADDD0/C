@@ -8,8 +8,6 @@ int i, c;
 i = 0;
 while ((c = getchar()) != EOF) {
     if (c != '\n')
-        if (i < lim - 1) {
+        if (++i < lim - 1)
             s[i] = c;
-            ++i;
-        }
 }

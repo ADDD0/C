@@ -16,12 +16,12 @@ main()
     celsius = lower;
     while (celsius <= upper) {
         printf("%3.0f  %6.1f\n", celsius, fahr(celsius));
-        celsius = celsius + step;
+        celsius += step;
     }
 }
 
 /* 华氏度:摄氏度转换为华氏度                              */
 float fahr(float celsius)
 {
-    return (9.0*celsius) / 5.0 + 32.0;
+    return (9.0 * celsius) / 5.0 + 32.0;
 }

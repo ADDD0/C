@@ -9,17 +9,17 @@ void escape(char s[], char t[])
 
     for (i = j = 0; t[i] != '\0'; i++)
         switch (t[i]) {
-        case '\n':  /* 换行符                                                  */
-            s[j++] = '\\';
-            s[j++] = 'n';
-            break;
-        case '\t':  /* 制表符                                                  */
-            s[j++] = '\\';
-            s[j++] = 't';
-            break;
-        default:    /* 所有其他字符                                            */
-            s[j++] = t[i];
-            break;
+            case '\n':  /* 换行符                                              */
+                s[j++] = '\\';
+                s[j++] = 'n';
+                break;
+            case '\t':  /* 制表符                                              */
+                s[j++] = '\\';
+                s[j++] = 't';
+                break;
+            default:    /* 所有其他字符                                        */
+                s[j++] = t[i];
+                break;
         }
     s[j] = '\0';
 }
