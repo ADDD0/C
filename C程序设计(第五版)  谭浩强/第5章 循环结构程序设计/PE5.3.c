@@ -10,7 +10,7 @@ main()
     printf("n=");
     scanf("%d", &n);
     temp = m * n;
-    while (r = m % n) {  /* 辗转相除法           */
+    while (r) {  /* 辗转相除法                   */
         m = n;
         n = r;
     }

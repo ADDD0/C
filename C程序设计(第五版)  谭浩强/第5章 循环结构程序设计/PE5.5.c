@@ -8,9 +8,7 @@ main()
     int a, n, i, sum;
 
     scanf("%d", &n);
-    for (a = A, i = sum = 0; n > 0; --n) {
+    for (a = A, i = sum = 0; n > 0; --n, sum += i)
         i = i * 10 + a;
-        sum += i;
-    }
     printf("%d\n", sum);
 }

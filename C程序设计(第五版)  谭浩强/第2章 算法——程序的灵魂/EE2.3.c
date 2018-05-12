@@ -8,11 +8,8 @@ main()
 {
     int year, n;
 
-    for (year = LOWER, n = 1; year <= UPPER; year += 4, ++n)
-    {
-        if (year % 400 == 0)
-            printf("%5d", year);
-        else if (year % 4 == 0 && year % 100 != 0)
+    for (year = LOWER, n = 1; year <= UPPER; year += 4, ++n) {
+        if (year % 4 == 0 && year % 100 || year % 400 == 0)
             printf("%5d", year);
         else
             printf("     ");

@@ -18,16 +18,14 @@ main()
     int row = 0, cul = N / 2;
     int i = row, j = cul;
 
-    while (count++ <= N * N)
-    {
+    while (count++ <= N * N) {
         a[row][cul] = count;
         if (i == 0)
             i = N - 1;
         else
             --i;
         j = (j + 1) % N;
-        if (a[i][j] != 0 || (row == 0 && cul == N-1))
-        {
+        if (a[i][j] || row == 0 && cul == N-1) {
             i = row + 1;
             j = cul;
         }
@@ -35,8 +33,7 @@ main()
         cul = j;
     }
 
-    for (i = 0; i < N; ++i)
-    {
+    for (i = 0; i < N; ++i) {
         for (j = 0; j < N; ++j)
             printf("%3d",a[i][j]);
         printf("\n");

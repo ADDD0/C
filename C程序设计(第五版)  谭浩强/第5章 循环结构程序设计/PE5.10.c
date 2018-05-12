@@ -8,13 +8,12 @@ main()
     int n;
     float i, j, k, sum;
 
-    i = j = 1.0;
-    sum = 0.0;
-    for (n = 1; n < 21; ++n) {
+    sum = 0;
+    for (n = i = j = 1; n < 21; ++n) {
         k = i + j;
-        sum += (k / j);
+        sum += k / j;
         i = j;
         j = k;
     }
-    printf("%f\n", sum);
+    printf("%.2f\n", sum);
 }

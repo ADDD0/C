@@ -8,13 +8,11 @@ main()
 
     judge = 1;
     scanf("%d", &n);
-    for (i = 2; i < sqrt(n) + 1; ++i)
-    {
-        if (n % i == 0)
-        {
-            judge = 0;
-            break;
-        }
+    for (i = 2; i < sqrt(n) + 1; ++i) {
+        if (n % i)
+            continue;
+        judge = 0;
+        break;
     }
     if (judge)
         printf("%d is a prime number\n", n);

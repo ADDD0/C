@@ -8,19 +8,17 @@ main()
 {
     int n, i, sum;
 
-    for (n = sum = 1; n < 1000; ++n) {
-        for (i = 2; i < n / 2 + 1; ++i) {
-            if (!(n % i))
+    for (n = 1; n < 1000; ++n) {
+        sum = 1;
+        for (i = 2; i < n / 2 + 1; ++i)
+            if (n % i == 0)
                 sum += i;
-        }
         if (n == sum) {
             printf("%d its factors are 1", n);
-            for (i = 2; i < n / 2 + 1; ++i) {
-                if (!(n % i))
+            for (i = 2; i < n / 2 + 1; ++i)
+                if (n % i == 0)
                     printf(",%d", i);
-            }
             printf("\n");
         }
-        sum = 1;
     }
 }
