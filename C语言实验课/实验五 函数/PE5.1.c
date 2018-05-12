@@ -1,26 +1,26 @@
-/* ±àÐ´³ÌÐò¼ÆËã2ºÍ-3µÄ0µ½5´ÎÃÝ
-³ÌÐòµÄÊä³öÐÎÊ½Îª:
-2µÄ0´ÎÃÝ:1     -3µÄ0´ÎÃÝ:1
-2µÄ1´ÎÃÝ:2     -3µÄ1´ÎÃÝ:-3
-2µÄ2´ÎÃÝ:4     -3µÄ2´ÎÃÝ:9
-2µÄ3´ÎÃÝ:8     -3µÄ3´ÎÃÝ:-27
-2µÄ4´ÎÃÝ:16        -3µÄ4´ÎÃÝ:81
-2µÄ5´ÎÃÝ:32        -3µÄ5´ÎÃÝ:-243
+/* ç¼–å†™ç¨‹åºè®¡ç®—2å’Œ-3çš„0åˆ°5æ¬¡å¹‚
+ç¨‹åºçš„è¾“å‡ºå½¢å¼ä¸º:
+2çš„0æ¬¡å¹‚:1     -3çš„0æ¬¡å¹‚:1
+2çš„1æ¬¡å¹‚:2     -3çš„1æ¬¡å¹‚:-3
+2çš„2æ¬¡å¹‚:4     -3çš„2æ¬¡å¹‚:9
+2çš„3æ¬¡å¹‚:8     -3çš„3æ¬¡å¹‚:-27
+2çš„4æ¬¡å¹‚:16    -3çš„4æ¬¡å¹‚:81
+2çš„5æ¬¡å¹‚:32    -3çš„5æ¬¡å¹‚:-243
 
-¾ßÌåÒªÇó:
-¢Ù±àÐ´Ò»¸öpower(int x,int n)º¯Êý¼ÆËãxµÄn´ÎÃÝ
-powerº¯ÊýµÄÐÎÊ½Îª:
+å…·ä½“è¦æ±‚:
+â‘ ç¼–å†™ä¸€ä¸ªpower(int x,int n)å‡½æ•°è®¡ç®—xçš„næ¬¡å¹‚
+powerå‡½æ•°çš„å½¢å¼ä¸º:
 int power(int x,int n)
 {
-    ±àÐ´´úÂëÊµÏÖÇóxµÄn´ÎÃÝ;
+    ç¼–å†™ä»£ç å®žçŽ°æ±‚xçš„næ¬¡å¹‚;
 }
-¢ÚÔÚÖ÷º¯ÊýÖÐ¶à´Îµ÷ÓÃpowerº¯Êý,µÃµ½ËùÒªÇóµÄ½á¹û
+â‘¡åœ¨ä¸»å‡½æ•°ä¸­å¤šæ¬¡è°ƒç”¨powerå‡½æ•°,å¾—åˆ°æ‰€è¦æ±‚çš„ç»“æžœ
 void main()
 {
     for(i=0;i<=5;i++)
     {
-        printf("2µÄ%d´ÎÃÝ:%d\t",i,power(2,i));
-        printf("-3µÄ%d´ÎÃÝ:%d\n",i,power(-3,i));
+        printf("2çš„%dæ¬¡å¹‚:%d\t",i,power(2,i));
+        printf("-3çš„%dæ¬¡å¹‚:%d\n",i,power(-3,i));
     }                                            */
 #include <stdio.h>
 
@@ -30,8 +30,8 @@ main()
     int i;
 
     for (i = 0; i <= 5; ++i) {
-        printf("2µÄ%d´ÎÃÝ:%d\t", i, power(2,i));
-        printf("-3µÄ%d´ÎÃÝ:%d\n", i, power(-3,i));
+        printf("2çš„%dæ¬¡å¹‚:%d\t", i, power(2,i));
+        printf("-3çš„%dæ¬¡å¹‚:%d\n", i, power(-3,i));
     }
 }
 

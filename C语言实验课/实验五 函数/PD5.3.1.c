@@ -1,41 +1,41 @@
-/* ±àÐ´³ÌÐòÇóÁ½¸öÕûÊýµÄ×î´ó¹«Ô¼ÊýºÍ×îÐ¡¹«±¶Êý
-¾ßÌåÒªÇó:
-¢Ù±àÐ´Á½¸öÓÃ»§×Ô¶¨Òåº¯Êý·Ö±ðÇó³ö×î´ó¹«Ô¼ÊýºÍ×îÐ¡¹«±¶Êý
-¢Ú½«mainº¯ÊýºÍÁ½¸ö×Ô¶¨Òåº¯Êý·ÅÔÚÍ¬Ò»¸öÔ´³ÌÐòÎÄ¼þ(.c)ÖÐ½øÐÐ±àÒë,Á´½Ó²¢ÔËÐÐ
-¢Û½«mainº¯ÊýºÍÁ½¸ö×Ô¶¨Òåº¯Êý·Ö±ð·ÅÔÚ²»Í¬µÄÔ´³ÌÐòÎÄ¼þ(.c)ÖÐ½øÐÐ±àÒë,Á´½Ó²¢ÔËÐÐ
+/* ç¼–å†™ç¨‹åºæ±‚ä¸¤ä¸ªæ•´æ•°çš„æœ€å¤§å…¬çº¦æ•°å’Œæœ€å°å…¬å€æ•°
+å…·ä½“è¦æ±‚:
+â‘ ç¼–å†™ä¸¤ä¸ªç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°åˆ†åˆ«æ±‚å‡ºæœ€å¤§å…¬çº¦æ•°å’Œæœ€å°å…¬å€æ•°
+â‘¡å°†mainå‡½æ•°å’Œä¸¤ä¸ªè‡ªå®šä¹‰å‡½æ•°æ”¾åœ¨åŒä¸€ä¸ªæºç¨‹åºæ–‡ä»¶(.c)ä¸­è¿›è¡Œç¼–è¯‘,é“¾æŽ¥å¹¶è¿è¡Œ
+â‘¢å°†mainå‡½æ•°å’Œä¸¤ä¸ªè‡ªå®šä¹‰å‡½æ•°åˆ†åˆ«æ”¾åœ¨ä¸åŒçš„æºç¨‹åºæ–‡ä»¶(.c)ä¸­è¿›è¡Œç¼–è¯‘,é“¾æŽ¥å¹¶è¿è¡Œ
 
-ÌáÊ¾:
-¢ÙÇó×î´ó¹«Ô¼ÊýµÄ·½·¨:Õ·×ªÏà³ý·¨
-	I.½«m,n½Ï´óÕßËÍÈëmÖÐ,½ÏÐ¡ÕßËÍÈënÖÐ
-	II.r=m%n
-	III.Èôr==0,ÔònÎª×î´ó¹«Ô¼Êý
-		·ñÔò½«n¡úmÖÐ,r¡únÖÐ,ÖØ¸´Ö´ÐÐII,III
-¢ÚÇó×îÐ¡¹«±¶ÊýµÄ·½·¨:m*n/×î´ó¹«Ô¼Êý                                           */
+æç¤º:
+â‘ æ±‚æœ€å¤§å…¬çº¦æ•°çš„æ–¹æ³•:è¾—è½¬ç›¸é™¤æ³•
+    I.å°†m,nè¾ƒå¤§è€…é€å…¥mä¸­,è¾ƒå°è€…é€å…¥nä¸­
+    II.r=m%n
+    III.è‹¥r==0,åˆ™nä¸ºæœ€å¤§å…¬çº¦æ•°
+        å¦åˆ™å°†nâ†’mä¸­,râ†’nä¸­,é‡å¤æ‰§è¡ŒII,III
+â‘¡æ±‚æœ€å°å…¬å€æ•°çš„æ–¹æ³•:m*n/æœ€å¤§å…¬çº¦æ•°                                           */
 #include <stdio.h>
 
 main()
 {
-	int lcm(int m, int n);
-	int gcd(int m, int n);
-	int x, y;
-	
-	printf("ÇëÊäÈëÁ½¸öÕûÊý:");
-	scanf("%d %d", &x, &y);
-	printf("×î´ó¹«Ô¼ÊýÎª:%d\n×îÐ¡¹«±¶ÊýÎª:%d\n", gcd(x, y), lcm(x, y));
+    int lcm(int m, int n);
+    int gcd(int m, int n);
+    int x, y;
+
+    printf("è¯·è¾“å…¥ä¸¤ä¸ªæ•´æ•°:");
+    scanf("%d %d", &x, &y);
+    printf("æœ€å¤§å…¬çº¦æ•°ä¸º:%d\næœ€å°å…¬å€æ•°ä¸º:%d\n", gcd(x, y), lcm(x, y));
 }
 
 int lcm(int m, int n)
 {
-	return (m * n / gcd(m, n));
+    return m * n / gcd(m, n);
 }
 
 int gcd(int m, int n)
 {
-	int r;
-	
-	while (r = m % n) {
-		m = n;
-		n = r;
-	}
-	return n;
+    int r;
+
+    while (r = m % n) {
+        m = n;
+        n = r;
+    }
+    return n;
 }

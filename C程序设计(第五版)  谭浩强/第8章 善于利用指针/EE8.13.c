@@ -7,6 +7,6 @@ int main()
     p=a;                                           //p指向二维数组的0行
     printf("please enter row and colum:");
     scanf("%d,%d",&i,&j);                          //输入要求输出的元素的行列号
-    printf("a[%d,%d]=%d\n",i,j,*(*(a+i)+j));       //输出a[i][j]的值
+    printf("a[%d,%d]=%d\n",i,j,*(*(p+i)+j));       //输出a[i][j]的值
     return 0;
   }
