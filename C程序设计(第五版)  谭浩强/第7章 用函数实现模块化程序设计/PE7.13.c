@@ -19,13 +19,10 @@ main()
 
 float LP(int n, float x)
 {
-
-
     if (!n)
         return 1;
     else if (n == 1)
         return x;
     else
         return ((2 * n - 1) * x * LP(n - 1, x) - (n - 1) * LP(n - 2, x)) / n;
-
 }

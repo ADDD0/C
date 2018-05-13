@@ -35,15 +35,10 @@ int my_find(int (*p)[N], int n, int *r, int *c)
     for (i = max = 0 ; i < n; ++i) {
         p1 = *(p + i) + i;
         p2 = *(p + i) + n - 1 - i;
-        if (*p1 > max) {
-            max = *p1;
-            *r = i;
-            *c = i;
-        } else if (*p2 > max) {
-            max = *p2;
-            *r = i;
-            *c = n - 1 - i;
-        }
+        if (*p1 > max)
+            max = *p1, *r = i, *c = i;
+        else if (*p2 > max)
+            max = *p2, *r = i, *c = n - 1 - i;
     }
     return max;
 }

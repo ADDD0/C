@@ -4,6 +4,7 @@
 main()
 {
     int day(int d[3]);
+
     int a[3];
 
     scanf("%d %d %d", &a[0], &a[1], &a[2]);
@@ -13,6 +14,7 @@ main()
 int day(int d[3])
 {
     int month(int m[2]);
+
     int m[2];
 
     m[0] = d[0];
@@ -23,6 +25,7 @@ int day(int d[3])
 int month(int m[2])
 {
     int year(int y);
+
     int days = 0;
 
     switch (m[1] - 1)
@@ -49,7 +52,7 @@ int month(int m[2])
 
 int year(int y)
 {
-    if (y % 400 == 0 || (y % 4 == 0 && y % 100))
+    if (y % 400 == 0 || y % 4 == 0 && y % 100)
         return 1;
     else
         return 0;

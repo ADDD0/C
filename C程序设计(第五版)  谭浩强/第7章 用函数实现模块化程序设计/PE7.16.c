@@ -4,9 +4,10 @@
 main()
 {
     int htoi(char s[]);
+
     int hn[10];
 
-    scanf("%s", &hn);
+    gets(hn);
     printf("hex:%s,dec:%d\n", hn, htoi(hn));
 }
 
