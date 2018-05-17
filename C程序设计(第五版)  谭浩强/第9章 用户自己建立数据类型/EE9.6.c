@@ -14,6 +14,7 @@ int main()
     struct Student *p;       //定义指向struct Student结构体变量的指针变量
     printf(" No.  Name                 sex age\n");
     for(p=stu;p<stu+3;p++)
-      printf("%5d %-20s %2c %4d\n",p->num,p->name,p->sex,p->age);  //输出结果
+      printf("%5d %-20s %2c %4d\n",p->num,p->name,p->sex,p->age);
+    //输出结果
     return 0;
   }

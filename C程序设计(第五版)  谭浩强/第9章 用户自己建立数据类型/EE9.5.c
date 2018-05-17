@@ -3,7 +3,7 @@
 #include<string.h>
 int main()
   {
-    struct Student//声明结构体类型struct Student
+    struct Student                //声明结构体类型struct Student
       {
         long num;
         char name[20];
@@ -18,7 +18,8 @@ int main()
     stu_1.sex='M';
     stu_1.score=89.5;
     printf("NO.:%ld\nname:%s\nsex:%c\nscore:%5.1f\n",
-    stu_1.num,stu_1.name,stu_1.sex,stu_1.score);  //输出结果
+    stu_1.num,stu_1.name,stu_1.sex,stu_1.score);
+    //输出结果
     printf("\nNO.:%ld\nname:%s\nsex:%c\nscore:%5.1f\n",
     (*p).num,(*p).name,(*p).sex,(*p).score);
     return 0;

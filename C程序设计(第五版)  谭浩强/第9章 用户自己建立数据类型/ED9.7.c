@@ -1,50 +1,50 @@
-//ÓĞn¸ö½á¹¹Ìå±äÁ¿,ÄÚº¬Ñ§ÉúÑ§ºÅ,ĞÕÃûºÍ3ÃÅ¿Î³ÌµÄ³É¼¨
-//ÒªÇóÊä³öÆ½¾ù³É¼¨×î¸ßµÄÑ§ÉúµÄĞÅÏ¢(°üÀ¨Ñ§ºÅ,ĞÕÃû,3ÃÅ¿Î³Ì³É¼¨ºÍÆ½¾ù³É¼¨)
+//æœ‰nä¸ªç»“æ„ä½“å˜é‡,å†…å«å­¦ç”Ÿå­¦å·,å§“åå’Œ3é—¨è¯¾ç¨‹çš„æˆç»©
+//è¦æ±‚è¾“å‡ºå¹³å‡æˆç»©æœ€é«˜çš„å­¦ç”Ÿçš„ä¿¡æ¯(åŒ…æ‹¬å­¦å·,å§“å,3é—¨è¯¾ç¨‹æˆç»©å’Œå¹³å‡æˆç»©)
 #include<stdio.h>
-#define N 3                                    //Ñ§ÉúÊıÎª3
-struct Student                                 //½¨Á¢½á¹¹ÌåÀàĞÍstruct Student
+#define N 3                                    //å­¦ç”Ÿæ•°ä¸º3
+struct Student                                 //å»ºç«‹ç»“æ„ä½“ç±»å‹struct Student
   {
-    int num;                                   //Ñ§ºÅ
-    char name[20];                             //ĞÕÃû
-    float score[3];                            //3ÃÅ¿Î³É¼¨
-    float aver;                                //Æ½¾ù³É¼¨
+    int num;                                   //å­¦å·
+    char name[20];                             //å§“å
+    float score[3];                            //3é—¨è¯¾æˆç»©
+    float aver;                                //å¹³å‡æˆç»©
   };
 int main()
   {
-    void input(struct Student stu[]);          //º¯ÊıÉùÃ÷
-    struct Student max(struct Student stu[]);  //º¯ÊıÉùÃ÷
-    void print(struct Student stu);            //º¯ÊıÉùÃ÷
-    struct Student stu[N],*p=stu;              //¶¨Òå½á¹¹ÌåÊı×éºÍÖ¸Õë
-    input(p);                                  //µ÷ÓÃinputº¯Êı
-    print(max(p));                             //µ÷ÓÃprintº¯Êı,ÒÔmaxº¯ÊıµÄ·µ»ØÖµ×÷ÎªÊµ²Î
+    void input(struct Student stu[]);          //å‡½æ•°å£°æ˜
+    struct Student max(struct Student stu[]);  //å‡½æ•°å£°æ˜
+    void print(struct Student stu);            //å‡½æ•°å£°æ˜
+    struct Student stu[N],*p=stu;              //å®šä¹‰ç»“æ„ä½“æ•°ç»„å’ŒæŒ‡é’ˆ
+    input(p);                                  //è°ƒç”¨inputå‡½æ•°
+    print(max(p));                             //è°ƒç”¨printå‡½æ•°,ä»¥maxå‡½æ•°çš„è¿”å›å€¼ä½œä¸ºå®å‚
     return 0;
   }
 
-void input(struct Student stu[])               //¶¨Òåinputº¯Êı
+void input(struct Student stu[])               //å®šä¹‰inputå‡½æ•°
   {
     int i;
-    printf("ÇëÊäÈë¸÷Ñ§ÉúµÄĞÅÏ¢:Ñ§ºÅ,ĞÕÃû,3ÃÅ¿Î³Ì³É¼¨:\n");
+    printf("è¯·è¾“å…¥å„å­¦ç”Ÿçš„ä¿¡æ¯:å­¦å·,å§“å,3é—¨è¯¾ç¨‹æˆç»©:\n");
     for(i=0;i<N;i++)
       {
         scanf("%d %s %f %f %f",&stu[i].num,&stu[i].name,&stu[i].score[0],
-        &stu[i].score[1],&stu[i].score[2]);    //ÊäÈëÊı¾İ
+        &stu[i].score[1],&stu[i].score[2]);    //è¾“å…¥æ•°æ®
         stu[i].aver=(stu[i].score[0]+stu[i].score[1]+stu[i].score[2])/3.0;
-        //ÇóÆ½¾ù³É¼¨
+        //æ±‚å¹³å‡æˆç»©
       }
   }
 
-struct Student max(struct Student stu[])       //¶¨Òåmaxº¯Êı
+struct Student max(struct Student stu[])       //å®šä¹‰maxå‡½æ•°
   {
-    int i,m=0;                                 //ÓÃm´æ·Å³É¼¨×î¸ßµÄÑ§ÉúÔÚÊı×éÖĞµÄĞòºÅ
+    int i,m=0;                                 //ç”¨må­˜æ”¾æˆç»©æœ€é«˜çš„å­¦ç”Ÿåœ¨æ•°ç»„ä¸­çš„åºå·
     for(i=0;i<N;i++)
-      if(stu[i].aver>stu[m].aver)              //ÕÒ³öÆ½¾ù³É¼¨×î¸ßµÄÑ§ÉúÔÚÊı×éÖĞµÄĞòºÅ
+      if(stu[i].aver>stu[m].aver)              //æ‰¾å‡ºå¹³å‡æˆç»©æœ€é«˜çš„å­¦ç”Ÿåœ¨æ•°ç»„ä¸­çš„åºå·
         m=i;
-    return stu[m];                             //·µ»Ø°üº¬¸ÃÉúĞÅÏ¢µÄ½á¹¹ÌåÔªËØ
+    return stu[m];                             //è¿”å›åŒ…å«è¯¥ç”Ÿä¿¡æ¯çš„ç»“æ„ä½“å…ƒç´ 
   }
 
-void print(struct Student stu)                 //¶¨Òåprintº¯Êı
+void print(struct Student stu)                 //å®šä¹‰printå‡½æ•°
   {
-    printf("\n³É¼¨×î¸ßµÄÑ§ÉúÊÇ:\n");
-    printf("Ñ§ºÅ:%d\nĞÕÃû:%s\nÈıÃÅ¿Î³É¼¨:%5.1f,%5.1f,%5.1f\nÆ½¾ù³É¼¨:%6.2f\n",
+    printf("\næˆç»©æœ€é«˜çš„å­¦ç”Ÿæ˜¯:\n");
+    printf("å­¦å·:%d\nå§“å:%s\nä¸‰é—¨è¯¾æˆç»©:%5.1f,%5.1f,%5.1f\nå¹³å‡æˆç»©:%6.2f\n",
     stu.num,stu.name,stu.score[0],stu.score[1],stu.score[2],stu.aver);
   }

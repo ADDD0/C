@@ -9,16 +9,16 @@ main()
     void rightrot(int *p1, int *p2, int m);
 
     int a[N], b[N];
-    int i, m;
+    int *p, m;
 
     printf("Please enter %d number:", N);
-    for (i = 0; i < N; ++i)
-        scanf("%d", a + i);
+    for (p = a; p < a + N; ++p)
+        scanf("%d", p);
     printf("Please enter the rotate value:");
     scanf("%d", &m);
     rightrot(a, b, m);
-    for (i = 0; i < N; ++i)
-        printf("%d ", *(b + i));
+    for (p = b; p < b + N; ++p)
+        printf("%d ", *p);
     printf("\n");
 }
 

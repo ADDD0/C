@@ -1,6 +1,6 @@
 //有n个学生的信息(包括学号,姓名,成绩),要求按照成绩的高低顺序输出各学生的信息
 #include<stdio.h>
-struct Student            //声明结构体类型struct Student
+struct Student                                  //声明结构体类型struct Student
   {
     int num;
     char name[20];
@@ -11,8 +11,8 @@ int main()
     struct Student stu[5]={{10101,"Zhang",78},{10103,"Wang",98.5},
     {10106,"Li",86},{10108,"Ling",73.5},{10110,"Sun",100}};
     //定义结构体数组并初始化
-    struct Student temp;  //定义结构体变量temp,用作交换时的临时变量
-    const int n=5;        //定义常变量n
+    struct Student temp;                        //定义结构体变量temp,用作交换时的临时变量
+    const int n=5;                              //定义常变量n
     int i,j,k;
     printf("The order is:\n");
     for(i=0;i<n-1;i++)

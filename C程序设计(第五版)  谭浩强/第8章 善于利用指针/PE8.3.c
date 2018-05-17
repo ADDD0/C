@@ -2,7 +2,7 @@
 写3个函数:①输入10个数;②进行处理;③输出10个数                          */
 #include <stdio.h>
 
-#define  N  10
+#define  N  5
 
 main()
 {
