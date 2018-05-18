@@ -19,13 +19,13 @@ main()
 {
     void f_sort(int *p, int n);
     int a[10];
-    int i;
+    int *p;
 
-    for (i = 0; i < 10; ++i)
-        scanf("%d", a + i);
+    for (p = a; p < a + 10; ++p)
+        scanf("%d", p);
     f_sort(a, 10);
-    for (i = 0; i < 10; ++i)
-        printf("%d ", *(a + i));
+    for (p = a; p < a + 10; ++p)
+        printf("%d ", *p);
     printf("\n");
 }
 

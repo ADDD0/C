@@ -10,7 +10,7 @@ void main()                      int my_find(int (*p)[5],int n,int *r,int *c)
 }                                                                             */
 #include <stdio.h>
 
-#define  N  5
+#define  N  3
 
 main()
 {
@@ -40,5 +40,6 @@ int my_find(int (*p)[N], int n, int *r, int *c)
         else if (*p2 > max)
             max = *p2, *r = i, *c = n - 1 - i;
     }
+
     return max;
 }

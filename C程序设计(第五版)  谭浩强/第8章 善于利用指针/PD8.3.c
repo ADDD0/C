@@ -31,14 +31,14 @@ void trans(int *p)
     int *max, *min;
 
     max = min = p;
-    for (i = 0; i < N; ++i) {
-        if (*(p + i) > *max)
-            max = p + i;
+    for (i = 0; i < N; ++i)  /* 找出最小值并交换位置                    */
         if (*(p + i) < *min)
             min = p + i;
-    }
-    t = *p, *p = *max, *max = t;
-    t = *(p + N - 1), *(p + N - 1) = *min, *min = t;
+    t = *p, *p = *min, *min = t;
+    for (i = 1; i < N; ++i)  /* 找出最大值并交换位置                    */
+        if (*(p + i) > *max)
+            max = p + i;
+    t = *(p + N - 1), *(p + N - 1) = *max, *max = t;
 }
 
 void output(int *p)

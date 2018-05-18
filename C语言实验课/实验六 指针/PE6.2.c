@@ -28,11 +28,10 @@ void my_del(char *s)
 {
     int i, j;
 
-      for (i = j = 0; *(s + i); ++i) {
+    for (i = j = 0; *(s + i); ++i)
         if (*(s + i) != '*') {
             *(s + j) = islower(*(s + i)) ? toupper(*(s + i)) : *(s + i);
             ++j;
         }
-    }
     *(s + j) = '\0';
 }

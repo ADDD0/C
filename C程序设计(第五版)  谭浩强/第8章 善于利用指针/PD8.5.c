@@ -7,24 +7,23 @@
 main()
 {
     int a[N];
-    int i, flag, n;
+    int *p, i, flag, n;
 
-    for (i = 0; i < N; ++i)
-        *(a + i) = 1;
+    for (p = a; p < a + N; ++p)
+        *p = 1;
     n = N;
     flag = 1;
     while (n - 1)
-        for (i = 0; i < N; ++i) {
-            if (*(a + i)) {
+        for (p = a; p < a + N; ++p)
+            if (*p) {
                 if (flag == 3) {
-                    *(a + i) = 0;
+                    *p = 0;
                     --n;
                     flag = 1;
                 }
                 else
                     ++flag;
             }
-        }
     for (i = 0; i < N; ++i)
         if (*(a + i))
             printf("%d\n", i + 1);
