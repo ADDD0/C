@@ -10,20 +10,17 @@ void main()                      int my_find(int (*p)[5],int n,int *r,int *c)
 }                                                                             */
 #include <stdio.h>
 
-#define  N  3
+#define  N  5
 
 main()
 {
     int my_find(int (*p)[N], int n, int *r, int *c);
     int a[N][N], max, row, col;
-    int *r, *c;
 
     for (row = 0; row < N; ++row)
         for (col = 0; col < N; ++col)
             scanf("%d", *(a + row) + col);
-    r = &row;
-    c = &col;
-    max = my_find(a, N, r, c);
+    max = my_find(a, N, &row, &col);
     printf("max=%d,row=%d,col=%d\n", max, row + 1, col + 1);
 }
 
@@ -32,7 +29,7 @@ int my_find(int (*p)[N], int n, int *r, int *c)
     int i, max;
     int *p1, *p2;
 
-    for (i = max = 0 ; i < n; ++i) {
+    for (i = max = 0; i < n; ++i) {
         p1 = *(p + i) + i;
         p2 = *(p + i) + n - 1 - i;
         if (*p1 > max)
@@ -40,6 +37,5 @@ int my_find(int (*p)[N], int n, int *r, int *c)
         else if (*p2 > max)
             max = *p2, *r = i, *c = n - 1 - i;
     }
-
     return max;
 }

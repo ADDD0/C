@@ -2,14 +2,14 @@
 #include<stdio.h>
 #include<malloc.h>
 #define LEN sizeof(struct Student)
-struct Student                                             //声明结构体类型struct Student
+struct Student                    //声明结构体类型struct Student
   {
     long num;
     float score;
     struct Student *next;
   };
 int n;
-struct Student *creat(void)                                //建立链表的函数
+struct Student *creat(void)       //建立链表的函数
   {
     struct Student *head;
     struct Student *p1,*p2;
@@ -32,7 +32,7 @@ struct Student *creat(void)                                //建立链表的函�
         return(head);
   }
 
-void print(struct Student *head)                 //输出链表的函数
+void print(struct Student *head)  //输出链表的函数
   {
     struct Student *p;
     printf("\nNow,These %d records are:\n",n);
@@ -48,7 +48,7 @@ void print(struct Student *head)                 //输出链表的函数
 int main()
   {
     struct Student *head;
-    head=creat();          //调用creat函数,返回第1个结点的起始地址
-    print(head);//调用print函数
+    head=creat();                 //调用creat函数,返回第1个结点的起始地址
+    print(head);                  //调用print函数
     return 0;
   }

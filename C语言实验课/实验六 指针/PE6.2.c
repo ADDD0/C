@@ -17,7 +17,7 @@ void main()              void my_del(char *s)
 main()
 {
     void my_del(char *s);
-    int a[80];
+    char a[80];
 
     gets(a);
     my_del(a);
@@ -26,12 +26,10 @@ main()
 
 void my_del(char *s)
 {
-    int i, j;
+    char *p;
 
-    for (i = j = 0; *(s + i); ++i)
-        if (*(s + i) != '*') {
-            *(s + j) = islower(*(s + i)) ? toupper(*(s + i)) : *(s + i);
-            ++j;
-        }
-    *(s + j) = '\0';
+    for (p = s; *p; ++p)
+        if (*p != '*')
+            *s++ = islower(*p) ? toupper(*p) : *p;
+    *s = '\0';
 }
