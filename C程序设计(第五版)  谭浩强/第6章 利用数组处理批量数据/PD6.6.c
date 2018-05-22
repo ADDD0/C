@@ -23,6 +23,6 @@ main()
             if (num[row][col])
                 printf("%4d ", num[row][col]);
         }
-    printf("\n");
+        printf("\n");
     }
 }

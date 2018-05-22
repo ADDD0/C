@@ -40,54 +40,52 @@ main()
     struct stu f_min(struct stu *p);
 
     struct stu s[N], s1, s2, *p;
-    int *s;
+    int *q;
 
     for (p = s; p < s + N; ++p) {
         scanf("%s %s", p -> sno, p -> sname);
-        for (s = p -> sco; s < p -> sco + 3; ++s)
-            scanf("%d", s);
+        for (q = p -> sco; q < p -> sco + 3; ++q)
+            scanf("%d", q);
     }
 
     s1 = f_max(s);
     s2 = f_min(s);
     printf("max:%-6s  %-10s", s1.sno, s1.sname);
-    for (s = s1.sco; s < s1.sco + 3; ++s)
-        printf("  %d", *s);
+    for (q = s1.sco; q < s1.sco + 3; ++q)
+        printf("  %d", *q);
     printf("min:%-6s  %-10s", s2.sno, s2.sname);
-    for (s = s2.sco; s < s2.sco + 3; ++s)
-        printf("  %d", *s);
+    for (q = s2.sco; q < s2.sco + 3; ++q)
+        printf("  %d", *q);
 }
 
 struct stu f_max(struct stu *p)
 {
-    struct stu *q;
+    struct stu smax;
     int i, sum, max, *s;
 
-    q = p;
     max = 0;
-    for (i = sum = 0; i < 3; ++p) {
+    for (i = sum = 0; i < 3; ++i, ++p) {
         for (s = p -> sco; s < p -> sco + 3; ++s)
             sum += *s;
-        if (sum > max) {
-            q = p;
-        }
+        if (sum > max)
+            smax = *p;
     }
-    return *q;
+    return smax;
 }
 
 struct stu f_min(struct stu *p)
 {
-    struct stu *q;
+    struct stu smin;
     int i, sum, min, *s;
 
     q = p;
     min = 0;
-    for (i = sum = 0; i < 3; ++p) {
+    for (i = sum = 0; i < 3; ++i, ++p) {
         for (s = p -> sco; s < p -> sco + 3; ++s)
             sum += *s;
         if (sum < min) {
-            q = p;
+            smin = *p;
         }
     }
-    return *q;
+    return smin;
 }
