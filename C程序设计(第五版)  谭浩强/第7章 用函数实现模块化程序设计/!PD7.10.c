@@ -6,14 +6,35 @@
 
 main()
 {
-    int i, j, state, max;
-    char s[128];
+    int getlen(char s[]);
+
+    int c, i, state, max;
     char word[128];
     char longest[128];
 
     state = OUT;
+    max = 0;
+    while ((c = getchar()) != '\n') {
+        if (c == ' ' || c == '\t') {
+            state = OUT;
+            if (len = getlen(word) > max) {
+                max = len;   /* 单词长度大于max时存放起来 */
+                for (i = 0; longest[i] = word[i]; ++i)
+                    ;          /* 字符串复制                */
+            }
+        } else if (state == OUT) {
+            state = IN;
+            i = 0;
+            word[i] = c;
+        } else
+            word[++i] = c;  /* 记录当前字符              */
+    }
+
+
+
+    state = OUT;
     gets(s);
-    for (i = j = max = 0; ; ++i) {
+    for (i = j = max = 0; s[i]; ++i) {
         if (s[i] == ' ' || s[i] == '\t' || s[i] == '\0') {
             state = OUT;
             if (max < j + 1) {
@@ -27,8 +48,6 @@ main()
             word[j] = s[i];
         } else
             word[j++] = s[i];  /* 记录当前单词              */
-        if (s[i] == '\0')
-            break;
     }
     printf("%s\n", longest);
 }
