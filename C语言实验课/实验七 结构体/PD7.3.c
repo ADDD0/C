@@ -42,6 +42,7 @@ main()
 
     struct stu *Head;
     int n;
+
     printf("Input number n:");
     scanf("%d", &n);
     Head = talloc();
@@ -74,7 +75,7 @@ void f_search(struct stu *h)
     int count = 0, *s;
 
     p = h;
-    printf("search name:");
+    printf("Search name:");
     scanf("%s", find);
     while (p) {
         if (!strcmp(p -> sname, find)) {
