@@ -7,20 +7,20 @@
 
 main()
 {
-    void input(float *p[5]);
-    float f1(float *p[5]);
-    void f2(float *p[5]);
-    void f3(float *p[5]);
+    void input(float (*p)[5]);
+    void f1(float (*p)[5]);
+    void f2(float (*p)[5]);
+    void f3(float (*p)[5]);
 
     float a[4][5];
 
     input(a);
-    printf("Average score of the first course:%.2f\n", f1(a));
+    f1(a);
     f2(a);
     f3(a);
 }
 
-void input(float *p[5])
+void input(float (*p)[5])
 {
     int i, j;
 
@@ -29,55 +29,64 @@ void input(float *p[5])
             scanf("%f", *(p + i) + j);
 }
 
-float f1(float *p[5])
+void f1(float (*p)[5])
 {
     float sum;
     int i;
 
     for (i = 0; i < 4; ++i)
         sum += **(p + i);
-    return sum / 4;
+    printf("\nRequest one:\n%.2f\n", sum / 4);
 }
 
-void f2(float *p[5])
+void f2(float (*p)[5])
 {
     void print(float *p, int n);
 
     int i, j, fail;
 
-    printf("\nRequest two:");
-    for (i = fail = 0; i < 4; ++i, fail = 0)
-        for (j = 0; j < 5; ++j)
+    printf("\nRequest two:\n");
+    for (i = 0; i < 4; ++i)
+        for (j = fail = 0; j < 5; ++j) {
             if (*(*(p + i) + j) < 60)
                 ++fail;
-            if (++fail == 2)
+            if (fail > 2) {
                 print(p + i, i);
+                fail = 0;
+                break;
+            }
+        }
 }
 
-void f3(float *p[5])
+void f3(float (*p)[5])
 {
     float aver(float *p);
     void print(float *p, int n);
 
-    int i, j;
+    int i, j, flag;
 
-    printf("\nRequest three:");
-    for (i = 0; i < 4; ++i)
+    printf("\nRequest three:\n");
+    for (i = 0; i < 4; ++i) {
         if (aver(p + i) > 90)
             print(p + i, i);
         else {
-            for (j = 0; j < 5; ++j)
-                if (*(*(p + i) + j) <= 85)
+            for (j = 0, flag = 1; j < 5; ++j)
+                if (*(*(p + i) + j) <= 85) {
+                    flag = 0;
                     break;
-            print(p + i, i);
+                }
+            if (flag)
+                print(p + i, i);
         }
+    }
+
 }
 
 void print(float *p, int n)
 {
     int i;
 
-    printf("Student %d:", n);
+    printf("Student %d:", n + 1);
     for (i = 0; i < 5; ++i)
         printf("%.2f  ", *(p + i));
     printf("\n");

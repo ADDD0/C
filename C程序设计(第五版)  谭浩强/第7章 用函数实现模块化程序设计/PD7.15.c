@@ -59,13 +59,12 @@ void find(struct staff s[])
     scanf("%d", &x);
     low = 0;
     high = N - 1;
-    mid = (low + high) / 2;
     while (low < high && x != s[mid].sno) {
+        mid = (low + high) / 2;
         if (x < s[mid].sno)
             high = mid - 1;
         else
             low = mid + 1;
-        mid = (low + high) / 2;
     }
     if (x == s[mid].sno)
         print(s[mid]);
