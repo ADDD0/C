@@ -18,6 +18,7 @@ void f_show(struct stu *h)                  f_show(Head);
     显示单链表h中的内容;
 }                                                                   */
 #include <stdio.h>
+#include <malloc.h>
 #include <stdlib.h>
 
 struct stu
@@ -40,6 +41,7 @@ main()
 
     struct stu *Head;
     int n;
+
     printf("Input number n:");
     scanf("%d", &n);
     Head = talloc();
@@ -62,7 +64,7 @@ void f_create(struct stu *h, int n)
         pre -> next = p;
         pre = p;
     }
-    p -> next = NULL;
+    pre -> next = NULL;
 }
 
 void  f_show(struct stu *h)

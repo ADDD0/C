@@ -20,6 +20,7 @@ void f_search(struct stu *h)
         printf(“No this name.\n”);
 }                                                        */
 #include <stdio.h>
+#include <malloc.h>
 #include <stdlib.h>
 
 struct stu
