@@ -1,5 +1,5 @@
 /* 已有a,b两个链表,每个链表中的结点包括学号,成绩
-要求把两个链表合并,按学号升序排列                */
+要求把两个链表合并,按学号升序排列                                 */
 #include <stdio.h>
 #include <malloc.h>
 
@@ -17,8 +17,8 @@ Student *talloc(void)
 
 main()
 {
-    Student *a, *b, *pre, *p, *t, **t1, **t2;
-    int i, *s;
+    Student *a, *b, *pre, *p, *pt;
+    int i, *s, t;
 
     pre = a = talloc();
     for (i = 0; i < 5; ++i) {
@@ -38,30 +38,38 @@ main()
             *s = 100;
         pre -> next = p;
         pre = p;
-    }                         /* 这之前均为a,b链表的初始化 */
-	printf("Ok\n");
-    pre -> next = a -> next;/* 此时b链表的尾部连接到a链表的头部 */	
-    for (pre = b -> next; pre -> next -> next; ++pre) {
-		printf("No.%5d:\n", pre -> sno);
-		for (p = pre; p -> next -> next; ++p) {
-			printf("No.%10d:\n", p -> next -> sno);
-            if (p -> sno > p -> next -> sno) {
-				t1 = &p;
-				t2 = &p -> next;
-				t = *t1;
-				*t1 = *t2;
-				*t2 = t;
-			}
-                
-			/* 借助二重指针交换地址(也可以使用交换数值的方法), */
-        }
-	}
-        
-    p = b -> next;
+    }                         /* 这之前均为a,b链表的初始化        */
+    pre -> next = a -> next;  /* 此时b链表的尾部连接到a链表的头部 */
+
+    p = b -> next;            /* 输出a,b合并后的链表              */
     while (p) {
-        printf("No.%d:", p -> sno);
+        printf("No.%d", p -> sno);
         for (s = p -> sco;  s < p -> sco + 3; ++s)
-            printf("  %d", *s);
+            printf("  %3d", *s);
+        printf("\n");
+        p = p -> next;
+    }
+    printf("\n");
+
+    pre = b -> next;          /* 类似选择排序法                   */
+    while (pre -> next) {     /* 指向倒数第二个结点时跳出循环     */
+        p = pt = pre;
+        do {
+            p = p -> next;
+            if (p -> sno < pt -> sno)
+                pt = p;
+        } while (p -> next);  /* 指向最后一个结点时跳出循环       */
+        t = pre -> sno, pre -> sno = pt -> sno, pt -> sno = t;
+        for (i = 0; i < 3; ++i)
+            t = pre -> sco[i], pre -> sco[i] = pt -> sco[i], pt -> sco[i] = t;
+        pre = pre -> next;
+    }
+
+    p = b -> next;            /* 输出a,b合并后按升序排序的链表    */
+    while (p) {
+        printf("No.%d", p -> sno);
+        for (s = p -> sco;  s < p -> sco + 3; ++s)
+            printf("  %3d", *s);
         printf("\n");
         p = p -> next;
     }

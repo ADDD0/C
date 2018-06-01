@@ -14,7 +14,7 @@ void f_search(struct stu *h)
             count++;
             输出p指向结点的内容;
         }
-    p指向下一个结点;
+        p指向下一个结点;
     }
     if(count==0)
         printf(“No this name.\n”);

@@ -34,6 +34,7 @@ main()
     while (n - 1) {
         ++flag;    /* 这里记录的是下一个人将要报的数 */
         if (flag == 3) {
+            printf("%d -> ", h -> next -> number);
             h -> next = h -> next -> next;
             --n;
             flag = 1;
