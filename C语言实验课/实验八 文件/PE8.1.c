@@ -29,7 +29,7 @@ void main()
 
 typedef struct stu
 {
-    int sno[6];
+    int sno;
     char sname[10];
     int sco[3];
 } Student;
@@ -50,13 +50,13 @@ main()
         exit(0);
     }
     p = talloc();
-    scanf("%d", p -> sno);
-    while (*p -> sno) {
+    scanf("%d", &p -> sno);
+    while (p -> sno) {
         scanf("%s", p -> sname);
         for (s = p -> sco;  s < p -> sco + 3; ++s)
             scanf("%d", s);
         fwrite(p, sizeof(Student), 1, fp);
-        scanf("%d", p -> sno);
+        scanf("%d", &p -> sno);
     }
     fclose(fp);
 }

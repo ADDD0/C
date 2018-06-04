@@ -31,7 +31,7 @@ void main()
 
 typedef struct stu
 {
-    int sno[6];
+    int sno;
     char sname[10];
     int sco[3];
 } Student;
@@ -56,11 +56,12 @@ main()
     }
     p = talloc();
     fread(p, sizeof(Student), 1, fp);
+    printf("  name  sub1  sub2  sub3  sum  aver\n");
     while (!feof(fp)) {
-        printf("%-5s ", p -> sname);
+        printf("%6s", p -> sname);
         for (s = p -> sco;  s < p -> sco + 3; ++s)
-            printf("%-5d ", *s);
-        printf("%-5d %-5.2f\n", sum(p -> sco), aver(p -> sco));
+            printf("%6d", *s);
+        printf("%5d%6.2f\n", sum(p -> sco), aver(p -> sco));
         fread(p, sizeof(Student), 1, fp);
     }
     fclose(fp);

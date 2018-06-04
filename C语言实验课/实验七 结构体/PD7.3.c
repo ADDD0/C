@@ -66,7 +66,7 @@ void f_create(struct stu *h, int n)
         pre -> next = p;
         pre = p;
     }
-    p -> next = NULL;
+    pre -> next = NULL;
 }
 
 void f_search(struct stu *h)
@@ -75,7 +75,7 @@ void f_search(struct stu *h)
     char find[10];
     int count = 0, *s;
 
-    p = h;
+    p = h -> next;
     printf("Search name:");
     scanf("%s", find);
     while (p) {

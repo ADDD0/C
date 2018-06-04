@@ -17,15 +17,12 @@ main()
         case '+': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 + data2); break;
         case '-': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 - data2); break;
         case '*': printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 * data2); break;
-        case '/': {
-            if (data2) {
+        case '/':
+            if (data2)
                 printf("%.2f%c%.2f=%.2f\n", data1, op, data2, data1 / data2);
-                break;
-            } else {
+            else
                 printf("Divisor cannot be 0\n");
-                break;
-            }
-        }
+            break;
         default : printf("Invalid data\n"); break;
     }
 }

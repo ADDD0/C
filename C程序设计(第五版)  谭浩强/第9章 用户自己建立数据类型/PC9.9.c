@@ -4,6 +4,7 @@
 实现链表的建立,输出,删除和插入,在主函数中指定需要删除和插入的结点的数据 */
 #include <stdio.h>
 #include <malloc.h>
+#include <string.h>
 
 typedef struct stu
 {
@@ -18,78 +19,96 @@ Student *talloc(void)
     return (Student *) malloc(sizeof(Student));
 }
 
+Student *h;/*链表头被声明为全局变量,不可更改*/
+
 main()
 {
-    void creat(Student *h);
-    void print(Student *h);
-    void del(Student *h);
-    void insert();
+    void creat();/*建立链表*/
+    void print();/*输出链表*/
+    void del();/*删除结点*/
+    void insert();/*插入结点*/
     void sort();/*增加排序功能*/
-    void search();/*增加搜索功能*/
+    Student *pre
+    searchnum(int);/*增加搜索学号功能*/
+    Student *pre
+    searchname(char);/*增加搜索姓名功能*/
 
-
-    Student *h, *p;
+    Student *pre, *p;
     int i, choice, *s;
 
     h = talloc();
+    pre = h;
     for (i = 0; i < 5; ++i) {/* 初始化一个含有5个数据的链表 */
         p = talloc();
         p -> sno = i + 100;
         p -> sname[0] = 'a' + i;
         for (s = p -> sco;  s < p -> sco + 3; ++s)
             *s = 90;
-        h -> next = p;
-        h = p;
+        pre -> next = p;
+        pre = p;
     }
+    pre -> next = NULL;
 
-    do {
-        printf("1: Create a new nodelist\n");
-        printf("2: Print current nodelist\n");
-        printf("3: Delete one node\n");
-        printf("4: Insert one node\n");
-        printf("5: Sort current nodelist\n");
-        printf("6: Search in nodelist\n");
-        printf("0: Exit\n");
+    while (1) {
+        printf("%-30s", "1: Create a new nodelist");
+        printf("%-30s", "2: Print current nodelist");
+        printf("\n");
+        printf("%-30s", "3: Delete nodes");
+        printf("%-30s", "4: Insert nodes");
+        printf("\n");
+        printf("%-30s", "5: Sort current nodelist");
+        printf("%-30s", "6: Search in nodelist");
+        printf("\n0: Exit\n");
         printf("Your choice is:");
         scanf("%d", &choice);
-        switch (choice) {
-            case 1: creat(h), break;
-            case 2: print(h), break;
-            case 3: del(h), break;
+        printf("\n");
+        if (!choice) {
+            printf("\n");
+            return;
         }
-
-    } while (choice);
-
-
+        switch (choice) {
+            case 1: creat(h); break;
+            case 2: print(h); break;
+            case 3: del(h); break;
+            case 4: insert(h); break;
+            case 5: sort(h); break;
+            case 6: search(h); break;
+            default : printf("Invalid command code\n");
+        }
+    }
 }
 
-void creat(Student *h)
+void creat()
 {
     Student *pre, *p;
     int n, i, *s;
 
     pre = h;
     printf("Note: This operation will eliminate the previous list\n");
+    /*创建后会删除原先的链表*/
     printf("Input nodelist's length n:");
     scanf("%d", &n);
     for (i = 0; i < n; ++i) {
         printf("Input student %d's info:", i + 1);
         p = talloc();
-        scanf("%d %s", p -> sno, p -> sname);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        scanf("%d %s", &p -> sno, p -> sname);
+        for (s = p -> sco; s < p -> sco + 3; ++s)
             scanf("%d", s);
         pre -> next = p;
         pre = p;
     }
     p -> next = NULL;
+    printf("\n");
 }
 
-void print(Student *h)
+void print()
 {
     Student *p;
     int *s;
 
     p = h -> next;
+    if (!p)/*链表为空时*/
+        printf("Nodelist is not initialized or has been deleted\n");
     while (p) {
         printf("No.%d %s:", p -> sno, p -> sname);
         for (s = p -> sco;  s < p -> sco + 3; ++s)
@@ -97,48 +116,144 @@ void print(Student *h)
         printf("\n");
         p = p -> next;
     }
+    printf("\n");
 }
 
-void del(Student *h)
+void del()
 {
     Student *pre, *p;
-    int choice = 1, findnum;
+    int choice, findnum;
     char findname[10];
 
     printf("0: Stop deleting\n");
-    printf("1: Delete node by student's No.(default)\n");
-    printf("2: Delete node by student's name\n");
+    printf("1: Delete node by student's No.\n");/*通过学号删除结点*/
+    printf("2: Delete node by student's name\n");/*通过姓名删除结点*/
+    printf("3: Delete nodelist\n");/*删除整个链表*/
     printf("Your choice is:");
     scanf("%d", &choice);
-    if (!choice)
-        return;
-    else if (choice == 1) {
-        printf("Input No.:");
-        scanf("%d", findnum)
-        pre = h;
-        do {
-            p = p -> next;
-            if (p -> sno == findnum)
-                pt = p;
-        } while (p -> next);
-
-
-            p = p -> next;
-        }
-
-
-
-
+    switch (choice) {
+        case 1:
+            printf("Input No.:");
+            scanf("%d", &findnum);
+            pre = h;
+            do {
+                p = pre -> next;
+                while (p -> sno == findnum) {/*发现匹配学号*/
+                    if (!p -> next) {/*指向尾结点*/
+                        pre -> next = NULL;
+                        break;
+                    }
+                    pre -> next = p -> next;
+                }
+                pre = p;
+            } while (pre -> next);
+            break;
+        case 2:
+            printf("Input name:");
+            scanf("%s", findname);
+            pre = h;
+            do {
+                p = pre -> next;
+                while (!strcmp(p -> sname, findname)) {/*发现匹配姓名*/
+                    if (!p -> next) {/*指向尾结点*/
+                        pre -> next = NULL;
+                        break;
+                    }
+                    pre -> next = p -> next;
+                }
+                pre = p;
+            } while (pre -> next);
+            break;
+        case 3: h -> next = NULL;
+        default : printf("\n"); return;
     }
-
-
-
+    printf("\n");
+    del(h);/*递归调用*/
 }
 
-void sort()
+void insert()
+{
+    Student *pre, *p;
+    int choice, insertnum, *s;
+
+    printf("0: Stop inserting\n");
+    printf("1: Insert a node at the head of the list\n");/*插入头结点*/
+    printf("2: Insert a node at the end of the list\n");/*插入尾结点*/
+    printf("3: Insert a node after any student No.\n");/*在任意学号后插入结点*/
+    printf("Your choice is:");
+    scanf("%d", &choice);
+    if (!choice) {
+        printf("\n");
+        return;
+    }
+    printf("Input student info:");
+    p = talloc();
+    scanf("%d %s", &p -> sno, p -> sname);
+    for (s = p -> sco; s < p -> sco + 3; ++s)
+    scanf("%d", s);
+    pre = h;
+    switch (choice) {
+        case 1:
+            p -> next = pre -> next;
+            pre -> next = p;
+            break;
+        case 2:
+            while (pre -> next)
+                pre = pre -> next;
+            pre -> next = p;
+            p -> next = NULL;
+            break;
+        case 3:
+            printf("Input the location to insert(in No.):");
+            scanf("%d", &insertnum);
+            do {
+                pre = pre -> next;
+                if (pre -> sno == insertnum) {
+                    if (pre -> next) {/*类似于插入头结点*/
+                        p -> next = pre -> next;
+                        pre -> next = p;
+                        break;
+                    }
+                    else {/*类似于插入尾结点*/
+                        pre -> next = p;
+                        p -> next = NULL;
+                    }
+                }
+            } while (pre -> next);
+        default : printf("\n"); return;
+    }
+    printf("\n");
+    insert(h);/*递归调用*/
+}
+
+void sort(Student *h)
 {
     printf("1: sort by student's No.s(default)\n");
     printf("0: sort by student's names\n");
 
-    switch()
+
+}
+
+Student *pre searchnum(int num)
+{
+    printf("Input No.:");
+            scanf("%d", &findnum);
+            pre = h;
+            do {
+                p = pre -> next;
+                while (p -> sno == findnum) {/*发现匹配学号*/
+                    if (!p -> next) {/*指向尾结点*/
+                        pre -> next = NULL;
+                        break;
+                    }
+                    pre -> next = p -> next;
+                }
+                pre = p;
+            } while (pre -> next);
+            break;;
+}
+
+Student *pre searchname(char *name)
+{
+    ;
 }
