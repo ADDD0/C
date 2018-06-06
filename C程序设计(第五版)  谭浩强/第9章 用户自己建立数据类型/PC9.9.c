@@ -19,16 +19,16 @@ Student *talloc(void)
     return (Student *) malloc(sizeof(Student));
 }
 
-Student *h;  /* 链表头被声明为全局变量,不可更改 */
+Student *h;  /* 链表头被声明为全局变量,不可更改               */
 
 main()
 {
-    void creat();              /* 建立链表      */
-    void print();              /* 输出链表      */
-    void del();                /* 删除结点      */
-    void insert();             /* 插入结点      */
-    void sort();               /* 增加排序功能  */
-    void search();             /* 增加搜索功能  */
+    void creat();              /* 建立链表                    */
+    void print();              /* 输出链表                    */
+    void del();                /* 删除结点                    */
+    void insert();             /* 插入结点                    */
+    void sort();               /* 增加排序功能                */
+    void search();             /* 增加搜索功能                */
 
     Student *pre, *p;
     int i, choice, *s;
@@ -104,7 +104,7 @@ void print()
     int *s;
 
     p = h -> next;
-    if (!p)  /* 链表为空时 */
+    if (!p)  /* 链表为空时    */
         printf("Nodelist is not initialized or has been deleted\n");
     while (p) {
         printf("No.%d %s:", p -> sno, p -> sname);

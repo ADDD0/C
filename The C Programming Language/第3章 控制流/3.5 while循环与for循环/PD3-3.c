@@ -9,12 +9,12 @@ void expand(char s1[], char s2[])
     int i, j;
 
     i = j = 0;
-    while ((c = s1[i++]) != '\0')
+    while ((c = s1[i++]) != '\0')  /* 从s1获取一个字符                     */
         if (s1[i] == '-' && s1[i+1] >= c) {
             i++;
-            while (c < s1[i])  /* 简写扩展                                 */
+            while (c < s1[i])      /* 简写扩展                             */
                 s2[j++] = c++;
         } else
-            s2[j++] = c;       /* 复制字符                                 */
+            s2[j++] = c;           /* 复制字符                             */
     s2[j] = '\0';
 }
