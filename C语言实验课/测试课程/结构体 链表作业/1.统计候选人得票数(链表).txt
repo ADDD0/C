@@ -1,0 +1,58 @@
+[问题描述]
+
+编写程序,先存入候选人信息(这里只保存候选人编号,候选人姓名,和选票数),再输入候选人名字(投票过程),输入结束后,输出统计结果.(采用链表存储数据)
+[输入形式]
+
+先输入候选人编号,姓名,编号为0,输入候选人信息结束.然后输入候选人名字(投票),输入结束用Ctrl+Z然后回车
+[输出形式]
+
+输出多行.每行候选人编号(占4行,左对齐),名字(占8行,左对齐),票数(占4行,左对齐)
+[样例输入]
+
+1 Bill
+2 Kate
+3 John
+0
+Kate
+Bill
+Kate
+^Z(Ctrl+Z)然后回车
+[样例输出]
+
+1   Bill    1
+2   Kate    2
+3   John    0
+[提示1]
+
+投票时,用Ctrl+Z结束输入.在程序里判断函数scanf()的返回值是否为EOF(End of File).如果是,即是输入结束.
+while(scanf("%s",name)!=EOF)
+{
+}
+[提示2]
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+struct candidate
+{
+    int cno;//候选人编号
+    char name[10];//候选人名字
+    int votes;//票数
+    struct candidate *next;
+};
+typedef struct candidate Candidate;
+
+#define LEN sizeof(Candidate)
+void initial(Candidate *head);
+void voting(Candidate *head);
+void output(Candidate *head);
+int main()
+{
+    Candidate *head;
+    head=(Candidate*)malloc(LEN);
+    head->next=NULL;
+    initial(head);
+    voting(head);
+    output(head);
+}

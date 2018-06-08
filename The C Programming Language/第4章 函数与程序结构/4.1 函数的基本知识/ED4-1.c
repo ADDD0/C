@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #define  MAXLINE  1000    /* 最大输入行长度       */
 
 int getline(char line[], int max);

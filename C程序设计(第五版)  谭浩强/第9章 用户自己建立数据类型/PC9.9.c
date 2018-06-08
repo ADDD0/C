@@ -135,12 +135,13 @@ void del()
             pre = h;
             do {
                 p = pre -> next;
-                while (p -> sno == findnum) {            /* 发现匹配学号     */
+                if (p -> sno == findnum) {            /* 发现匹配学号     */
                     if (!p -> next) {                    /* 指向尾结点       */
                         pre -> next = NULL;
                         break;
                     }
-                    pre -> next = p -> next;
+                    p = p -> next;
+                    pre -> next = p;
                 }
                 pre = p;
             } while (pre -> next);
@@ -156,7 +157,8 @@ void del()
                         pre -> next = NULL;
                         break;
                     }
-                    pre -> next = p -> next;
+                    p = p -> next;
+                    pre -> next = p;
                 }
                 pre = p;
             } while (pre -> next);

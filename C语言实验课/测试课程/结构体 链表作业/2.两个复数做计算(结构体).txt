@@ -1,0 +1,63 @@
+[问题描述]
+
+输入两个复数,根据要求计算.
+要求：用结构体表示复数.编写两个函数分别计算两个复数的和,两个复数的差.
+
+类型定义:
+struct complex
+{
+    float repart,impart;
+};
+typedef struct complex Complex;
+
+Complex add(Complex a,Complex b);
+Complex substract(Complex a,Complex b);
+
+在主函数里,输入两个复数,调用函数计算,然后输入计算结果.
+主函数参考如下:
+#include<stdio.h>
+
+struct complex
+{
+    float repart,impart;
+};
+typedef struct complex Complex;
+
+Complex add(Complex a,Complex b);
+Complex substract(Complex a,Complex b);
+
+int main()
+{
+    Complex a,b,c;
+    char op;
+    scanf("(%f%fi)%c(%f%fi)",&a.repart,&a.impart,&op,&b.repart,&b.impart);
+    if(op=='+')
+    c=add(a,b);
+    else if(op=='-')
+    c=substract(a,b);
+    printf("%.2f%+.2fi\n",c.repart,c.impart);//输出格式符后面有+号表示输出数时要带正负号
+}
+[输入形式]
+
+输入一表达式a+b,或a-b,其中a,b是复数,每个复数用圆括号括起来
+[输出形式]
+
+实部和虚部的数均保持两位小数(提示如果输出格式是%+f,意思是输出的数前面带正或负号)
+[样例输入1]
+
+(1+2i)+(3-4i)
+[样例输出1]
+
+4.00-2.00i
+[样例输入2]
+
+(1+2i)-(3-4i)
+[样例输出2]
+
+-2.00+6.00i
+[样例输入3]
+
+(1+2i)+(-1-2i)
+[样例输出3]
+
+0.00+0.00i
