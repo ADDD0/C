@@ -1,30 +1,30 @@
 /* 编写程序entab,将空格串替换为最少数量
-的制表符和空格,但要保持单词之间的间隔不变               */
+的制表符和空格,但要保持单词之间的间隔不变                */
 #include <stdio.h>
 
-#define  TABINC  8                  /* 制表符增量       */
+#define  TABINC  8              /* tab increment size    */
 
-/* 用制表符和空格替换字符串中的空格                     */
+/* replace strings of blanks with tabs and blanks        */
 main()
 {
     int c, nb, nt, pos;
 
-    nb = 0;                         /* 必要的空格数     */
-    nt = 0;                         /* 必要的制表符数目 */
+    nb = 0;                     /* # of blanks necessary */
+    nt = 0;                     /* # of tabs necessary   */
     for (pos = 1; (c = getchar()) != EOF; ++pos)
         if (c == ' ') {
             if (pos % TABINC != 0)
-                ++nb;               /* 增加空格数目     */
+                ++nb;           /* increment # of blanks */
             else {
-                nb = 0;             /* 重置空格数目     */
-                ++nt;               /* 加一个制表符     */
+                nb = 0;         /* reset # of blanks     */
+                ++nt;           /* one more tab          */
             }
         } else {
             for ( ; nt > 0; --nt)
-                putchar('\t');      /* 输出制表符       */
-            if (c == '\t')          /* 忽略空格         */
+                putchar('\t');  /* output tab(s)         */
+            if (c == '\t')      /* forget the blank(s)   */
                 nb = 0;
-            else                    /* 输出空格         */
+            else                /* output blank(s)       */
                 for ( ; nb > 0; --nb)
                     putchar(' ');
             putchar(c);

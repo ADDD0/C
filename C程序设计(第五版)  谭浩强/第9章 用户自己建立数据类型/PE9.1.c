@@ -14,15 +14,15 @@ main()
     Date date, *p;
 
     p = &date;
-    scanf("%d %d %d", &p -> year, &p -> month, &p -> day);
-    printf("year:%d days:%d\n", p -> year, day(p));
+    scanf("%d %d %d", &p->year, &p->month, &p->day);
+    printf("year:%d days:%d\n", p->year, day(p));
 }
 
 int day(Date *p)
 {
     int month(Date *);
 
-    return month(p) + p -> day;
+    return month(p) + p->day;
 }
 
 int month(Date *p)
@@ -31,7 +31,7 @@ int month(Date *p)
 
     int days = 0;
 
-    switch (p -> month - 1)
+    switch (p->month - 1)
     {
         case 12: days += 31;
         case 11: days += 30;
@@ -55,7 +55,7 @@ int month(Date *p)
 
 int year(Date *p)
 {
-    if (p -> year % 400 == 0 || p -> year % 4 == 0 && p -> year % 100)
+    if (p->year % 400 == 0 || p->year % 4 == 0 && p->year % 100)
         return 1;
     else
         return 0;

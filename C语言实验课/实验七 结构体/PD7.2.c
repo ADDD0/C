@@ -58,13 +58,13 @@ void f_create(struct stu *h, int n)
     for (i = 0; i < n; ++i) {
         printf("Input student %d's info:", i + 1);
         p = talloc();
-        scanf("%s %s", p -> sno, p -> sname);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        scanf("%s %s", p->sno, p->sname);
+        for (s = p->sco;  s < p->sco + 3; ++s)
             scanf("%d", s);
-        pre -> next = p;
+        pre->next = p;
         pre = p;
     }
-    pre -> next = NULL;
+    pre->next = NULL;
 }
 
 void  f_show(struct stu *h)
@@ -72,12 +72,12 @@ void  f_show(struct stu *h)
     struct stu *p;
     int *s;
 
-    p = h -> next;
+    p = h->next;
     while (p) {
-        printf("No.%s %s:", p -> sno, p -> sname);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        printf("No.%s %s:", p->sno, p->sname);
+        for (s = p->sco;  s < p->sco + 3; ++s)
             printf("  %d", *s);
         printf("\n");
-        p = p -> next;
+        p = p->next;
     }
 }

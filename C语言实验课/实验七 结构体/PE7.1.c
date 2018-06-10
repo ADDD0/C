@@ -43,8 +43,8 @@ main()
     int *q;
 
     for (p = s; p < s + N; ++p) {
-        scanf("%s %s", p -> sno, p -> sname);
-        for (q = p -> sco; q < p -> sco + 3; ++q)
+        scanf("%s %s", p->sno, p->sname);
+        for (q = p->sco; q < p->sco + 3; ++q)
             scanf("%d", q);
     }
     s1 = f_max(s);
@@ -63,11 +63,11 @@ struct Stu f_max(struct Stu *p)
     struct Stu smax;
     int i, sum, max, *s;
 
-    for (s = p -> sco, max = 0; s < p -> sco + 3; ++s)
+    for (s = p->sco, max = 0; s < p->sco + 3; ++s)
         max += *s;
     smax = *p++;
     for (i = 0; i < N - 1; ++i, ++p) {
-        for (s = p -> sco, sum = 0; s < p -> sco + 3; ++s)
+        for (s = p->sco, sum = 0; s < p->sco + 3; ++s)
             sum += *s;
         if (sum > max) {
             max = sum;
@@ -82,11 +82,11 @@ struct Stu f_min(struct Stu *p)
     struct Stu smin;
     int i, sum, min, *s;
 
-    for (s = p -> sco, min = 0; s < p -> sco + 3; ++s)
+    for (s = p->sco, min = 0; s < p->sco + 3; ++s)
         min += *s;
     smin = *p++;
     for (i = 0; i < N - 1; ++i, ++p) {
-        for (s = p -> sco, sum = 0; s < p -> sco + 3; ++s)
+        for (s = p->sco, sum = 0; s < p->sco + 3; ++s)
             sum += *s;
         if (sum < min) {
             min = sum;

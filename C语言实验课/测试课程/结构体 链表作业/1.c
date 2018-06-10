@@ -32,16 +32,16 @@ void initial(Candidate *head)
 
     pre = head;
     p = (Candidate *) malloc(LEN);
-    scanf("%d", &p -> cno);
-    while (p -> cno) {
-        scanf("%s", p -> name);
-        p -> votes = 0;
-        pre -> next = p;
+    scanf("%d", &p->cno);
+    while (p->cno) {
+        scanf("%s", p->name);
+        p->votes = 0;
+        pre->next = p;
         pre = p;
         p = (Candidate *) malloc(LEN);
-        scanf("%d", &p -> cno);
+        scanf("%d", &p->cno);
     }
-    pre -> next = NULL;
+    pre->next = NULL;
 }
 
 void voting(Candidate *head)
@@ -52,9 +52,9 @@ void voting(Candidate *head)
     while (scanf("%s", name) != EOF) {
         p = head;
         while (p) {
-            if (!strcmp(p -> name, name))
-                ++p -> votes;
-            p = p -> next;
+            if (!strcmp(p->name, name))
+                ++p->votes;
+            p = p->next;
         }
     }
 }
@@ -64,6 +64,6 @@ void output(Candidate *head)
     Candidate *p;
 
     p = head;
-    while (p = p -> next)
-        printf("%-4d%-8s%-4d\n", p -> cno, p -> name, p -> votes);
+    while (p = p->next)
+        printf("%-4d%-8s%-4d\n", p->cno, p->name, p->votes);
 }

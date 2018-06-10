@@ -1,5 +1,7 @@
-/* 编写一个程序,查找C语言程序中的
-基本语法错误,如圆括号,方括号,花括号不配对等         */
+/* 编写一个程序,查找C语言程序中的基本语法错误,
+如圆括号,方括号,花括号不配对等.要正确处理引号
+(包括单引号和双引号),转义字符序列与注释
+(如果读者想把该程序编写成完全通用的程序,难度会比较大)    */
 #include <stdio.h>
 
 int brace, brack, paren;
@@ -8,7 +10,7 @@ void in_quote(int c);
 void in_comment(void);
 void search(int c);
 
-/* C程序基本语法检查器                              */
+/* rudimentary syntax checker for C programs             */
 main()
 {
     int c;
@@ -17,15 +19,15 @@ main()
     while ((c = getchar()) != EOF) {
         if (c == '/') {
             if ((c = getchar()) == '*')
-                in_comment();       /* 注释内部     */
+                in_comment();       /* inside comment    */
             else
                 search(c);
         } else if (c == '\'' || c == '"')
-            in_quote(c);            /* 引号内部     */
+            in_quote(c);            /* inside quote      */
         else
             search(c);
 
-        if (brace < 0) {            /* 输出错误     */
+        if (brace < 0) {            /* output errors     */
             printf("Unbalanced braces\n");
             brace = 0;
         } else if (brack < 0) {
@@ -36,7 +38,7 @@ main()
             paren = 0;
         }
     }
-    if (brace > 0)                  /* 输出错误     */
+    if (brace > 0)                  /* output errors     */
         printf("Unbalanced braces\n");
     if (brack > 0)
         printf("Unbalanced brackets\n");
@@ -44,7 +46,7 @@ main()
         printf("Unbalanced parentheses\n");
 }
 
-/* search:搜寻基本语法错误                          */
+/* search: search for rudimentary syntax errors          */
 void search(int c)
 {
     extern int brace, brack, paren;
@@ -63,25 +65,25 @@ void search(int c)
         --paren;
 }
 
-/* in_comment:有效注释内部                          */
+/* in_comment: inside of a valid comment                 */
 void in_comment(void)
 {
     int c, d;
 
-    c = getchar();                  /* 前一字符     */
-    d = getchar();                  /* 当前字符     */
-    while (c != '*' || d != '/') {  /* 搜寻末尾     */
+    c = getchar();                  /* prev character    */
+    d = getchar();                  /* curr character    */
+    while (c != '*' || d != '/') {  /* search for end    */
         c = d;
         d = getchar();
     }
 }
 
-/* in_quote:引号内部                                */
+/* in_quote: inside quote                                */
 void in_quote(int c)
 {
     int d;
 
-    while ((d = getchar()) != c)    /* 搜寻末尾     */
+    while ((d = getchar()) != c)    /* search end quote  */
         if (d == '\\')
-            getchar();              /* 忽略转义序列 */
+            getchar();              /* ignore escape seq */
 }

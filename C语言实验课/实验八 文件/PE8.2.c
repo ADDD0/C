@@ -10,7 +10,7 @@ void main()
 {
     FILE *fp;
     定义结构体变量及其它需要的变量;
-    以rb的方式打开文件f1.dat；
+    以rb的方式打开文件f1.->
     if(打开失败)
     {
         输出失败信息;
@@ -58,10 +58,10 @@ main()
     fread(p, sizeof(Student), 1, fp);
     printf("  name  sub1  sub2  sub3  sum  aver\n");
     while (!feof(fp)) {
-        printf("%6s", p -> sname);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        printf("%6s", p->sname);
+        for (s = p->sco;  s < p->sco + 3; ++s)
             printf("%6d", *s);
-        printf("%5d%6.2f\n", sum(p -> sco), aver(p -> sco));
+        printf("%5d%6.2f\n", sum(p->sco), aver(p->sco));
         fread(p, sizeof(Student), 1, fp);
     }
     fclose(fp);

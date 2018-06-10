@@ -25,21 +25,21 @@ main()
     pre = h = talloc();
     for (i = 0; i < n - 1; ++i) {
         p = talloc();
-        p -> number = i + 2;
-        pre -> next = p;
+        p->number = i + 2;
+        pre->next = p;
         pre = p;
     }
-    p -> next= h;  /* 使链表形成一个环               */
-    h -> number = flag = 1;
+    p->next= h;  /* 使链表形成一个环               */
+    h->number = flag = 1;
     while (n - 1) {
         ++flag;    /* 这里记录的是下一个人将要报的数 */
         if (flag == 3) {
-            printf("%d -> ", h -> next -> number);
-            h -> next = h -> next -> next;
+            printf("%d->", h->next->number);
+            h->next = h->next->next;
             --n;
             flag = 1;
         }
-        h = h -> next;
+        h = h->next;
     }
-    printf("%d\n", h -> number);
+    printf("%d\n", h->number);
 }

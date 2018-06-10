@@ -23,54 +23,54 @@ main()
     pre = a = talloc();
     for (i = 0; i < 5; ++i) {
         p = talloc();
-        p -> sno = i + 100;
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        p->sno = i + 100;
+        for (s = p->sco;  s < p->sco + 3; ++s)
             *s = 90;
-        pre -> next = p;
+        pre->next = p;
         pre = p;
     }
-    pre -> next = NULL;
+    pre->next = NULL;
     pre = b = talloc();
     for (i = 0; i < 3; ++i) {
         p = talloc();
-        p -> sno = i + 200;
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        p->sno = i + 200;
+        for (s = p->sco;  s < p->sco + 3; ++s)
             *s = 100;
-        pre -> next = p;
+        pre->next = p;
         pre = p;
     }                         /* 这之前均为a,b链表的初始化        */
-    pre -> next = a -> next;  /* 此时b链表的尾部连接到a链表的头部 */
+    pre->next = a->next;  /* 此时b链表的尾部连接到a链表的头部 */
 
-    p = b -> next;            /* 输出a,b合并后的链表              */
+    p = b->next;            /* 输出a,b合并后的链表              */
     while (p) {
-        printf("No.%d", p -> sno);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        printf("No.%d", p->sno);
+        for (s = p->sco;  s < p->sco + 3; ++s)
             printf("  %3d", *s);
         printf("\n");
-        p = p -> next;
+        p = p->next;
     }
     printf("\n");
 
-    pre = b -> next;          /* 类似选择排序法                   */
-    while (pre -> next) {     /* 指向倒数第二个结点时跳出循环     */
+    pre = b->next;          /* 类似选择排序法                   */
+    while (pre->next) {     /* 指向倒数第二个结点时跳出循环     */
         p = pt = pre;
         do {
-            p = p -> next;
-            if (p -> sno < pt -> sno)
+            p = p->next;
+            if (p->sno < pt->sno)
                 pt = p;
-        } while (p -> next);  /* 指向最后一个结点时跳出循环       */
-        t = pre -> sno, pre -> sno = pt -> sno, pt -> sno = t;
+        } while (p->next);  /* 指向最后一个结点时跳出循环       */
+        t = pre->sno, pre->sno = pt->sno, pt->sno = t;
         for (i = 0; i < 3; ++i)
-            t = pre -> sco[i], pre -> sco[i] = pt -> sco[i], pt -> sco[i] = t;
-        pre = pre -> next;
+            t = pre->sco[i], pre->sco[i] = pt->sco[i], pt->sco[i] = t;
+        pre = pre->next;
     }
 
-    p = b -> next;            /* 输出a,b合并后按升序排序的链表    */
+    p = b->next;            /* 输出a,b合并后按升序排序的链表    */
     while (p) {
-        printf("No.%d", p -> sno);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        printf("No.%d", p->sno);
+        for (s = p->sco;  s < p->sco + 3; ++s)
             printf("  %3d", *s);
         printf("\n");
-        p = p -> next;
+        p = p->next;
     }
 }

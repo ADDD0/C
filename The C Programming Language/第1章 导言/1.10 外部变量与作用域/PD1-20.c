@@ -1,28 +1,28 @@
-/* 编写程序detab,将输入中的制表符替换成适当
-数目的空格,使空格充满到下一个制表符终止位的地方      */
+/* 编写程序detab,将输入中的制表符替换成适当数目的空格
+使空格充满到下一个制表符终止位的地方                              */
 #include <stdio.h>
 
-#define  TABINC  8               /* 制表符增量       */
+#define  TABINC  8               /* tab increment size            */
 
-/* 用适当数量的空格替换制表符                        */
+/* replace tabs with the proper number of blanks                  */
 main()
 {
     int c, nb, pos;
 
-    nb = 0;                      /* 必要的空格数     */
-    pos = 0;                     /* 行列中的字符位置 */
+    nb = 0;                      /* number of blanks necessary    */
+    pos = 0;                     /* position of character in line */
     while ((c = getchar()) != EOF) {
-        if (c == '\t') {         /* 制表符           */
+        if (c == '\t') {         /* tab character                 */
             nb = TABINC - pos % TABINC;
             while (nb > 0) {
                 putchar(' ');
                 ++pos;
                 --nb;
             }
-        } else if (c == '\n') {  /* 换行符           */
+        } else if (c == '\n') {  /* newline character             */
             putchar(c);
             pos = 0;
-        } else {                 /* 所有其余字符     */
+        } else {                 /* all other characters          */
             putchar(c);
             ++pos;
         }

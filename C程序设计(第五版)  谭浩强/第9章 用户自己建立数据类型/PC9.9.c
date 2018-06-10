@@ -37,14 +37,14 @@ main()
     pre = h;
     for (i = 0; i < 5; ++i) {  /* 初始化一个含有5个数据的链表 */
         p = talloc();
-        p -> sno = i + 100;
-        p -> sname[0] = 'a' + i;
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        p->sno = i + 100;
+        p->sname[0] = 'a' + i;
+        for (s = p->sco;  s < p->sco + 3; ++s)
             *s = 90;
-        pre -> next = p;
+        pre->next = p;
         pre = p;
     }
-    pre -> next = NULL;
+    pre->next = NULL;
 
     while (1) {
         printf("%-30s", "1: Create a new nodelist");
@@ -88,13 +88,13 @@ void creat()
     for (i = 0; i < n; ++i) {
         printf("Input student %d's info:", i + 1);
         p = talloc();
-        scanf("%d %s", &p -> sno, p -> sname);
-        for (s = p -> sco; s < p -> sco + 3; ++s)
+        scanf("%d %s", &p->sno, p->sname);
+        for (s = p->sco; s < p->sco + 3; ++s)
             scanf("%d", s);
-        pre -> next = p;
+        pre->next = p;
         pre = p;
     }
-    p -> next = NULL;
+    p->next = NULL;
     printf("\n");
 }
 
@@ -103,15 +103,15 @@ void print()
     Student *p;
     int *s;
 
-    p = h -> next;
+    p = h->next;
     if (!p)  /* 链表为空时    */
         printf("Nodelist is not initialized or has been deleted\n");
     while (p) {
-        printf("No.%d %s:", p -> sno, p -> sname);
-        for (s = p -> sco;  s < p -> sco + 3; ++s)
+        printf("No.%d %s:", p->sno, p->sname);
+        for (s = p->sco;  s < p->sco + 3; ++s)
             printf("  %d", *s);
         printf("\n");
-        p = p -> next;
+        p = p->next;
     }
     printf("\n");
 }
@@ -134,36 +134,36 @@ void del()
             scanf("%d", &findnum);
             pre = h;
             do {
-                p = pre -> next;
-                if (p -> sno == findnum) {            /* 发现匹配学号     */
-                    if (!p -> next) {                    /* 指向尾结点       */
-                        pre -> next = NULL;
+                p = pre->next;
+                if (p->sno == findnum) {            /* 发现匹配学号     */
+                    if (!p->next) {                    /* 指向尾结点       */
+                        pre->next = NULL;
                         break;
                     }
-                    p = p -> next;
-                    pre -> next = p;
+                    p = p->next;
+                    pre->next = p;
                 }
                 pre = p;
-            } while (pre -> next);
+            } while (pre->next);
             break;
         case 2:
             printf("Input name:");
             scanf("%s", findname);
             pre = h;
             do {
-                p = pre -> next;
-                while (!strcmp(p -> sname, findname)) {  /* 发现匹配姓名     */
-                    if (!p -> next) {                    /* 指向尾结点       */
-                        pre -> next = NULL;
+                p = pre->next;
+                while (!strcmp(p->sname, findname)) {  /* 发现匹配姓名     */
+                    if (!p->next) {                    /* 指向尾结点       */
+                        pre->next = NULL;
                         break;
                     }
-                    p = p -> next;
-                    pre -> next = p;
+                    p = p->next;
+                    pre->next = p;
                 }
                 pre = p;
-            } while (pre -> next);
+            } while (pre->next);
             break;
-        case 3: h -> next = NULL;
+        case 3: h->next = NULL;
         default : printf("\n"); return;
     }
     printf("\n");
@@ -187,38 +187,38 @@ void insert()
     }
     printf("Input student info:");
     p = talloc();
-    scanf("%d %s", &p -> sno, p -> sname);
-    for (s = p -> sco; s < p -> sco + 3; ++s)
+    scanf("%d %s", &p->sno, p->sname);
+    for (s = p->sco; s < p->sco + 3; ++s)
     scanf("%d", s);
     pre = h;
     switch (choice) {
         case 1:
-            p -> next = pre -> next;
-            pre -> next = p;
+            p->next = pre->next;
+            pre->next = p;
             break;
         case 2:
-            while (pre -> next)
-                pre = pre -> next;
-            pre -> next = p;
-            p -> next = NULL;
+            while (pre->next)
+                pre = pre->next;
+            pre->next = p;
+            p->next = NULL;
             break;
         case 3:
             printf("Input the location to insert(in No.):");
             scanf("%d", &insertnum);
             do {
-                pre = pre -> next;
-                if (pre -> sno == insertnum) {
-                    if (pre -> next) {  /* 类似于插入头结点 */
-                        p -> next = pre -> next;
-                        pre -> next = p;
+                pre = pre->next;
+                if (pre->sno == insertnum) {
+                    if (pre->next) {  /* 类似于插入头结点 */
+                        p->next = pre->next;
+                        pre->next = p;
                         break;
                     }
                     else {              /* 类似于插入尾结点 */
-                        pre -> next = p;
-                        p -> next = NULL;
+                        pre->next = p;
+                        p->next = NULL;
                     }
                 }
-            } while (pre -> next);
+            } while (pre->next);
         default : printf("\n"); return;
     }
     printf("\n");
@@ -238,67 +238,67 @@ void sort()
     scanf("%d", &choice);
     switch (choice) {
         case 11:
-            pre = h -> next;
-            while (pre -> next) {
+            pre = h->next;
+            while (pre->next) {
                 p = pt = pre;
                 do {
-                    p = p -> next;
-                    if (p -> sno < pt -> sno)
+                    p = p->next;
+                    if (p->sno < pt->sno)
                         pt = p;
-                } while (p -> next);
-                t = pre -> sno, pre -> sno = pt -> sno, pt -> sno = t;
-                strcpy(s, pre -> sname), strcpy(pre -> sname, pt -> sname), strcpy(pt -> sname, s);
+                } while (p->next);
+                t = pre->sno, pre->sno = pt->sno, pt->sno = t;
+                strcpy(s, pre->sname), strcpy(pre->sname, pt->sname), strcpy(pt->sname, s);
                 for (i = 0; i < 3; ++i)
-                    t = pre -> sco[i], pre -> sco[i] = pt -> sco[i], pt -> sco[i] = t;
-                pre = pre -> next;
+                    t = pre->sco[i], pre->sco[i] = pt->sco[i], pt->sco[i] = t;
+                pre = pre->next;
             }
             break;
         case 12:
-            pre = h -> next;
-            while (pre -> next) {
+            pre = h->next;
+            while (pre->next) {
                 p = pt = pre;
                 do {
-                    p = p -> next;
-                    if (p -> sno > pt -> sno)
+                    p = p->next;
+                    if (p->sno > pt->sno)
                         pt = p;
-                } while (p -> next);
-                t = pre -> sno, pre -> sno = pt -> sno, pt -> sno = t;
-                strcpy(s, pre -> sname), strcpy(pre -> sname, pt -> sname), strcpy(pt -> sname, s);
+                } while (p->next);
+                t = pre->sno, pre->sno = pt->sno, pt->sno = t;
+                strcpy(s, pre->sname), strcpy(pre->sname, pt->sname), strcpy(pt->sname, s);
                 for (i = 0; i < 3; ++i)
-                    t = pre -> sco[i], pre -> sco[i] = pt -> sco[i], pt -> sco[i] = t;
-                pre = pre -> next;
+                    t = pre->sco[i], pre->sco[i] = pt->sco[i], pt->sco[i] = t;
+                pre = pre->next;
             }
             break;
         case 21:
-            pre = h -> next;
-            while (pre -> next) {
+            pre = h->next;
+            while (pre->next) {
                 p = pt = pre;
                 do {
-                    p = p -> next;
-                    if (strcmp(p -> sname, pt -> sname) < 0)
+                    p = p->next;
+                    if (strcmp(p->sname, pt->sname) < 0)
                         pt = p;
-                } while (p -> next);
-                t = pre -> sno, pre -> sno = pt -> sno, pt -> sno = t;
-                strcpy(s, pre -> sname), strcpy(pre -> sname, pt -> sname), strcpy(pt -> sname, s);
+                } while (p->next);
+                t = pre->sno, pre->sno = pt->sno, pt->sno = t;
+                strcpy(s, pre->sname), strcpy(pre->sname, pt->sname), strcpy(pt->sname, s);
                 for (i = 0; i < 3; ++i)
-                    t = pre -> sco[i], pre -> sco[i] = pt -> sco[i], pt -> sco[i] = t;
-                pre = pre -> next;
+                    t = pre->sco[i], pre->sco[i] = pt->sco[i], pt->sco[i] = t;
+                pre = pre->next;
             }
             break;
         case 22:
-            pre = h -> next;
-            while (pre -> next) {
+            pre = h->next;
+            while (pre->next) {
                 p = pt = pre;
                 do {
-                    p = p -> next;
-                    if (strcmp(p -> sname, pt -> sname) > 0)
+                    p = p->next;
+                    if (strcmp(p->sname, pt->sname) > 0)
                         pt = p;
-                } while (p -> next);
-                t = pre -> sno, pre -> sno = pt -> sno, pt -> sno = t;
-                strcpy(s, pre -> sname), strcpy(pre -> sname, pt -> sname), strcpy(pt -> sname, s);
+                } while (p->next);
+                t = pre->sno, pre->sno = pt->sno, pt->sno = t;
+                strcpy(s, pre->sname), strcpy(pre->sname, pt->sname), strcpy(pt->sname, s);
                 for (i = 0; i < 3; ++i)
-                    t = pre -> sco[i], pre -> sco[i] = pt -> sco[i], pt -> sco[i] = t;
-                pre = pre -> next;
+                    t = pre->sco[i], pre->sco[i] = pt->sco[i], pt->sco[i] = t;
+                pre = pre->next;
             }
             break;
     }
@@ -326,17 +326,17 @@ void searchnum()
     struct stu *p;
     int findnum, *s;
 
-    p = h -> next;
+    p = h->next;
     printf("Search No.:");
     scanf("%d", &findnum);
     while (p) {
-        if (p -> sno == findnum) {
-            printf("No.%d %s:", p -> sno, p -> sname);
-            for (s = p -> sco;  s < p -> sco + 3; ++s)
+        if (p->sno == findnum) {
+            printf("No.%d %s:", p->sno, p->sname);
+            for (s = p->sco;  s < p->sco + 3; ++s)
                 printf("  %d", *s);
             printf("\n");
         }
-        p = p -> next;
+        p = p->next;
     }
     printf("\n");
 }
@@ -347,17 +347,17 @@ void searchname()
     char findname[10];
     int *s;
 
-    p = h -> next;
+    p = h->next;
     printf("Search name:");
     scanf("%s", findname);
     while (p) {
-        if (!strcmp(p -> sname, findname)) {
-            printf("No.%d %s:", p -> sno, p -> sname);
-            for (s = p -> sco;  s < p -> sco + 3; ++s)
+        if (!strcmp(p->sname, findname)) {
+            printf("No.%d %s:", p->sno, p->sname);
+            for (s = p->sco;  s < p->sco + 3; ++s)
                 printf("  %d", *s);
             printf("\n");
         }
-        p = p -> next;
+        p = p->next;
     }
     printf("\n");
 }

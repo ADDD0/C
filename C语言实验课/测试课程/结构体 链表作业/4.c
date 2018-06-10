@@ -21,7 +21,7 @@ main()
             if (strcmp(p[j].name, p[j + 1].name) > 0)
                 t = p[j], p[j] = p[j + 1], p[j + 1] = t;
     for (i = 0; i < n; ++i, ++p) {
-        perimeter = 2 * (p -> length + p -> width);
-        printf("%s %d %d %d\n", p -> name, perimeter, p -> length, p -> width);
+        perimeter = 2 * (p->length + p->width);
+        printf("%s %d %d %d\n", p->name, perimeter, p->length, p->width);
     }
 }

@@ -31,15 +31,15 @@ void initial(staff *head)
 
     pre = head;
     p = (staff *) malloc(LEN);
-    scanf("%d", &p -> sno);
-    while (p -> sno) {
-        scanf("%s %s %d",p -> name, p -> dep, &p -> wage);
-        pre -> next = p;
+    scanf("%d", &p->sno);
+    while (p->sno) {
+        scanf("%s %s %d",p->name, p->dep, &p->wage);
+        pre->next = p;
         pre = p;
         p = (staff *) malloc(LEN);
-        scanf("%d", &p -> sno);
+        scanf("%d", &p->sno);
     }
-    pre -> next = NULL;
+    pre->next = NULL;
 }
 
 void del(staff *head)
@@ -50,17 +50,17 @@ void del(staff *head)
     scanf("%s", finddep);
     pre = head;
     do {
-        p = pre -> next;
-        if (!strcmp(p -> dep, finddep)) {
-            if (!p -> next) {
-                pre -> next = NULL;
+        p = pre->next;
+        if (!strcmp(p->dep, finddep)) {
+            if (!p->next) {
+                pre->next = NULL;
                 break;
             }
-            p = p -> next;
-            pre -> next = p;
+            p = p->next;
+            pre->next = p;
         }
         pre = p;
-    } while (pre -> next);
+    } while (pre->next);
 }
 
 void output(staff *head)
@@ -68,6 +68,6 @@ void output(staff *head)
     staff *p;
 
     p = head;
-    while (p = p -> next)
-        printf("%d %s %s %d\n", p -> sno, p -> name, p -> dep, p -> wage);
+    while (p = p->next)
+        printf("%d %s %s %d\n", p->sno, p->name, p->dep, p->wage);
 }
