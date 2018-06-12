@@ -2,12 +2,12 @@
 使用该函数编写一个程序,每次颠倒一个输入行中的字符顺序 */
 #include <stdio.h>
 
-#define  MAXLINE  1000  /* 允许的输入行的最大长度     */
+#define  MAXLINE  1000  /* maximum input line size    */
 
 int getline(char line[], int maxline);
 void reverse(char s[], int len);
 
-/* 反转输入行,一次反转一行                            */
+/* reverse input lines, a line at a time              */
 main()
 {
     int len;
@@ -18,7 +18,6 @@ main()
     return 0;
 }
 
-/* getline函数:将一行读入到s中并返回其长度            */
 int getline(char s[], int lim)
 {
     int c, i;
@@ -31,10 +30,10 @@ int getline(char s[], int lim)
     return i;
 }
 
-/* reverse函数:反向字符串                             */
-void reverse(char s[], int i)
+/* reverse: reverse string s                          */
+void reverse(char s[], int len)
 {
-    while (--i > 0)
-        putchar(s[i-1]);
+    while (--len > 0)
+        putchar(s[len - 1]);
     putchar('\n');
 }

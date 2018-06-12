@@ -1,16 +1,16 @@
-/* 编写一个程序,打印长度大于80个字符的所有输入行   */
+/* 编写一个程序,打印长度大于80个字符的所有输入行    */
 #include <stdio.h>
 
-#define  MAXLINE   1000  /* 允许的输入行的最大长度 */
+#define  MAXLINE   1000  /* maximum input line size */
 #define  LONGLINE  80
 
 int getline(char line[], int maxline);
 
-/* 打印比LONGLINE长的行                            */
+/* print lines longer than LONGLINE                 */
 main()
 {
-    int len;             /* 当前行长度             */
-    char line[MAXLINE];  /* 当前的输入行           */
+    int len;             /* current line length     */
+    char line[MAXLINE];  /* current input line      */
 
     while ((len = getline(line, MAXLINE)) > 0)
         if (len > LONGLINE) {
@@ -19,17 +19,21 @@ main()
     return 0;
 }
 
-/* getline函数:将一行读入到s中并返回其长度         */
 int getline(char s[], int lim)
 {
-    int c, i;
+    int c, i, j;
 
-    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
-        s[i] = c;
+    j = 0;
+    for (i = 0; (c = getchar()) != EOF && c != '\n'; ++i)
+        if (i < lim - 2) {
+            s[j] = c;
+            ++j;
+        }
     if (c == '\n') {
-        s[i] = c;
+        s[j] = c;
+        ++j;
         ++i;
     }
-    s[i] = '\0';
+    s[j] = '\0';
     return i;
 }

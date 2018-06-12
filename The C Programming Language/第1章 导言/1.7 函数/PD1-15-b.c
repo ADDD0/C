@@ -3,15 +3,16 @@
 
 float celsius(float fahr);
 
-/* 打印摄氏温度与华氏温度对照表                           */
+/* print Fahrenheit-Celsius table
+    for fahr = 0, 20, . . ., 300; floating-point version  */
 main()
 {
     float fahr;
     int lower, upper, step;
 
-    lower = 0;    /* 温度表的下限                         */
-    upper = 300;  /* 温度表的上限                         */
-    step = 20;    /* 步长                                 */
+    lower = 0;    /* lower limit of temperature table     */
+    upper = 300;  /* upper limit                          */
+    step = 20;    /* step size                            */
 
     fahr = lower;
     while (fahr <= upper) {
@@ -20,7 +21,7 @@ main()
     }
 }
 
-/* 摄氏度:华氏度转换为摄氏度                              */
+/* celsius: convert fahr into celsius                     */
 float celsius(float fahr)
 {
     return (5.0/9.0) * (fahr-32.0);

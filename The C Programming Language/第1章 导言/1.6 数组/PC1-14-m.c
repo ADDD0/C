@@ -1,17 +1,16 @@
-/* 编写一个程序,打印输入中各个字符出现频度的直方图
-垂直方向直方图                                     */
+/* 编写一个程序,打印输入中各个字符出现频度的直方图        */
 #include <stdio.h>
 #include <ctype.h>
 
-#define  MAXHIST  15   /* 直方图最大长度           */
-#define  MAXCHAR  128  /* 不同字符个数             */
+#define  MAXHIST  15   /* max length of histogram         */
+#define  MAXCHAR  128  /* max different characters        */
 
-/* 打印不同字符在垂直方向上的频率直方图            */
+/* print vertical histogram freq. of different characters */
 main()
 {
     int c, i, j;
-    int maxvalue;      /* cc[]的最大值             */
-    int cc[MAXCHAR];   /* 字符计数器               */
+    int maxvalue;      /* maximum value for cc[]          */
+    int cc[MAXCHAR];   /* character counters              */
 
     for (i = 0; i < MAXCHAR; ++i)
         cc[i] = 0;

@@ -1,14 +1,14 @@
 /* 编写一个统计空格,制表符与换行符个数的程序 */
 #include <stdio.h>
 
-/* 统计空格,制表符与换行符                   */
+/* count blanks, tabs, and newlines          */
 main()
 {
     int c, nb, nt, nl;
 
-    nb = 0;  /* 空格个数                     */
-    nt = 0;  /* 制表符个数                   */
-    nl = 0;  /* 换行符个数                   */
+    nb = 0;  /* number of blanks             */
+    nt = 0;  /* number of tabs               */
+    nl = 0;  /* number of newlines           */
     while ((c = getchar()) != EOF) {
         if (c == ' ')
             ++nb;

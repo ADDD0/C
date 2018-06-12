@@ -1,16 +1,15 @@
-/* 编写一个程序
-删除每个输入行末尾的空格及制表符,并删除完全是空格的行 */
+/* 编写一个程序,删除每个输入行末尾的空格及制表符,并删除完全是空格的行 */
 #include <stdio.h>
 
-#define  MAXLINE   1000  /* 允许的输入行的最大长度    */
+#define  MAXLINE   1000   /* maximum input line size                  */
 
 int getline(char line[], int maxline);
 int remove(char s[]);
 
-/* 删除末尾的空格及制表符,并删除空白行                */
+/* remove trailing blanks and tabs, and delete blank lines            */
 main()
 {
-    char line[MAXLINE];  /* 当前的输入行              */
+    char line[MAXLINE];   /* current input line                       */
 
     while (getline(line, MAXLINE) > 0)
         if (remove(line) > 0)
@@ -18,7 +17,6 @@ main()
     return 0;
 }
 
-/* getline函数:将一行读入到s中并返回其长度            */
 int getline(char s[], int lim)
 {
     int c, i;
@@ -33,21 +31,21 @@ int getline(char s[], int lim)
     return i;
 }
 
-/* remove函数:从字符串s中删除末尾的空格及制表符       */
+/* remove: trailing blanks and tabs from character string s           */
 int remove(char s[])
 {
     int i;
 
-    while (s[i] != '\n')
+    while (s[i] != '\n')  /* find newline character                   */
         ++i;
-    --i;
+    --i;                  /* back off from '\n'                       */
     while (i > 0 && (s[i] == ' ' || s[i] == '\t'))
         --i;
-    if (i > 0) {
+    if (i > 0) {          /* is it a nonblank line?                   */
         ++i;
-        s[i] = '\n';
+        s[i] = '\n';      /* put newline character back               */
         ++i;
-        s[i] = '\0';
+        s[i] = '\0';      /* terminate the string                     */
     }
     return i;
 }

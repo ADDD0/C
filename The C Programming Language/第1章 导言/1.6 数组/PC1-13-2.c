@@ -1,24 +1,24 @@
 /* 编写一个程序,打印输入中单词长度的直方图
-水平方向的直方图比较容易绘制,垂直方向的直方图则要困难些
-垂直方向直方图                                          */
+水平方向的直方图比较容易绘制,垂直方向的直方图则要困难些 */
 #include <stdio.h>
 
-#define  MAXHIST  15  /* 直方图最大长度                 */
-#define  MAXWORD  11  /* 单词最大长度                   */
-#define  IN       1   /* 在单词内                       */
-#define  OUT      0   /* 在单词外                       */
+#define  MAXHIST  15  /* max length of histogram        */
+#define  MAXWORD  11  /* max length of a word           */
+#define  IN       1   /* inside a word                  */
+#define  OUT      0   /* outside a word                 */
 
-/* 打印垂直方向直方图                                   */
+/* print vertical histogram                             */
 main()
 {
     int c, i, j, nc, state;
-    int maxvalue;     /* wl[]的最大值                   */
-    int ovflow;       /* 溢出单词数目                   */
-    int wl[MAXWORD];  /* 单词长度计数器                 */
+    int maxvalue;     /* maximum value for wl[]         */
+    int ovflow;       /* number of overflow words       */
+    int wl[MAXWORD];  /* word length counters           */
+
 
     state = OUT;
-    nc = 0;           /* 单词中的字符个数               */
-    ovflow = 0;       /* 大于单词最大长度的单词个数     */
+    nc = 0;           /* number of chars in a word      */
+    ovflow = 0;       /* number of words >= MAXWORD     */
     for (i = 0; i < MAXWORD; ++i)
         wl[i] = 0;
     while ((c = getchar()) != EOF) {
@@ -32,9 +32,9 @@ main()
             nc = 0;
         } else if (state == OUT) {
             state = IN;
-            nc = 1;   /* 新单词开始                     */
+            nc = 1;   /* beginning of a new word        */
         } else
-            ++nc;     /* 在单词内                       */
+            ++nc;     /* inside a word                  */
     }
     maxvalue = 0;
     for (i = 1; i < MAXWORD; ++i)

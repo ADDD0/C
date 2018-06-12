@@ -1,13 +1,13 @@
 /* 编写函数reverse(s),将字符串s中的字符顺序颠倒过来
-使用该函数编写一个程序,每次颠倒一个输入行中的字符顺序 */
+使用该函数编写一个程序,每次颠倒一个输入行中的字符顺序  */
 #include <stdio.h>
 
-#define  MAXLINE  1000    /* 允许的输入行的最大长度   */
+#define  MAXLINE  1000    /* maximum input line size   */
 
 int getline(char line[], int maxline);
 void reverse(char s[]);
 
-/* 反转输入行,一次反转一行                            */
+/* reverse input lines, a line at a time               */
 main()
 {
     char line[MAXLINE];
@@ -19,7 +19,6 @@ main()
     return 0;
 }
 
-/* getline函数:将一行读入到s中并返回其长度            */
 int getline(char s[], int lim)
 {
     int c, i;
@@ -34,22 +33,22 @@ int getline(char s[], int lim)
     return i;
 }
 
-/* reverse函数:反向字符串                             */
+/* reverse: reverse string s                           */
 void reverse(char s[])
 {
     int i, j;
     char temp;
 
     i = 0;
-    while (s[i] != '\0')  /* 找到字符串末尾            */
+    while (s[i] != '\0')  /* find the end of string s  */
         ++i;
-    --i;                  /* 从'\0'开始倒退            */
+    --i;                  /* back off from '\0'        */
     if (s[i] == '\n')
-        --i;              /* 留下换行符                */
-    j = 0;                /* 开始新字符串              */
+        --i;              /* leave newline in place    */
+    j = 0;                /* beginning of new string s */
     while (j < i) {
         temp = s[i];
-        s[j] = s[i];      /* 交换字符                  */
+        s[j] = s[i];      /* swap the characters       */
         s[i] = temp;
         --i;
         ++j;
