@@ -222,7 +222,7 @@ void insert()
         default : printf("\n"); return;
     }
     printf("\n");
-    insert(h);  /* 递归调用 */
+    insert();  /* 递归调用 */
 }
 
 void sort()

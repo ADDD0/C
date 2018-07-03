@@ -1,20 +1,20 @@
 /* 编写一个函数rightrot(x, n),该函数返回将x循环右移
 (即从最右端移出的位将从最左端移入)n(二进制)位后所得到的值 */
-/* rightrot函数:将x循环右移n位                            */
+/* rightrot: rotate x to the right by n positions         */
 unsigned rightrot(unsigned x, int n)
 {
     int wordlength(void);
-    int rbit;          /* 最右边的位                      */
+    int rbit;          /* rightmost bit                   */
 
     while (n-- > 0) {
         rbit = (x & 1) << (wordlength() - 1);
-        x = x >> 1;    /* 将x右移1位                      */
-        x = x | rbit;  /* 完成一次循环                    */
+        x = x >> 1;    /* shift x 1 position right        */
+        x = x | rbit;  /* complete one rotation           */
     }
     return x;
 }
 
-/* wordlength函数:计算计算机的字长                        */
+/* wordlength: computes word length of the machine        */
 int wordlength(void)
 {
     int i;

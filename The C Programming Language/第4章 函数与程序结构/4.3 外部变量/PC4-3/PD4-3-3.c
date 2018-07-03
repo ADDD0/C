@@ -2,12 +2,12 @@
 #include <string.h>
 #include <ctype.h>
 
-#define  NUMBER  '0'     /* 标识找到一个数 */
+#define  NUMBER  '0'     /* signal that a number was found */
 
 int getch(void);
 void ungetch(int);
 
-/* getop函数:获取下一个运算符或数值操作数  */
+/* getop: get next operator or numeric operand             */
 int getop(char s[])
 {
     int c, i;
@@ -17,19 +17,19 @@ int getop(char s[])
     s[1] = '\0';
     i = 0;
     if (!isdigit(c) && c != '.' && c != '-')
-        return c;        /* 不是数         */
+        return c;        /* not a number                   */
     if (c == '-')
         if (isdigit(c = getch()) || c == '.')
-            s[++i] = c;  /* 负数           */
+            s[++i] = c;  /* negative number                */
         else {
             if (c != EOF)
                 ungetch(c);
-            return '-';  /* 减号标记       */
+            return '-';  /* minus sign                     */
         }
-    if (isdigit(c))      /* 收集整数部分   */
+    if (isdigit(c))      /* collect integer part           */
         while (isdigit(s[++i] = c = getch()))
             ;
-    if (c == '.')        /* 收集小数部分   */
+    if (c == '.')        /* collect fraction part          */
         while (isdigit(s[++i] = c = getch()))
             ;
     s[i] = '\0';

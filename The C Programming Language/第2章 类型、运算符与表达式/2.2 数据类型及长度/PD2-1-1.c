@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <limits.h>
 
-/* 确定类型的取值范围                        */
+/* deternube ranges of types                 */
 main()
 {
-    /* 有符号数据类型                        */
+    /* signed types                          */
     printf("signed char min  = %d\n", SCHAR_MIN);
     printf("signed char max  = %d\n", SCHAR_MAX);
     printf("signed short min = %d\n", SHRT_MIN);
@@ -16,7 +16,7 @@ main()
     printf("signed int max   = %d\n", INT_MAX);
     printf("signed long min  = %ld\n", LONG_MIN);
     printf("signed long max  = %ld\n", LONG_MAX);
-    /* 无符号数据类型                        */
+    /* unsigned types                        */
     printf("unsigned char max  = %u\n", UCHAR_MAX);
     printf("unsigned short max = %u\n", USHRT_MAX);
     printf("unsigned int max   = %u\n", UINT_MAX);

@@ -1,32 +1,29 @@
-/* 给计算器程序增加访问sin,exp与pow等库函数的操作
-有关这些库函数的详细信息,请参见附录B.4节中的头文件<math.h> */
+/* 给计算器程序增加处理变量的命令(提供26个具有单个英文字母
+变量名的变量很容易).增加一个变量存放最近打印的值           */
 #include <stdio.h>
-#include <string.h>
 #include <math.h>    /* for atof()                         */
 
 #define  MAXOP  100  /* max size of operand or operator    */
 #define  NUMBER '0'  /* signal that a number was found     */
-#define  NAME   'n'  /* signal hat a name was found        */
 
 int getop(char []);
 void push(double);
 double pop(void);
-void mathfnc(char []);
 
 /* reverse Polish calculator                               */
 main()
 {
-    int type;
-    double op2;
+    int i, type, var = 0;
+    double op2, v;
     char s[MAXOP];
+    double variable[26];
 
+    for (i = 0; i < 26; i++)
+        variable[i] = 0.0;
     while ((type = getop(s)) != EOF) {
         switch (type) {
             case NUMBER:
                 push(atof(s));
-                break;
-            case NAME:
-                mathfnc(s);
                 break;
             case '+':
                 push(pop() + pop());
@@ -45,31 +42,27 @@ main()
                 else
                     printf("error: zero divisor\n");
                 break;
+            case '=':
+                pop();
+                if (var >= 'A' && var <= 'Z')
+                    variable[var - 'A'] = pop();
+                else
+                    printf("error: no variable name\n");
+                break;
             case '\n':
-                printf("\t%.8g\n", pop());
+                v = pop();
+                printf("\t%.8g\n", v);
                 break;
             default:
-                printf("error: unknown command %s\n", s);
+                if (type >= 'A' && type <= 'Z')
+                    push(variable[type - 'A']);
+                else if (type == 'v')
+                    push(v);
+                else
+                    printf("error: unknown command %s\n", s);
                 break;
         }
+        var = type;
     }
     return 0;
-}
-
-/* mathfuc: check string s for supported math functions    */
-void mathfnc(char s[])
-{
-    double op2;
-
-    if (strcmp(s, "sin") == 0)
-        push(sin(pop()));
-    else if (strcmp(s, "cos") == 0)
-        push(cos(pop()));
-    else if (strcmp(s, "exp") == 0)
-        push(exp(pop()));
-    else if (strcmp(s, "pow") == 0) {
-        op2 = pop();
-        push(pow(pop(), op2));
-    } else
-        printf("error: %s not supported\n", s);
 }

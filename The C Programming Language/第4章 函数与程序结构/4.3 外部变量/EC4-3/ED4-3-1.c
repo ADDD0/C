@@ -41,7 +41,7 @@ main()
                 printf("\t%.8g\n", pop());
                 break;
             default:
-                printf("errod: unknown command %s\n", s);
+                printf("error: unknown command %s\n", s);
                 break;
         }
     }

@@ -47,7 +47,7 @@ void reverse(char s[])
         --i;              /* leave newline in place    */
     j = 0;                /* beginning of new string s */
     while (j < i) {
-        temp = s[i];
+        temp = s[j];
         s[j] = s[i];      /* swap the characters       */
         s[i] = temp;
         --i;

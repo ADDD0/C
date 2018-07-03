@@ -6,16 +6,24 @@
 enum loop {NO, YES};
 enum loop okloop = YES;
 
-i = 0;
-while (okloop == YES) {
-    if (i >= lim - 1)   /* 有效范围外                                   */
-        okloop = NO;
-    else if ((c = getchar()) == '\n')
-        okloop = NO;
-    else if (c == EOF)  /* 文件末尾                                     */
-        okloop = NO;
-    else {
-        s[i] = c;
-        ++i;
-    }
+main()
+{
+    int lim = 128;
+    int i, c;
+    char s[lim];
+
+    i = 0;
+    while (okloop == YES)
+        if (i >= lim - 1)   /* outside of valid range ?                 */
+            okloop = NO;
+        else if ((c = getchar()) == '\n')
+            okloop = NO;
+        else if (c == EOF)  /* end of file ?                            */
+            okloop = NO;
+        else {
+            s[i] = c;
+            ++i;
+        }
+    s[i] = '\0';
+    printf("%s\n", s);
 }

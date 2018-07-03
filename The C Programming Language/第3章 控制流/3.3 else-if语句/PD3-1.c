@@ -2,7 +2,7 @@
 其实只要一次就足够(代价是将更多的测试在循环外执行)
 重写该函数,使得在循环内部只执行一次测试
 比较两种版本函数的运行时间 */
-/* binsearch函数:在v[0]<=v[1]<=v[2]<=…<=v[n-1]中查找x          */
+/* binsearch: find x in v[0] <= v[1] <= . . . <= v[n-1]        */
 int binsearch(int x, int v[], int n)
 {
     int low, high, mid;
@@ -18,7 +18,7 @@ int binsearch(int x, int v[], int n)
         mid = (low + high) / 2;
     }
     if (x == v[mid])
-        return mid;  /* 找到了匹配的值                         */
+        return mid;  /* found match                            */
     else
-        return -1;   /* 没有匹配的值                           */
+        return -1;   /* no match                               */
 }
