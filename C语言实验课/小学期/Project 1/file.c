@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "file.h"
 #include "stu.h"
+#include "file.h"
 
 void read(char filename[])
 {
@@ -16,7 +16,7 @@ void read(char filename[])
         return;
     }
 
-    printf("\n--Found file");
+    printf("\n--Found file\n");
     printf("--The linked list has been loaded\n");
     pre = h;
     while (!feof(fp)) {
@@ -37,11 +37,9 @@ void creat()
     float *s;
 
     pre = h;
-    printf("\n--Note: This operation will eliminate the previous list\n");
-    /* 创建后会删除原先的链表 */
-    printf("--(Stop when the student's ID is 0)\n");
+    printf("\n--(Stop when the student's ID is 0)\n");
     printf("Data input:\n");
-    printf("--format: %%d   %%s    %%d   %%f*3\n");
+    printf("--format: %%d   %%s    %%d   %%f*%d\n", COURSE);
     printf("--       (ID)(name)(term)(score)\n");
     p = talloc();
     scanf("%d", &p->sno);
@@ -58,7 +56,6 @@ void creat()
         p = talloc();
         scanf("%d", &p->sno);
     }
-    getchar();
     pre->next = NULL;
     printf("\n--Data input completed\n");
 
@@ -69,7 +66,7 @@ void creat()
 void sort()
 {
     Student *pt, *p;
-    int count = 0;
+    int count = 1;
 
     if (h->next)
         p = h;
@@ -81,7 +78,7 @@ void sort()
         p->rank = 0;
         ++count;
     }
-    while (count > 1) {
+    while (--count > 1) {
         pt = h->next;
         while (pt->rank != 0)
             pt = pt->next;
@@ -90,7 +87,6 @@ void sort()
             if (p->aver < pt->aver && p->rank == 0)
                 pt = p;
         pt->rank = count;
-        --count;
     }
     p = h->next;
     while (p->rank)
@@ -112,5 +108,4 @@ void save(char filename[])
         fprintf(fp, "%f %d\n", p->aver, p->rank);
     }
     fclose(fp);
-    putchar(10);
 }

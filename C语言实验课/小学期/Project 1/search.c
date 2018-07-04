@@ -17,10 +17,11 @@ void search()
 {
     int choice, searchnum, searchterm;
 
-    printf("\n0: Stop searching\n");
-    printf("1: Search in No.\n");
-    printf("2: Search in term\n");
-    printf("3: Search in failed scores\n");
+    printf("\n--Search\n");
+    printf("--0: Stop searching\n");
+    printf("--1: Search in No.\n");
+    printf("--2: Search in term\n");
+    printf("--3: Search in failed scores\n");
     printf("Your choice is:");
     scanf("%d", &choice);
     if (!choice) {

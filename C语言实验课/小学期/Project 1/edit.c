@@ -8,10 +8,12 @@ void edit()
 {
     int choice;
 
-    printf("\n0: Stop editing\n");
-    printf("1: Insert nodes\n");
-    printf("2: Modify nodes\n");
-    printf("3: Delete nodes\n");
+    printf("\n--Edit\n");
+    printf("--0: Stop editing\n");
+    printf("--1: Insert nodes\n");
+    printf("--2: Modify nodes\n");
+    printf("--3: Delete nodes\n");
+    printlist();
     printf("Your choice is:");
     scanf("%d", &choice);
     switch (choice) {
@@ -19,7 +21,7 @@ void edit()
         case 1: insert(); break;
         case 2: modify(); break;
         case 3: del(); break;
-        default : printf("Invalid command code\n\n");
+        default : printf("Invalid command code\n");
     }
     edit();
 }
@@ -30,16 +32,15 @@ void insert()
     int choice, insertnum;
     float *s;
 
-    printf("\n0: Stop inserting\n");
-    printf("1: Insert a node at the head of the list\n");  /* 插入头结点           */
-    printf("2: Insert a node at the end of the list\n");   /* 插入尾结点           */
-    printf("3: Insert a node after any student No.\n");    /* 在任意学号后插入结点 */
+    printf("\n--Insert\n");
+    printf("--0: Stop inserting\n");
+    printf("--1: Insert a node at the head of the list\n");
+    printf("--2: Insert a node at the end of the list\n");
+    printf("--3: Insert a node after any student No.\n");
     printf("Your choice is:");
     scanf("%d", &choice);
-    if (!choice) {
-        putchar(10);
+    if (!choice)
         return;
-    }
     printf("Input student info:");
     p = talloc();
     scanf("%d %s %d", &p->sno, p->sname, &p->term);
@@ -68,12 +69,12 @@ void insert()
             do {
                 pre = pre->next;
                 if (pre->sno == insertnum) {
-                    if (pre->next) {    /* 类似于插入头结点 */
+                    if (pre->next) {  /* 类似于插入头结点 */
                         p->next = pre->next;
                         pre->next = p;
                         break;
                     }
-                    else {              /* 类似于插入尾结点 */
+                    else {            /* 类似于插入尾结点 */
                         pre->next = p;
                         p->next = NULL;
                     }
@@ -83,7 +84,7 @@ void insert()
         default : printf("Invalid command code\n");
     }
     sort();
-    insert();  /* 递归调用 */
+    insert();                         /* 递归调用         */
 }
 
 void modify()
@@ -92,8 +93,9 @@ void modify()
     int i, choice, findnum, findterm;
     char findname[10];
 
-    printf("\n0: Stop modifing\n");
-    printf("1: Modify node by student's No. ,name and term\n");  /* 通过学号,姓名和学期修改结点 */
+    printf("\n--Modify\n");
+    printf("--0: Stop modifing\n");
+    printf("--1: Modify node by student's No. ,name and term\n");
     printf("Your choice is:");
     scanf("%d", &choice);
     if (!choice) {
@@ -109,7 +111,8 @@ void modify()
             while (p) {
                 if (p->sno == findnum && strcmp(p->sname, findname) == 0 && p->term == findterm) {
                     p->aver = 0;
-                    printf("Input student's new scores:");  /* 只能修改成绩 */
+                    printf("Input student's new scores:");
+                    /* 只能修改成绩 */
                     for (i = 0; i < COURSE; ++i)
                         scanf("%f", p->sco + i);
                     for (i = 0; i < COURSE; ++i)
@@ -122,7 +125,7 @@ void modify()
         default : printf("Invalid command code\n");
     }
     sort();
-    modify();  /* 递归调用 */
+    modify();       /* 递归调用     */
 }
 
 void del()
@@ -131,10 +134,11 @@ void del()
     int choice, findnum;
     char findname[10];
 
-    printf("\n0: Stop deleting\n");
-    printf("1: Delete node by student's No.\n");       /* 通过学号删除结点 */
-    printf("2: Delete node by student's name\n");      /* 通过姓名删除结点 */
-    printf("3: Delete nodelist\n");                    /* 删除整个链表     */
+    printf("\n--Delete\n");
+    printf("--0: Stop deleting\n");
+    printf("--1: Delete node by student's No.\n");     /* 通过学号删除结点 */
+    printf("--2: Delete node by student's name\n");    /* 通过姓名删除结点 */
+    printf("--3: Delete nodelist\n");                  /* 删除整个链表     */
     printf("Your choice is:");
     scanf("%d", &choice);
     switch (choice) {
@@ -156,6 +160,7 @@ void del()
                 }
                 pre = p;
             } while (pre->next);
+            sort();
             break;
         case 2:
             printf("Input name:");
@@ -173,12 +178,12 @@ void del()
                 }
                 pre = p;
             } while (pre->next);
+            sort();
             break;
         case 3:
             h->next = NULL;
             break;
         default : printf("Invalid command code\n");
     }
-    sort();
-    del();  /* 递归调用 */
+    del();                                             /* 递归调用         */
 }

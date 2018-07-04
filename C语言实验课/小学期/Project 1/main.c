@@ -15,7 +15,6 @@ main()
 {
     void printlist();
 
-
     char filename[20];
     int choice;
 
@@ -27,11 +26,12 @@ main()
     /* 如果输入的文件名不带扩展名,就在文件名末尾加上.txt */
     read(filename);
     while (1) {
-        printf("0: Exit\n");
-        printf("1: Edit information\n");
-        printf("2: Search information\n");
-        printf("3: Save information\n");
-        printf("4: Print current information\n");
+        printf("\n--Main program\n");
+        printf("--0: Exit\n");
+        printf("--1: Edit information\n");
+        printf("--2: Search information\n");
+        printf("--3: Save information\n");
+        printf("--4: Print current information\n");
         printf("Your choice is:");
         scanf("%d", &choice);
         switch (choice) {
@@ -40,7 +40,7 @@ main()
             case 2: search(); break;
             case 3: save(filename); break;
             case 4: printlist(); break;
-            default : printf("Invalid command code\n\n");
+            default : printf("Invalid command code\n");
         }
     }
 }
@@ -51,15 +51,16 @@ void printlist()
     float *s;
 
     p = h->next;
-    if (!p)  /* 链表为空时    */
-        printf("--Nodelist is not initialized or has been deleted\n");
+    if (!p) {  /* 链表为空时                             */
+        printf("\n--Nodelist is not initialized or has been deleted\n");
+        creat();
+    }
     while (p) {
         printf("No.%d %s %d:", p->sno, p->sname, p->term);
         for (s = p->sco;  s < p->sco + 3; ++s)
-            printf("  %f", *s);
-        printf("  %f %d", p->aver, p->rank);
+            printf("  %.2f", *s);
+        printf("  %.2f %d", p->aver, p->rank);
         printf("\n");
         p = p->next;
     }
-    printf("\n");
 }
