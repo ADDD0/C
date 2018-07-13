@@ -21,14 +21,14 @@ void read(char filename[])
     pre = h;
     while (!feof(fp)) {
         p = talloc();
-        fscanf(fp, "%d %s %d", &p->sno, p->sname, &p->term);
+        fscanf(fp, "%d %s %d ", &p->sno, p->sname, &p->term);
         for (i = 0; i < COURSE; ++i)
-            fscanf(fp, "%f", p->sco + i);
+            fscanf(fp, "%f ", p->sco + i);
         fscanf(fp, "%f %d ", &p->aver, &p->rank);
-        pre -> next = p;
+        pre->next = p;
         pre = p;
     }
-    pre -> next = NULL;
+    pre->next = NULL;
 }
 
 void creat()
@@ -84,7 +84,7 @@ void sort()
             pt = pt->next;
         p = pt;
         while (p = p->next)
-            if (p->aver < pt->aver && p->rank == 0)
+            if (p->aver < pt->aver && !p->rank)
                 pt = p;
         pt->rank = count;
     }
@@ -105,7 +105,7 @@ void save(char filename[])
         fprintf(fp, "%d %s %d ", p->sno, p->sname, p->term);
         for (s = p->sco; s < p->sco + COURSE; ++s)
             fprintf(fp, "%f ", *s);
-        fprintf(fp, "%f %d\n", p->aver, p->rank);
+        fprintf(fp, "%f %d \n", p->aver, p->rank);
     }
     fclose(fp);
 }

@@ -68,7 +68,7 @@ void insert()
             scanf("%d", &insertnum);
             do {
                 pre = pre->next;
-                if (pre->sno == insertnum) {
+                if (pre->sno == insertnum)
                     if (pre->next) {  /* 类似于插入头结点 */
                         p->next = pre->next;
                         pre->next = p;
@@ -78,7 +78,6 @@ void insert()
                         pre->next = p;
                         p->next = NULL;
                     }
-                }
             } while (pre->next);
             break;
         default : printf("Invalid command code\n");
@@ -90,7 +89,8 @@ void insert()
 void modify()
 {
     Student *p;
-    int i, choice, findnum, findterm;
+    int choice, findnum, findterm;
+    float *s;
     char findname[10];
 
     printf("\n--Modify\n");
@@ -98,10 +98,8 @@ void modify()
     printf("--1: Modify node by student's No. ,name and term\n");
     printf("Your choice is:");
     scanf("%d", &choice);
-    if (!choice) {
-        putchar(10);
+    if (!choice)
         return;
-    }
     printf("Input student's No. ,name and term:");
     scanf("%d %s %d", &findnum, findname, &findterm);
 
@@ -109,14 +107,14 @@ void modify()
     switch (choice) {
         case 1:
             while (p) {
-                if (p->sno == findnum && strcmp(p->sname, findname) == 0 && p->term == findterm) {
-                    p->aver = 0;
+                if (p->sno == findnum && !strcmp(p->sname, findname) && p->term == findterm) {
+                    p->aver = 0.0;
                     printf("Input student's new scores:");
                     /* 只能修改成绩 */
-                    for (i = 0; i < COURSE; ++i)
-                        scanf("%f", p->sco + i);
-                    for (i = 0; i < COURSE; ++i)
-                        p->aver += *(p->sco + i);
+                    for (s = p->sco; s < p->sco + COURSE; ++s) {
+                        scanf("%f", s);
+                        p->aver += *s;
+                    }
                     p->aver /= COURSE;
                 }
                 p = p->next;
@@ -150,7 +148,7 @@ void del()
             pre = h;
             do {
                 p = pre->next;
-                if (p->sno == findnum) {               /* 发现匹配学号     */
+                while (p->sno == findnum) {               /* 发现匹配学号     */
                     if (!p->next) {                    /* 指向尾结点       */
                         pre->next = NULL;
                         break;

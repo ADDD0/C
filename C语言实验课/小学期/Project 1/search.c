@@ -24,10 +24,8 @@ void search()
     printf("--3: Search in failed scores\n");
     printf("Your choice is:");
     scanf("%d", &choice);
-    if (!choice) {
-        putchar(10);
+    if (!choice)
         return;
-    }
     switch (choice) {
         case 1:
             printf("Search No.:");
