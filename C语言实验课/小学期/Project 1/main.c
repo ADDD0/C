@@ -40,7 +40,7 @@ main()
             case 2: search(); break;
             case 3: save(filename); break;
             case 4: printlist(); break;
-            default : printf("Invalid command code\n");
+            default: printf("Invalid command code\n");
         }
     }
 }

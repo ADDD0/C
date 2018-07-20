@@ -40,7 +40,7 @@ void search()
         case 3:
             searchInScore();
             break;
-        default : printf("Invalid command code\n");
+        default: printf("Invalid command code\n");
     }
     search();  /* 递归调用 */
 }

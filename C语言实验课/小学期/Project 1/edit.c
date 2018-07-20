@@ -21,7 +21,7 @@ void edit()
         case 1: insert(); break;
         case 2: modify(); break;
         case 3: del(); break;
-        default : printf("Invalid command code\n");
+        default: printf("Invalid command code\n");
     }
     edit();
 }
@@ -80,7 +80,7 @@ void insert()
                     }
             } while (pre->next);
             break;
-        default : printf("Invalid command code\n");
+        default: printf("Invalid command code\n");
     }
     sort();
     insert();                         /* 递归调用         */
@@ -120,7 +120,7 @@ void modify()
                 p = p->next;
             }
             break;
-        default : printf("Invalid command code\n");
+        default: printf("Invalid command code\n");
     }
     sort();
     modify();       /* 递归调用     */
@@ -181,7 +181,7 @@ void del()
         case 3:
             h->next = NULL;
             break;
-        default : printf("Invalid command code\n");
+        default: printf("Invalid command code\n");
     }
     del();                                             /* 递归调用         */
 }

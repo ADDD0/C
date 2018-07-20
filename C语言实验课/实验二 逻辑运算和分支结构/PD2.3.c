@@ -23,6 +23,6 @@ main()
             else
                 printf("Divisor cannot be 0\n");
             break;
-        default : printf("Invalid data\n"); break;
+        default: printf("Invalid data\n"); break;
     }
 }

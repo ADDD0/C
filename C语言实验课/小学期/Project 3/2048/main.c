@@ -75,7 +75,7 @@ void start_game()
             case 's':
                 move_down();
                 break;
-            default : continue;
+            default: continue;
         }
 
         score > best ? best = score : 1;     /* 打破得分纪录           */
@@ -90,12 +90,12 @@ void start_game()
 /* 计时函数 */
 void timing(int s)
 {
-	sleep(s);
-	if (get_null_count()) {
-		add_rand_num();
-		refresh_show();
-	}
-	timing(s);
+    sleep(s);
+    if (get_null_count()) {
+        add_rand_num();
+        refresh_show();
+    }
+    timing(s);
 }
 
 /* 重置游戏 */
@@ -297,9 +297,9 @@ void refresh_show()
 
                 for ( ; n; ++digit)
                     n /= 10;
-                switch(digit) {
+                switch (digit) {
                     case 1:
-                    switch(board[i][j]) {
+                    switch (board[i][j]) {
                         case 2: case 4: SetConsoleTextAttribute(JB, 248); break;
                         case 8: SetConsoleTextAttribute(JB, 143); break;
                     }
@@ -307,7 +307,7 @@ void refresh_show()
                     break;
 
                     case 2:
-                    switch(board[i][j]) {
+                    switch (board[i][j]) {
                         case 16: SetConsoleTextAttribute(JB, 206); break;
                         case 32: SetConsoleTextAttribute(JB, 234); break;
                         case 64: SetConsoleTextAttribute(JB, 169); break;
@@ -316,7 +316,7 @@ void refresh_show()
                     break;
 
                     case 3:
-                    switch(board[i][j]) {
+                    switch (board[i][j]) {
                         case 128: SetConsoleTextAttribute(JB, 157); break;
                         case 256: SetConsoleTextAttribute(JB, 217); break;
                         case 512: SetConsoleTextAttribute(JB, 154); break;
@@ -325,7 +325,7 @@ void refresh_show()
                     break;
 
                     case 4:
-                    switch(board[i][j]) {
+                    switch (board[i][j]) {
                         case 1024: SetConsoleTextAttribute(JB, 174); break;
                         case 2048: SetConsoleTextAttribute(JB, 236); break;
                         default: SetConsoleTextAttribute(JB, 192); break;
@@ -333,7 +333,7 @@ void refresh_show()
                     printf("%4d", board[i][j]);
                     break;
 
-                    default :
+                    default:
                     n = board[i][j];
                     for (int k = 1; k < 20; ++k) {
                         n >>= 1;

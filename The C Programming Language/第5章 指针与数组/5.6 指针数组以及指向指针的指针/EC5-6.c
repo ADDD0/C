@@ -80,7 +80,7 @@ void writelines(char *lineptr[], int nlines)
         printf("%s\n", *lineptr++);
 }
 
-/* qsort函数: 以递增顺序对v[left] …v[right]进行排序                  */
+/* qsort函数: 以递增顺序对v[left]…v[right]进行排序                   */
 void qsort(char *v[], int left, int right)
 {
     int i, last;

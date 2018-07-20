@@ -70,7 +70,7 @@ main()
             case 4: insert(); break;
             case 5: sort(); break;
             case 6: search(); break;
-            default : printf("Invalid command code\n");
+            default: printf("Invalid command code\n");
         }
     }
 }
@@ -164,7 +164,7 @@ void del()
             } while (pre->next);
             break;
         case 3: h->next = NULL;
-        default : printf("\n"); return;
+        default: printf("\n"); return;
     }
     printf("\n");
     del(h);  /* 递归调用 */
@@ -219,7 +219,7 @@ void insert()
                     }
                 }
             } while (pre->next);
-        default : printf("\n"); return;
+        default: printf("\n"); return;
     }
     printf("\n");
     insert();  /* 递归调用 */

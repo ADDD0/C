@@ -16,7 +16,7 @@ int getch(void)
     return c;
 }
 
-/* ungets: push character back onto the input                  */
+/* ungetch: push character back onto the input                 */
 void ungetch(int c)
 {
     if (buf != 0)
