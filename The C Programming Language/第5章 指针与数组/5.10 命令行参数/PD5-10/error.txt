@@ -1,0 +1,8 @@
+input:
+    expr 2 3 *
+output:
+    error: unknown command E
+               3
+
+
+???
