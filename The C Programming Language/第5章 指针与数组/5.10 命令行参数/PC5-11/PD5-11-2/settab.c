@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdlib.h>
 
 #define  MAXLINE  100         /* maximum line size          */
 #define  TABINC   8           /* default tab increment size */
