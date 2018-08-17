@@ -80,7 +80,6 @@ void readargs(int argc, char *argv[])
     }
     if (argc || pos1 > pos2)
         error("Usage: sort -dfnr [+pos1] [-pos2]");
-
 }
 
 void error(char *s)
