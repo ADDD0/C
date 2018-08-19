@@ -1,16 +1,16 @@
 /* 在有了基本框架后,对计算器程序进行扩充就比较简单了
-在该程序中加入取模(%)运算符,并注意考虑负数的情况            */
+在该程序中加入取模(%)运算符,并注意考虑负数的情况        */
 #include <stdio.h>
-#include <math.h>    /* for atof()                          */
+#include <math.h>    /* for atof()                      */
 
-#define  MAXOP  100  /* max size of operand or operator     */
-#define  NUMBER '0'  /* signal that a number was found      */
+#define  MAXOP  100  /* max size of operand or operator */
+#define  NUMBER '0'  /* signal that a number was found  */
 
 int getop(char []);
 void push(double);
 double pop(void);
 
-/* reverse Polish calculator                                */
+/* reverse Polish calculator                            */
 main()
 {
     int type;
