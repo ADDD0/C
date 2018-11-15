@@ -20,9 +20,8 @@ LinkList CreateList(LinkList L, int n) {
 }
 
 void MergeList(LinkList La, LinkList Lb) {
-    LinkList pa=La->next, pb=Lb->next, pc, pf;
+    LinkList pa=La->next, pb=Lb->next, pc=La, pf;
 
-    pc = La;
     free(Lb);
     while (pa && pb)
         if (pa->data < pb->data) {
@@ -41,10 +40,7 @@ void MergeList(LinkList La, LinkList Lb) {
             pb = pb->next;
             free(pf);
         }
-    if (pa)
-        pc->next = pa;
-    else
-        pc->next = pb;
+    pc->next = pa ? pa : pb;
 }
 
 void Show(LinkList L) {
