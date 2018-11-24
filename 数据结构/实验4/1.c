@@ -19,8 +19,8 @@ LinkList CreateList(LinkList L, int n) {
     return L;
 }
 
-void MergeList(LinkList La, LinkList Lb) {
-    LinkList pa=La->next, pb=Lb->next, pc=La, pf;
+LinkList MergeList(LinkList La, LinkList Lb) {
+    LinkList pa=La->next, pb=Lb->next, pc=La, pf, L;
 
     free(Lb);
     while (pa && pb)
@@ -41,6 +41,7 @@ void MergeList(LinkList La, LinkList Lb) {
             free(pf);
         }
     pc->next = pa ? pa : pb;
+    return La;
 }
 
 void Show(LinkList L) {
@@ -56,7 +57,7 @@ int main() {
     Show(La);
     Lb = CreateList(Lb, 7);
     Show(Lb);
-    MergeList(La, Lb);
+    La = MergeList(La, Lb);
     Show(La);
     return 0;
 }

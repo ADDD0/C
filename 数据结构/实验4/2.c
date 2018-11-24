@@ -19,10 +19,9 @@ LinkList CreateList(LinkList L, int n) {
     return L;
 }
 
-void IntersectList(LinkList La, LinkList Lb) {
-    LinkList pa=La->next, pb=Lb->next, pc, pf;
+LinkList IntersectList(LinkList La, LinkList Lb) {
+    LinkList pa=La->next, pb=Lb->next, pc=La, pf;
 
-    pc = La;
     free(Lb);
     while (pa && pb)
         if (pa->data < pb->data) {
@@ -42,6 +41,7 @@ void IntersectList(LinkList La, LinkList Lb) {
             free(pf);
         }
     pc->next = NULL;
+    return La;
 }
 
 void Show(LinkList L) {
@@ -57,7 +57,7 @@ int main() {
     Show(La);
     Lb = CreateList(Lb, 7);
     Show(Lb);
-    IntersectList(La, Lb);
+    La = IntersectList(La, Lb);
     Show(La);
     return 0;
 }

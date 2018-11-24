@@ -1,0 +1,71 @@
+1.已知顺序表L,在第i个元素前插入元素e.
+    (1)首先要定义顺序表的数据结构,可参考教材22页;
+    (2)定义一个函数能够初始化一个顺序表,可参考教材23页算法2.3;
+    (3)编写一个函数,例如:
+        int ListInsert_Sq(SqList *L, int i, int e) {
+            //已知顺序表L,在第i个元素前插入元素e,已知空间足够大.
+            ......
+        }
+    上边算法可参考教材24页算法2.4
+    (4)读懂F中函数(ListPrint),它能输出一个顺序表中所有元素的值.
+    (5)编写主函数(main)并多次调用ListInsert_Sq函数创建一个顺序表,并输出其结果,例如:
+        输入:1  2  3  4  5
+        输出:1  2  3  4  5
+    (6)程序编制上的部分提示,仅供参考:
+        #include "stdio.h"
+        #define  N  10  //顺序表中最多N个数
+        #define  OK  1
+        #define  ERROR  -1
+        typedef struct {
+            int *elem;
+            int length;
+            int listsize;
+        } SqList;
+
+        int Init(SqList *L) {
+            //因为L是指针,所以请注意->的使用,不是L.
+            L->elem = (int*) malloc(N * sizeof(int));
+            if (!L->elem)
+                return ERROR;
+            L->length = 0;
+            L->listsize = N;
+            return OK;
+        }
+
+        int ListInsert_Sq(SqList *L, int i, int e) {
+            //插入函数,在实验时,可暂不考虑空间不足的情况
+            ......
+        }
+
+        int ListPrint(SqList M) {
+            //能输出顺序表所有元素的值
+            int *p;
+            for (p = M.elem; p <= (M.elem + M.length - 1); ++p)
+                printf("%d    ", *p);
+            printf("\n");
+        }
+
+        int main() {
+            int i, n=5, e;
+            SqList M;
+
+            Init(&M);
+            printf("Input %d numbers, Please:\n", n);
+            for (i = 1; i <= n; ++i) {
+                //创建初始的顺序表,包含n个数,通过调用n次ListInsert_Sq函数实施插入
+                scanf("%d", &e);  //输入一个数
+                ListInsert_Sq(&M, i, e);  //在L中第i个前插入e
+            }
+            ListPrint(M);//输出顺序表中各元素的值
+            ListInsert_Sq(&M, 3, 999);    //在第三个元素前插入999
+            printf("After insert:\n");
+            ListPrint(M);                 //输出插入后顺序表的各元素的值
+            return 0;
+            //如果环境是Win-Tc,getch()起到暂停作用以看程序输出结果
+        }
+        注:在上机编程时可不打注释(//后的文字),但是在写实验报告时要加适当的注释;有的函数返回类型是int,但是可以不返回任何类型,可以换成void.
+
+2.编写函数实现在一个非递减的顺序表L(空间足够大)中,插入一个值为e的元素,要求插入后L仍然是非递减的.(选做)
+    void SortListInsert(SqList *L, int e) {
+        ......
+}
