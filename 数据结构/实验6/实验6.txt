@@ -1,27 +1,29 @@
-1.Çó¶þ²æÊ÷Ò¶×ÓÊý.
-    (1)Ð´Ò»¸öµÝ¹éËã·¨ÊµÏÖ¼ÆËã¶þ²æÊ÷µÄÒ¶×ÓÊý
-        ÌáÊ¾:ÏÈ¿¼ÂÇ±ß½ç,Èç¹û¶þ²æÊ÷Îª¿ÕÔò·µ»Ø0;Èç¹û¸ù½áµãÎÞ×óº¢×ÓºÍÓÒº¢×ÓÔò·µ»Ø1;·ñÔò,·µ»Ø¸Ã¶þ²æÊ÷µÄ×ó×ÓÊ÷Ò¶×ÓÊý¼ÓÉÏÓÒ×ÓÊ÷Ò¶×ÓÊý.
-        ÀýÈç:
-            int sumLeaf(BiTree T) {  //Çó¶þ²æÊ÷Ò¶×ÓÊý,²»Ê¹ÓÃÈ«¾Ö±äÁ¿
-                ......
+1.æ±‚äºŒå‰æ ‘å¶å­æ•°.
+    (1)å†™ä¸€ä¸ªé€’å½’ç®—æ³•å®žçŽ°è®¡ç®—äºŒå‰æ ‘çš„å¶å­æ•°
+        æç¤º:å…ˆè€ƒè™‘è¾¹ç•Œ,å¦‚æžœäºŒå‰æ ‘ä¸ºç©ºåˆ™è¿”å›ž0;
+          å¦‚æžœæ ¹ç»“ç‚¹æ— å·¦å­©å­å’Œå³å­©å­åˆ™è¿”å›ž1;
+          å¦åˆ™,è¿”å›žè¯¥äºŒå‰æ ‘çš„å·¦å­æ ‘å¶å­æ•°åŠ ä¸Šå³å­æ ‘å¶å­æ•°.
+        ä¾‹å¦‚:
+            int SumLeaf(BiTree T) {      //æ±‚äºŒå‰æ ‘å¶å­æ•°,ä¸ä½¿ç”¨å…¨å±€å˜é‡
+                ...
             }
 
-    (2)ÔÚº¯Êý(main),µ÷ÓÃº¯ÊýSumLeaf(T),²¢ÄÜÊä³ö½á¹û½øÐÐÑéÖ¤.
-        º¯Êý(main)µÄ±àÖÆÌáÊ¾ÈçÏÂ:
-        int main() {
-            int CountSum;
-            BiTree T;
+    (2)åœ¨å‡½æ•°(main),è°ƒç”¨å‡½æ•°SumLeaf(T),å¹¶èƒ½è¾“å‡ºç»“æžœè¿›è¡ŒéªŒè¯.
+        å‡½æ•°(main)çš„ç¼–åˆ¶æç¤ºå¦‚ä¸‹:
+            int main() {
+                int CountSum;
+                BiTree T;
 
-            T = CreateBiTree(T);     //²Î¿¼ÊµÑéÎå
-            PreOrderTraverse(T);     //²Î¿¼ÊµÑéÎå,ÏÈÐò±éÀú¶þ²æÊ÷
-            MediumOrderTraverse(T);  //²Î¿¼ÊµÑéÎå,ÖÐÐò±éÀú¶þ²æÊ÷
-            CountSum = SumLeaf(T);   //ÇóÒ¶×ÓÊý
-            printf("The Sumleaf is:%d\n", CountSum); //Êä³öÒ¶×ÓÊý
-            return 0;
-        }
+                T = CreateBiTree(T);     //å‚è€ƒå®žéªŒäº”
+                PreOrderTraverse(T);     //å‚è€ƒå®žéªŒäº”,å…ˆåºéåŽ†äºŒå‰æ ‘
+                MediumOrderTraverse(T);  //å‚è€ƒå®žéªŒäº”,ä¸­åºéåŽ†äºŒå‰æ ‘
+                CountSum = SumLeaf(T);   //æ±‚å¶å­æ•°
+                printf("The Sumleaf is:%d\n", CountSum); //è¾“å‡ºå¶å­æ•°
+                return 0;
+            }
 
-2.Ð´Ò»¸öµÝ¹éËã·¨Í³¼Æ¶þ²æÊ÷µÄ¶ÈÎª1µÄ½áµã×ÜÊý,²»ÓÃÈ«¾Ö±äÁ¿.
+2.å†™ä¸€ä¸ªé€’å½’ç®—æ³•ç»Ÿè®¡äºŒå‰æ ‘çš„åº¦ä¸º1çš„ç»“ç‚¹æ€»æ•°,ä¸ç”¨å…¨å±€å˜é‡.
 
-3.Ñ¡×öÌâ
-    (1)Ð´Ò»¸öµÝ¹éËã·¨ÊµÏÖ¼ÆËã¶þ²æÊ÷µÄÉî¶È.
-    (2)Ð´Ò»¸öµÝ¹éËã·¨ÊµÏÖÍ³¼Æ¶þ²æÊ÷µÄ½áµã×ÜÊý,²»Ê¹ÓÃÈ«¾Ö±äÁ¿.
+3.é€‰åšé¢˜
+    (1)å†™ä¸€ä¸ªé€’å½’ç®—æ³•å®žçŽ°è®¡ç®—äºŒå‰æ ‘çš„æ·±åº¦.
+    (2)å†™ä¸€ä¸ªé€’å½’ç®—æ³•å®žçŽ°ç»Ÿè®¡äºŒå‰æ ‘çš„ç»“ç‚¹æ€»æ•°,ä¸ä½¿ç”¨å…¨å±€å˜é‡.

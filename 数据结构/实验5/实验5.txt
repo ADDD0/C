@@ -1,59 +1,60 @@
-1.½¨Á¢Ò»¸ö¶þ²æÊ÷.
-    (1)½¨Á¢¶þ²æÊ÷µÄÊý¾Ý½á¹¹,ÒªÇóÒÔ¶þ²æÁ´±í×÷Îª´æ´¢½á¹¹,¿É²Î¿¼½Ì²Ä127Ò³
-    (2)¶Á¶®ÏÂÃæ¿É´´½¨¶þ²æÊ÷µÄµÝ¹éº¯Êý,ÀýÈç:
+1.å»ºç«‹ä¸€ä¸ªäºŒå‰æ ‘.
+    (1)å»ºç«‹äºŒå‰æ ‘çš„æ•°æ®ç»“æž„,è¦æ±‚ä»¥äºŒå‰é“¾è¡¨ä½œä¸ºå­˜å‚¨ç»“æž„,å¯å‚è€ƒæ•™æ127é¡µ
+    (2)è¯»æ‡‚ä¸‹é¢å¯åˆ›å»ºäºŒå‰æ ‘çš„é€’å½’å‡½æ•°,ä¾‹å¦‚:
         BiTree CreateBiTreeBitree(BiTree T) {
-            ......
+            ...
         }
-        ÉÏ±ßËã·¨¿É²Î¿¼½Ì²Ä131Ò³Ëã·¨6.4,×¢ÒâÂ¼ÈëµÄÊý¾Ý´ÎÐò.
+        ä¸Šè¾¹ç®—æ³•å¯å‚è€ƒæ•™æ131é¡µç®—æ³•6.4,æ³¨æ„å½•å…¥çš„æ•°æ®æ¬¡åº.
 
-2.¶Ô½¨Á¢µÄ¶þ²æÊ÷½øÐÐ±éÀú.
-    (1)Ð´Ò»¸öµÝ¹éËã·¨ÊµÏÖ¶Ô¶þ²æÊ÷µÄ±éÀú,ÒªÇóÄÜÊä³ö½á¹û,ÀýÈç:
-        int PreOrderTraverse(Bitree T) {  //ÏÈÐò±éÀú¶þ²æÊ÷
-            ......
+2.å¯¹å»ºç«‹çš„äºŒå‰æ ‘è¿›è¡ŒéåŽ†.
+    (1)å†™ä¸€ä¸ªé€’å½’ç®—æ³•å®žçŽ°å¯¹äºŒå‰æ ‘çš„éåŽ†,è¦æ±‚èƒ½è¾“å‡ºç»“æžœ,ä¾‹å¦‚:
+        int PreOrderTraverse(Bitree T) {  //å…ˆåºéåŽ†äºŒå‰æ ‘
+            ...
         }
-        ÉÏ±ßËã·¨¿É²Î¿¼½Ì²Ä129Ò³Ëã·¨6.1.
-    (2)±àÐ´Ö÷º¯Êý(main),µ÷ÓÃº¯ÊýCreateBiTree(T)À´´´½¨Ò»¸ö¶þ²æÊ÷²¢±éÀú.
-    (3)³ÌÐò±àÖÆÉÏµÄÌáÊ¾,½ö¹©²Î¿¼:
-    #include "stdio.h"
-    #include "string.h"
-    #define  NULL  0
+        ä¸Šè¾¹ç®—æ³•å¯å‚è€ƒæ•™æ129é¡µç®—æ³•6.1.
+    (2)ç¼–å†™ä¸»å‡½æ•°(main),è°ƒç”¨å‡½æ•°CreateBiTree(T)æ¥åˆ›å»ºä¸€ä¸ªäºŒå‰æ ‘å¹¶éåŽ†.
+    (3)ç¨‹åºç¼–åˆ¶ä¸Šçš„æç¤º,ä»…ä¾›å‚è€ƒ:
+        #include "stdio.h"
+        #include "string.h"
+        #define  NULL  0
 
-    typedef struct BiTNode {
-        char data;  //×¢Òâ½áµãÀàÐÍ
-        struct  BiTNode *lchild, *rchild;
-    } BiTNode, *BiTree;
+        typedef struct BiTNode {
+            char data;                   //æ³¨æ„ç»“ç‚¹ç±»åž‹
+            struct  BiTNode *lchild, *rchild;
+        } BiTNode, *BiTree;
 
-    BiTree CreateBiTree(BiTree T) {  // ´´½¨¶þ²æÊ÷
-        char ch; 
+        BiTree CreateBiTree(BiTree T) {  // åˆ›å»ºäºŒå‰æ ‘
+            char ch;
 
-        getchar(ch);
-        if (ch == '#')
-            T = NULL;
-        else {
-            if (!(T = (BiTNode*) malloc(sizeof(BiTNode))))
-                exit(0);
-            T->data=ch;
-            T->lchild = CreateBiTree(T->lchild);
-            T->rchild = CreateBiTree(T->rchild);
+            getchar(ch);
+            if (ch == '#')
+                T = NULL;
+            else {
+                if (!(T = (BiTNode*) malloc(sizeof(BiTNode))))
+                    exit(0);
+                T->data=ch;
+                T->lchild = CreateBiTree(T->lchild);
+                T->rchild = CreateBiTree(T->rchild);
+            }
+            return T;
         }
-        return T;
-    }
 
-    int PreOrderTraverse(BiTree T) {
-        //ÏÈÐò±éÀú¶þ²æÊ÷£¬Êä³ö¸÷½áµãµÄÖµ
-        ......
-    }  //ÔÚÍê³ÉÏÈÐò±éÀúµÄ»ù´¡ÉÏ,¿ÉÈ¥ÊµÏÖÖÐÐòºÍºóÐò±éÀúËã·¨
-    ×¢Òâ:ÔÚÊµÑé±¨¸æÒªÌåÏÖ³öÏÈÐò±éÀúºÍÖÐÐò±éÀúËã·¨.
+        int PreOrderTraverse(BiTree T) {
+            //å…ˆåºéåŽ†äºŒå‰æ ‘ï¼Œè¾“å‡ºå„ç»“ç‚¹çš„å€¼
+            ...
+        }  //åœ¨å®Œæˆå…ˆåºéåŽ†çš„åŸºç¡€ä¸Š,å¯åŽ»å®žçŽ°ä¸­åºå’ŒåŽåºéåŽ†ç®—æ³•
+        æ³¨æ„:åœ¨å®žéªŒæŠ¥å‘Šè¦ä½“çŽ°å‡ºå…ˆåºéåŽ†å’Œä¸­åºéåŽ†ç®—æ³•.
 
-    int main() {
-        BiTree T;
+        int main() {
+            BiTree T;
 
-        T = CreateBiTree(T);  //´´½¨¶þ²æÊ÷
-        printf(¡°The preorder of T is:\n¡±);
-        PreOrderTraverse(T);  //ÏÈÐò±éÀú¶þ²æÊ÷,Êä³öTÖÐ¸÷½áµãµÄÖµ
-        return 0;
-    }
-    ×¢Òâ:Â¼Èë²âÊÔÊý¾ÝÊ±Ò»¶¨ÒªÊÂÏÈÖªµÀ×Ô¼ºËùÒª´´½¨µÄ¶þ²æÊ÷.
-    ÀýÈç,ÊäÈëµÄÐòÁÐÊÇ:Ab##C##(»Ø³µ),ÄÇÃ´Ëù´´½¨µÄ¶þ²æÊ÷ÊÇÊ²Ã´ÑùÄØ?²Î¿¼½Ì²Ä131Ò³.
+            T = CreateBiTree(T);  //åˆ›å»ºäºŒå‰æ ‘
+            printf(â€œThe preorder of T is:\nâ€);
+            PreOrderTraverse(T);  //å…ˆåºéåŽ†äºŒå‰æ ‘,è¾“å‡ºTä¸­å„ç»“ç‚¹çš„å€¼
+            return 0;
+        }
+        æ³¨æ„:å½•å…¥æµ‹è¯•æ•°æ®æ—¶ä¸€å®šè¦äº‹å…ˆçŸ¥é“è‡ªå·±æ‰€è¦åˆ›å»ºçš„äºŒå‰æ ‘.
+        ä¾‹å¦‚,è¾“å…¥çš„åºåˆ—æ˜¯:Ab##C##(å›žè½¦),é‚£ä¹ˆæ‰€åˆ›å»ºçš„äºŒå‰æ ‘æ˜¯ä»€ä¹ˆæ ·å‘¢?
+          å‚è€ƒæ•™æ131é¡µ.
 
-3.ÓÃÏÈÐò±éÀú·½Ê½Êä³ö¶þ²æÊ÷ÖÐµÄ´óÐ´×ÖÄ¸,²¢½«´óÐ´×ÖÄ¸µÄ¸öÊý´æÈëÈ«¾Ö±äÁ¿countÖÐ.(Ñ¡×ö)
+3.ç”¨å…ˆåºéåŽ†æ–¹å¼è¾“å‡ºäºŒå‰æ ‘ä¸­çš„å¤§å†™å­—æ¯,å¹¶å°†å¤§å†™å­—æ¯çš„ä¸ªæ•°å­˜å…¥å…¨å±€å˜é‡countä¸­.(é€‰åš)
