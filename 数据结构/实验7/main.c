@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Create(ALGraph *G) {     /* 创建一个有向图                              */
+void Create(ALGraph *G) {             /* 创建一个有向图                      */
     int i, j, k;
     ArcNode *s;
 
@@ -35,13 +35,13 @@ void DFS(ALGraph G, int v) {  /* 从顶点v出发进行深度优先遍历,注意
             DFS(G, w->adjvex);
 }
 
-void DFSGraph(ALGraph G) {    /* 尝试从各点出发DFS                           */
+void DFSGraph(ALGraph G) {            /* 尝试从各点出发DFS                   */
     int i;
 
     for (i = 0; i < G.vexnum; ++i)
         if (!visited[i]) {
             printf("\nFrom %d DFS is:", i);
-            DFS(G, i);        /* 从i出发深度遍历                             */
+            DFS(G, i);                /* 从i出发深度遍历                     */
         }
 }
 
@@ -73,7 +73,7 @@ int main(){
 
     Create(&G);
     DFSGraph(G);
-    printf("\n%d\n", OutputDegree(G, 3));
+    printf("\n%d\n", OutputDegree(G, 0));
     printf("%d\n", InDegree(G, 0));
     return 0;
 }

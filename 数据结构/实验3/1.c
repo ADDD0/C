@@ -4,7 +4,7 @@
 
 LinkList CreateList(LinkList L, int n) {  //头插法
     int i;
-    LinkList p, pre;
+    LinkList p;
 
     L = (LinkList) malloc(sizeof(LNode));
     L->next = NULL;

@@ -1,0 +1,52 @@
+1.建立两个单链表.
+    具体可参考实验二.
+
+2.编写单链表直接插入的排序算法.
+    具体思想可参考教材265页算法10.1.
+
+3.编写单链表直接选择的排序算法.
+    具体思想可参考教材278页算法10.9.
+
+4.程序编制上的提示,仅供参考:
+    #include "stdio.h"
+
+    #define  NULL  0
+
+    typedef struct LNode {
+        int data;
+        struct LNode *next;
+    } LNode, *LinkList;
+
+    LinkList CreateList(LinkList L, int n) {
+        //创建一个单链表带头结点且含n个结点的单链表,参考实验三
+    　　...
+    　　return L;
+    }
+
+    void Show(LinkList L) {
+        //能输出单链表L中各结点的值,参考实验三
+    　  ...
+    }
+
+    void InsertSort(LinkList L) {
+        //对单链表L进行直接插入排序
+        ...　
+    }
+
+    void SelectSort(LinkList L) {
+        //对单链表L进行直接选择排序
+        ...
+    }
+
+    int main() {
+        LinkList  M, N;
+
+        M = CreateList(M, 6);
+        InsertSort(M);  //对单链表M进行直接插入排序
+        Show(M);
+        N = CreateList(N, 5);
+        SelectSort(N);  //对单链表N进行直接选择排序
+        Show(N);
+        return 0;
+    }
+    注:在具体实现时,一次可以只做一个排序,在实验报告上只写出一个排序的实现算法即可.

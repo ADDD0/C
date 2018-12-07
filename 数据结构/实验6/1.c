@@ -23,7 +23,7 @@ int PreOrderTraverse(BiTree T) {     //先序
         PreOrderTraverse(T->lchild);
         PreOrderTraverse(T->rchild);
     } else
-        return ERROR;
+        return 0;
 }
 
 int MediumOrderTraverse(BiTree T) {  //中序
@@ -32,7 +32,7 @@ int MediumOrderTraverse(BiTree T) {  //中序
         putchar(T->data);
         MediumOrderTraverse(T->rchild);
     } else
-        return ERROR;
+        return 0;
 }
 
 int SumLeaf(BiTree T) {              //叶子数
