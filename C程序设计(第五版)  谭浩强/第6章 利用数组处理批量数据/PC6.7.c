@@ -8,29 +8,29 @@
 要求输出1~n*n的自然数构成的魔方阵 */
 #include <stdio.h>
 
-#define  N  7
+#define  N  5
 
 /* 只能输出奇数平方               */
 main()
 {
     int a[N][N] = {0};
     int count = 0;
-    int row = 0, cul = N / 2;
-    int i = row, j = cul;
+    int row = 0, col = N / 2;
+    int i = row, j = col;
 
     while (count++ <= N * N) {
-        a[row][cul] = count;
+        a[row][col] = count;
         if (i == 0)
             i = N - 1;
         else
             --i;
         j = (j + 1) % N;
-        if (a[i][j] || row == 0 && cul == N-1) {
+        if (a[i][j] || row == 0 && col == N-1) {
             i = row + 1;
-            j = cul;
+            j = col;
         }
         row = i;
-        cul = j;
+        col = j;
     }
 
     for (i = 0; i < N; ++i) {
