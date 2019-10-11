@@ -1,0 +1,101 @@
+1.在实验3的基础上,求La和Lb两集合的并运算,要求占用原来空间.
+    (1)在实验内容1的main函数上边编写一个能够实现La和Lb两集合的并运算
+      (合并后仍然是递增的)函数,例如:
+        void MergeList(LinkList La, LinkList Lb) {
+            //求La和Lb两集合的并运算,结果用La保存
+            //因为占用原来空间，所以需释放多余结点
+            ......
+        }
+        上边算法可参考教材31页算法2.12,注意本算法需考虑删除相同的元素,
+        因为我们考虑的集合中没有重复元素.
+    (2)在main函数中输入数据(如果是头插法,输入数据时要倒着录):
+        La:1  3  7  8  15  20
+        Lb:2  4  8  15  17  24  90
+    (3)在主函数中调用MergeList(La, Lb)函数,并输出合并后的La结果:
+        1  2  3  4  7  8  15  17  20  24  90
+    (4)主函数编制提示,仅供参考:
+        int main() {
+            LinkList La, Lb;
+
+            La = CreateList(La, 6);  //创建La要求递增
+            Show(La);
+            Lb = CreateList(Lb, 7);  //创建Lb要求递增
+            Show(Lb);
+            MergeList(La,Lb);        //求并集,合并后的结果在La中,Lb就不存在了
+            Show(La);
+            return 0;
+        }
+        注:第二次实验完成以上内容即可,如有剩余时间,可以做下面的选做题.
+
+2.求La和Lb两集合的交运算,要求占用原来空间.(选做)
+    (1)在以上程序基础上,编写一个能够实现La和Lb两集合的交运算
+      (交集仍然是递增的)函数,例如:
+        void IntersectList(LinkList La, LinkList Lb) {
+            //求La和Lb两集合的交运算,结果用La保存
+            ...
+        }
+        上边算法可参考教材31页算法2.12,注意本算法要将La和Lb中多余结点释放掉.
+    (2)在主函数中调用IntersectList(La, Lb)算法,并输出结果:
+        8  15
+    (3)注意当调用MergeList(La, Lb)算法后,La和Lb都改变了,Lb不存在了,La的值也发生
+      了变化,这样就无法实现下边的实验了,所以需要重新录入La和Lb,他们的值如下:
+        La:1  3  7  8  15  20
+        Lb:2  4  8  15  17  24  90
+    (4)主函数编制提示,仅供参考:
+        int main() {
+            LinkList La,Lb;
+
+            La = CreateList(La, 6);  //创建La要求递增
+            Show(La);
+            Lb = CreateList(Lb, 7);  //创建Lb要求递增
+            Show(Lb);
+            IntersectList(La, Lb);   //求交集
+            Show(La);
+            return 0;
+        }
+        注:main函数的编制可参考上面的并运算,对交运算进行测试,上机时一回只测试
+          一个运算,如要测试交运算,就不要测试并运算了.
+
+3.将一个带头结点单链表就地逆置.(选做)
+    程序编制上的提示,仅供参考(其中很多代码可以借鉴内容1):
+    #include "stdio.h"
+    #define  NULL  0
+
+    typedef struct LNode {
+        int data;
+        struct LNode *next;
+    } LNode, *LinkList;
+
+    LinkList CreateList(LinkList L, int n) {
+        //创建一个含有n个结点的带头结点的单链表
+        ...
+        return L;
+    }
+
+    void Show(LinkList L) {
+        //能够输出带头结点的单链表L中的各个结点的值
+        ...
+    }
+
+    void ReverseList(LinkList L) {
+        //将一个带头结点单链表L就地逆置
+        ...
+    }
+
+    int main() {
+        LinkList L;
+
+        L = CreatList(L, 6);
+        Show(L);
+        ReverseList(L);
+        printf(“\nThe after reverse L is:\n”);
+        Show(L);
+        return 0;
+    }
+    注:程序运行时如输入(假设采用头插法创建的链表):
+        6  5  4  3  2  1,
+
+        输出结果如下:
+        1  2  3  4  5  6
+        The after reverse L is:
+        6  5  4  3  2  1
